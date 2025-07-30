@@ -197,6 +197,8 @@
         <div class="tabs">
             <button class="tab active" onclick="showTab('gastos')">💰 Gastos Fijos</button>
             <button class="tab" onclick="showTab('ventas')">📈 Análisis Ventas</button>
+            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones Socios</button>
+            <button class="tab" onclick="showTab('deudas')">💳 Deudas y Pagos</button>
             <button class="tab" onclick="showTab('proyeccion')">🎯 Proyección</button>
             <button class="tab" onclick="showTab('alertas')">⚠️ Alertas</button>
         </div>
@@ -343,7 +345,123 @@
             </div>
         </div>
 
-        <div id="proyeccion" class="tab-content">
+        <div id="inversiones" class="tab-content">
+            <div class="section">
+                <h3>📊 Inversión Actual por Socio (Actualizado 30 Jul 2025)</h3>
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>💰 William Quintero</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Fecha</th><th>Concepto</th><th>Valor</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Inicial</td><td>Inversión base</td><td class="number">$9,000,000</td></tr>
+                                <tr><td>26/06/2025</td><td>Aporte adicional</td><td class="number">$3,200,000</td></tr>
+                                <tr><td>30/07/2025</td><td>Abono deuda Juan</td><td class="number">$1,000,000</td></tr>
+                                <tr><td>30/07/2025</td><td>Sistema Siigo (T.C)</td><td class="number">$780,000</td></tr>
+                                <tr><td>30/07/2025</td><td>Capital trabajo/mercado</td><td class="number">$1,000,000</td></tr>
+                                <tr style="background: #e7f3ff; font-weight: bold;"><td colspan="2"><strong>TOTAL WILLIAM</strong></td><td class="number"><strong>$14,980,000</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>👥 Otros Socios (28 Jul 2025)</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Socio</th><th>Inversión Total</th><th>% Participación</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>William</strong></td><td class="number"><strong>$14,980,000</strong></td><td><strong>29.8%</strong></td></tr>
+                                <tr><td>Daniel</td><td class="number">$12,000,000</td><td>23.9%</td></tr>
+                                <tr><td>Paula</td><td class="number">$11,142,000</td><td>22.2%</td></tr>
+                                <tr><td>Julián</td><td class="number">$11,142,000</td><td>22.2%</td></tr>
+                                <tr style="background: #f8f9fa; font-weight: bold;"><td><strong>TOTAL</strong></td><td class="number"><strong>$49,264,000</strong></td><td><strong>100%</strong></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="alert warning">
+                            <strong>⚠️ Nota:</strong> William es ahora el mayor inversionista con $14.98M
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4>📈 Evolución de Inversión William</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Período</th><th>Inversión Acumulada</th><th>Motivo</th><th>Estado</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Inicial</td><td class="number">$9,000,000</td><td>Inversión base original</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr><td>Jun 2025</td><td class="number">$12,200,000</td><td>Capital adicional + emergencias</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr><td>Jul 2025</td><td class="number">$14,980,000</td><td>Crisis liquidez + sistema + deuda Juan</td><td class="status-warning">💳 T.C</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="deudas" class="tab-content">
+            <div class="section">
+                <h3>💳 Control de Deudas y Pagos Pendientes</h3>
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>🏦 Deuda Juan (Suplementos)</h4>
+                        <div class="alert warning">
+                            <strong>Deuda Original:</strong> $3,200,000 (capital suplementos)<br>
+                            <strong>Abono William (29 Jul):</strong> $1,000,000<br>
+                            <strong>Saldo Pendiente:</strong> $2,200,000
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Fecha Pago</th><th>Valor Cuota</th><th>Estado</th><th>Días Restantes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>15 Agosto 2025</td><td class="number">$733,000</td><td class="status-warning">⏳ Pendiente</td><td id="dias1">16 días</td></tr>
+                                <tr><td>30 Agosto 2025</td><td class="number">$733,000</td><td class="status-warning">⏳ Pendiente</td><td id="dias2">31 días</td></tr>
+                                <tr><td>15 Sept 2025</td><td class="number">$734,000</td><td class="status-warning">⏳ Pendiente</td><td id="dias3">47 días</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>💳 Sistema Siigo (Tarjeta William)</h4>
+                        <div class="alert danger">
+                            <strong>Total:</strong> $780,000 - Pagado con T.C William<br>
+                            <strong>Modalidad:</strong> 3 cuotas de $260,000 c/u<br>
+                            <strong>⚠️ Requiere reintegro urgente</strong>
+                        </div>
+                        <div class="input-group">
+                            <label>Fecha facturación T.C:</label>
+                            <input type="date" id="fechaTC" value="2025-07-30">
+                        </div>
+                        <button class="btn" onclick="calcularCuotasTC()">Calcular Vencimientos</button>
+                        <div id="cuotasTC"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4>📋 Otras Deudas Pendientes (Mayo 2025)</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Acreedor</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Juan</td><td>Suplementos (ver arriba)</td><td class="number">$2,200,000</td><td class="status-warning">En cuotas</td></tr>
+                            <tr><td>Alejo</td><td>MR Cream</td><td class="number">$75,000</td><td class="status-warning">Pendiente</td></tr>
+                            <tr><td>Jhon tatuador</td><td>Suplementos</td><td class="number">$386,000</td><td class="status-warning">Por recoger</td></tr>
+                            <tr><td>Daniel</td><td>Varios</td><td class="number">$40,000</td><td class="status-warning">Pendiente</td></tr>
+                            <tr><td>Paula</td><td>Gastos varios</td><td class="number">$54,000</td><td class="status-warning">Pendiente</td></tr>
+                            <tr><td>Julián</td><td>Gastos varios</td><td class="number">$25,000</td><td class="status-warning">Pendiente</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="result">
+                        <strong>Total Deudas Menores:</strong> $580,000
+                    </div>
+                </div>
+            </div>
+        </div>
             <div class="section">
                 <h3>🎯 Metas para Alcanzar Equilibrio</h3>
                 <div class="financial-grid">
@@ -410,10 +528,11 @@
                             <tr><th>Indicador</th><th>Valor Actual</th><th>Meta</th><th>Estado</th></tr>
                         </thead>
                         <tbody>
+                            <tr><td>Inversión William</td><td class="number">$14,980,000</td><td class="number">$12,000,000</td><td class="status-danger">Excedida 25%</td></tr>
                             <tr><td>Venta Diaria</td><td class="number">$150,000</td><td class="number">$356,000</td><td class="status-danger">Crítico</td></tr>
-                            <tr><td>Cobertura de Gastos</td><td>42%</td><td>100%</td><td class="status-danger">Crítico</td></tr>
+                            <tr><td>Deuda externa</td><td class="number">$2,980,000</td><td class="number">$0</td><td class="status-danger">Alto riesgo</td></tr>
                             <tr><td>Balance Mensual</td><td class="number">-$3,700,000</td><td class="number">$0</td><td class="status-danger">Crítico</td></tr>
-                            <tr><td>Margen de Ganancia</td><td>60%</td><td>60%</td><td class="status-good">Bueno</td></tr>
+                            <tr><td>Días supervivencia</td><td>45 días</td><td>∞</td><td class="status-danger">Emergencia</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -548,6 +667,24 @@
         window.onload = function() {
             calcular();
             analizarVentas();
+            calcularCuotasTC();
+            
+            // Actualizar contadores de días para deuda Juan
+            const hoy = new Date();
+            const fechas = [
+                new Date('2025-08-15'),
+                new Date('2025-08-30'), 
+                new Date('2025-09-15')
+            ];
+            
+            fechas.forEach((fecha, index) => {
+                const dias = Math.ceil((fecha - hoy) / (1000 * 60 * 60 * 24));
+                const elemento = document.getElementById(`dias${index + 1}`);
+                if (elemento) {
+                    elemento.textContent = `${dias} días`;
+                    elemento.className = dias < 15 ? 'status-danger' : dias < 30 ? 'status-warning' : '';
+                }
+            });
         };
     </script>
 </body>
