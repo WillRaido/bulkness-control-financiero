@@ -673,100 +673,394 @@
 
         <div id="operaciones" class="tab-content">
             <div class="section">
-                <h3>📊 Reporte Operativo - Gustavo (30-31 Jul 2025)</h3>
+                <h3>📊 Control Operativo Diario - Gustavo Ordóñez</h3>
                 <div class="alert success">
-                    <strong>✅ Sistema Siigo:</strong> Gustavo en capacitación - Implementación en proceso
+                    <strong>✅ Responsable Operativo:</strong> Gustavo - Capacitación Siigo en proceso | Línea telefónica colombiana configurada
+                </div>
+                
+                <div class="card">
+                    <h4>🛒 Detalle de Compras 31 Julio 2025</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Hora</th><th>Proveedor/Concepto</th><th>Productos</th><th>Valor</th><th>Factura</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mañana</td><td>Proveedor mayorista</td><td>Insumos varios</td><td class="number">$12,340</td><td>✅ Recibida</td></tr>
+                            <tr><td>Mañana</td><td>Frutería central</td><td>Frutas frescas (carta)</td><td class="number">$91,350</td><td>✅ Recibida</td></tr>
+                            <tr><td>Mediodía</td><td>Distribuidor toppings</td><td>Toppings + refrigerador</td><td class="number">$393,910</td><td>✅ Recibida</td></tr>
+                            <tr><td>Tarde</td><td>Panadería local</td><td>Pan y productos panadería</td><td class="number">$19,600</td><td>✅ Recibida</td></tr>
+                            <tr><td>Tarde</td><td>Postobón</td><td>Bebidas y refrescos</td><td class="number">$111,500</td><td>✅ Pagada</td></tr>
+                            <tr style="background: #f8f9fa; font-weight: bold;">
+                                <td colspan="3"><strong>TOTAL GASTADO 31 JULIO</strong></td>
+                                <td class="number"><strong>$628,700</strong></td>
+                                <td class="status-good"><strong>Completo</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="financial-grid" style="margin-top: 20px;">
+                        <div class="result">
+                            <strong>💰 Control Capital Trabajo:</strong><br>
+                            • William envió: <span class="number">$1,000,000</span><br>
+                            • Gastado 31 jul: <span class="number">$628,700</span><br>
+                            • Disponible: <span class="number">$371,300</span>
+                        </div>
+                        <div class="alert warning">
+                            <strong>📋 Pendiente completar:</strong><br>
+                            Productos faltantes para carta completa<br>
+                            <strong>Estimado necesario:</strong> $200-300k adicionales
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="financial-grid">
                     <div class="card">
-                        <h4>🥤 Inventario Mr Creamy (30 Jul)</h4>
+                        <h4>🥤 Análisis Inventario Mr Creamy</h4>
                         <table class="table">
                             <thead>
-                                <tr><th>Concepto</th><th>Valor</th><th>Detalle</th></tr>
+                                <tr><th>Detalle</th><th>Cantidad</th><th>Valor Unit.</th><th>Total</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Costo unitario</td><td class="number">$33,000</td><td>30 envases</td></tr>
-                                <tr><td>Precio venta</td><td class="number">$60,000</td><td>Margen 82%</td></tr>
-                                <tr><td>Inversión total</td><td class="number">$990,000</td><td>30 x $33k</td></tr>
-                                <tr><td>Venta potencial</td><td class="number">$1,800,000</td><td>30 x $60k</td></tr>
-                                <tr style="background: #d4edda;"><td><strong>Ganancia proyectada</strong></td><td class="number"><strong>$810,000</strong></td><td class="status-good"><strong>82% margen</strong></td></tr>
+                                <tr><td>Stock actual</td><td>30 envases</td><td class="number">$33,000</td><td class="number">$990,000</td></tr>
+                                <tr><td>Precio venta</td><td>30 envases</td><td class="number">$60,000</td><td class="number">$1,800,000</td></tr>
+                                <tr><td>Margen ganancia</td><td>-</td><td>82%</td><td class="number status-good">$810,000</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="alert info" style="background: #e2e3e5; color: #383d41; border-left-color: #6c757d;">
+                            <strong>📊 Rotación:</strong> "Excelente rotación" - Gustavo<br>
+                            <strong>⚠️ Pendiente:</strong> Fecha pago factura proveedor
+                        </div>
+                        <div class="alert success">
+                            <strong>💡 Uso dual:</strong> Venta directa + ingrediente para carta (bowls, cremas arroz)
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>💊 Inventario Suplementos (Juan)</h4>
+                        <div class="result">
+                            <strong>📦 Stock en consignación:</strong><br>
+                            <span class="number">$1,705,000</span>
+                        </div>
+                        <div class="alert warning">
+                            <strong>📋 Pendiente mañana:</strong><br>
+                            • Desglose detallado por producto<br>
+                            • Cálculo de márgenes individuales<br>
+                            • Reporte de rotación por ítem
+                        </div>
+                        <div class="alert info" style="background: #e2e3e5; color: #383d41; border-left-color: #6c757d;">
+                            <strong>💰 Valor total inventario:</strong><br>
+                            Mr Creamy ($990k) + Juan ($1.7M) = <strong>$2,695,000</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cronograma" class="tab-content">
+            <div class="section">
+                <h3>📅 Cronograma Crítico de Pagos - Próximos 30 Días</h3>
+                
+                <div class="alert danger">
+                    <strong>🚨 EMERGENCIA FINANCIERA:</strong><br>
+                    <strong>$5,250,000 requeridos en los próximos 15 días para evitar colapso operativo</strong>
+                </div>
+                
+                <div class="card">
+                    <h4>📊 Desglose Cronológico Agosto 2025</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Fecha Límite</th><th>Concepto</th><th>Beneficiario</th><th>Valor</th><th>Criticidad</th><th>Consecuencia</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f8d7da;">
+                                <td><strong>1-2 Ago</strong></td>
+                                <td>Nómina Gustavo (pendiente)</td>
+                                <td>Gustavo Ordóñez</td>
+                                <td class="number">$1,072,000</td>
+                                <td class="status-danger">MÁXIMA</td>
+                                <td>Renuncia operador clave</td>
+                            </tr>
+                            <tr style="background: #f8d7da;">
+                                <td><strong>1-2 Ago</strong></td>
+                                <td>Nómina Nicolás (pendiente)</td>
+                                <td>Nicolás</td>
+                                <td class="number">$265,000</td>
+                                <td class="status-danger">MÁXIMA</td>
+                                <td>Pérdida empleado</td>
+                            </tr>
+                            <tr style="background: #f8d7da;">
+                                <td><strong>5 Ago</strong></td>
+                                <td>Arriendo agosto</td>
+                                <td>Propietario local</td>
+                                <td class="number">$2,400,000</td>
+                                <td class="status-danger">MÁXIMA</td>
+                                <td>Desalojo inmediato</td>
+                            </tr>
+                            <tr style="background: #fff3cd;">
+                                <td><strong>7-10 Ago</strong></td>
+                                <td>Reintegro T.C William</td>
+                                <td>William (personal)</td>
+                                <td class="number">$780,000</td>
+                                <td class="status-warning">ALTA</td>
+                                <td>Intereses acumulativos</td>
+                            </tr>
+                            <tr style="background: #fff3cd;">
+                                <td><strong>15 Ago</strong></td>
+                                <td>1ª Cuota deuda Juan</td>
+                                <td>Juan (suplementos)</td>
+                                <td class="number">$733,000</td>
+                                <td class="status-warning">ALTA</td>
+                                <td>Pérdida credibilidad</td>
+                            </tr>
+                            <tr style="background: #e2e3e5;">
+                                <td colspan="3"><strong>TOTAL CRÍTICO (15 días)</strong></td>
+                                <td class="number"><strong>$5,250,000</strong></td>
+                                <td class="status-danger"><strong>COLAPSO</strong></td>
+                                <td><strong>Cierre forzoso</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>📅 Vista Semanal - Agosto</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Semana</th><th>Pagos Obligatorios</th><th>Acumulado</th><th>Impacto</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1-7 Ago</td><td class="number">$4,517,000</td><td class="number">$4,517,000</td><td class="status-danger">Crítico</td></tr>
+                                <tr><td>8-15 Ago</td><td class="number">$733,000</td><td class="number">$5,250,000</td><td class="status-danger">Colapso</td></tr>
+                                <tr><td>16-23 Ago</td><td class="number">$500,000*</td><td class="number">$5,750,000</td><td class="status-warning">Operativo</td></tr>
+                                <tr><td>24-31 Ago</td><td class="number">$1,800,000*</td><td class="number">$7,550,000</td><td class="status-warning">Nóminas</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 12px; color: #6c757d;">*Estimado operación normal + nóminas agosto</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>⚠️ Recursos Disponibles vs Necesidades</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Fuente</th><th>Disponible</th><th>Estado</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Capital trabajo restante</td><td class="number">$371,300</td><td class="status-good">Disponible</td></tr>
+                                <tr><td>Inventario Mr Creamy</td><td class="number">$810,000*</td><td class="status-warning">Si se vende</td></tr>
+                                <tr><td>Ventas diarias estimadas</td><td class="number">$2,250,000*</td><td class="status-warning">15 días</td></tr>
+                                <tr style="background: #f8f9fa;"><td><strong>TOTAL POSIBLE</strong></td><td class="number"><strong>$3,431,300</strong></td><td class="status-danger"><strong>Insuficiente</strong></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="alert danger">
+                            <strong>💰 DÉFICIT CRÍTICO:</strong><br>
+                            Necesario: $5,250,000<br>
+                            Disponible: $3,431,300<br>
+                            <strong>FALTANTE: $1,818,700</strong>
+                        </div>
+                        <p style="font-size: 12px; color: #6c757d;">*Proyecciones optimistas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="section">
+                <h3>🏠 Servicios y Próximos Pagos Fijos</h3>
+                <div class="card">
+                    <h4>✅ Servicios Julio 2025 - PAGADOS (Gestión Gustavo)</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Servicio</th><th>Valor Real</th><th>Presupuestado</th><th>Ahorro</th><th>% Eficiencia</th><th>Fecha Pago</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>⚡ Energía eléctrica</td><td class="number">$300,000</td><td class="number">$500,000</td><td class="number status-good">$200,000</td><td class="status-good">40%</td><td>Jul 25</td></tr>
+                            <tr><td>💧 Acueducto y alcantarillado</td><td class="number">$120,000</td><td class="number">$300,000</td><td class="number status-good">$180,000</td><td class="status-good">60%</td><td>Jul 20</td></tr>
+                            <tr><td>🌐 Internet banda ancha</td><td class="number">$36,000</td><td class="number">$100,000</td><td class="number status-good">$64,000</td><td class="status-good">64%</td><td>Jul 15</td></tr>
+                            <tr style="background: #d4edda; font-weight: bold;">
+                                <td><strong>TOTAL JULIO</strong></td>
+                                <td class="number"><strong>$456,000</strong></td>
+                                <td class="number">$900,000</td>
+                                <td class="number status-good"><strong>$444,000</strong></td>
+                                <td class="status-good"><strong>49%</strong></td>
+                                <td><strong>Pagado</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert success">
+                        <strong>🎉 GESTIÓN EXCEPCIONAL:</strong> Gustavo logró $444,000 de ahorro (49% menos que presupuesto) - Eficiencia operativa destacada
+                    </div>
+                </div>
+                
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>📅 Pagos Fijos Próximos</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Concepto</th><th>Fecha Límite</th><th>Valor</th><th>Días Restantes</th><th>Criticidad</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #f8d7da;">
+                                    <td><strong>🏠 Arriendo Agosto</strong></td>
+                                    <td><strong>5 Agosto 2025</strong></td>
+                                    <td class="number"><strong>$2,400,000</strong></td>
+                                    <td class="status-danger"><strong>5 días</strong></td>
+                                    <td class="status-danger">MÁXIMA</td>
+                                </tr>
+                                <tr><td>⚡ Servicios Agosto</td><td>25 Agosto 2025</td><td class="number">~$456,000</td><td>25 días</td><td class="status-good">Baja</td></tr>
+                                <tr><td>🏠 Arriendo Septiembre</td><td>5 Sept 2025</td><td class="number">$2,400,000</td><td>36 días</td><td class="status-warning">Media</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>🏠 Desglose Arriendo Total</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Concepto</th><th>Valor Total</th><th>% Bulkness</th><th>Valor Bulkness</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arriendo local completo</td><td class="number">$8,000,000</td><td>30%</td><td class="number">$2,400,000</td></tr>
+                                <tr><td>Bestial Ink (Paula/Julián)</td><td class="number">$8,000,000</td><td>70%</td><td class="number">$5,600,000</td></tr>
                             </tbody>
                         </table>
                         <div class="alert warning">
-                            <strong>⚠️ Pendiente:</strong> Fecha de pago factura proveedor
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>💊 Stock Suplementos Juan</h4>
-                        <div class="result">
-                            <strong>Inventario en consignación:</strong><br>
-                            <span class="number">$1,705,000</span>
-                        </div>
-                        <div class="alert info" style="background: #e2e3e5; color: #383d41; border-left-color: #6c757d;">
-                            <strong>📋 Nota:</strong> Productos de Juan en consignación - Pendiente desglose detallado
+                            <strong>⚠️ CONSECUENCIA NO PAGO:</strong><br>
+                            Desalojo afecta tanto Bulkness como Bestial Ink.<br>
+                            <strong>Pérdida total de las 2 inversiones.</strong>
                         </div>
                     </div>
                 </div>
             </div>
-            
+        </div>
             <div class="section">
-                <h3>🛒 Compras 31 Julio 2025</h3>
+                <h3>🚨 Análisis de Crisis: ¿Cómo Llegamos Aquí?</h3>
+                
+                <div class="alert danger">
+                    <strong>📊 RESUMEN EJECUTIVO:</strong><br>
+                    Bulkness requiere $5.25M en 15 días para sobrevivir. La crisis es resultado de déficit operativo estructural, decisiones no coordinadas y dependencia excesiva de aportes de William.
+                </div>
+                
                 <div class="card">
-                    <h4>💰 Desglose de Gastos Diarios</h4>
+                    <h4>🔍 Causas Raíz de la Crisis</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Proveedor</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
+                            <tr><th>Causa Principal</th><th>Impacto Financiero</th><th>Período</th><th>Responsabilidad</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Proveedor 1</td><td>Varios</td><td class="number">$12,340</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr><td>Proveedor 2</td><td>Frutas</td><td class="number">$91,350</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr><td>Proveedor 3</td><td>Toppings y refrigerador</td><td class="number">$393,910</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr><td>Panadería</td><td>Pan y productos</td><td class="number">$19,600</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr><td>Postobón</td><td>Bebidas</td><td class="number">$111,500</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr style="background: #f8f9fa; font-weight: bold;"><td colspan="2"><strong>TOTAL COMPRAS</strong></td><td class="number"><strong>$628,700</strong></td><td><strong>Pagado</strong></td></tr>
+                            <tr>
+                                <td><strong>1. Déficit Operativo Estructural</strong></td>
+                                <td class="number status-danger">-$3,700,000/mes</td>
+                                <td>Jun-Jul 2025</td>
+                                <td>Modelo de negocio</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Ventas Insuficientes vs Gastos</strong></td>
+                                <td class="number">$150k vs $356k diarios</td>
+                                <td>Continuo</td>
+                                <td>Estrategia comercial</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Decisiones Sin Consenso</strong></td>
+                                <td class="number">$2,000,000+</td>
+                                <td>Mayo-Jul 2025</td>
+                                <td>Falta governance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Dependencia de William</strong></td>
+                                <td class="number">$5,980,000</td>
+                                <td>60 días</td>
+                                <td>Desequilibrio socios</td>
+                            </tr>
+                            <tr>
+                                <td><strong>5. Falta Control Financiero</strong></td>
+                                <td class="number">$1,500,000+</td>
+                                <td>Jun-Jul 2025</td>
+                                <td>Sistemas internos</td>
+                            </tr>
                         </tbody>
                     </table>
-                    
-                    <div class="result">
-                        <strong>Capital trabajo enviado:</strong> $1,000,000<br>
-                        <strong>Gastado:</strong> $628,700<br>
-                        <strong>Saldo disponible:</strong> <span class="number">$371,300</span>
-                    </div>
-                    <div class="alert warning">
-                        <strong>📋 Pendiente:</strong> Productos faltantes para completar carta
-                    </div>
                 </div>
-            </div>
-            
-            <div class="section">
-                <h3>💰 Nóminas Pendientes Julio 2025</h3>
+                
                 <div class="financial-grid">
                     <div class="card">
-                        <h4>👨‍💼 Gustavo Ordóñez</h4>
+                        <h4>📈 Cronología de la Crisis</h4>
                         <table class="table">
                             <thead>
-                                <tr><th>Período</th><th>Valor</th><th>Pagado</th><th>Pendiente</th></tr>
+                                <tr><th>Período</th><th>Evento Crítico</th><th>Impacto</th><th>Respuesta</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1-15 Julio</td><td class="number">$811,000</td><td class="number">$550,000</td><td class="number status-warning">$261,000</td></tr>
-                                <tr><td>15-31 Julio</td><td class="number">$811,000</td><td class="number">$0</td><td class="number status-danger">$811,000</td></tr>
-                                <tr style="background: #fff3cd;"><td><strong>TOTAL GUSTAVO</strong></td><td class="number">$1,622,000</td><td class="number">$550,000</td><td class="number"><strong>$1,072,000</strong></td></tr>
+                                <tr><td><strong>Mayo 2025</strong></td><td>Pérdida $6M cocina + apertura</td><td class="number status-danger">-$6,000,000</td><td>Daniel crédito $3M</td></tr>
+                                <tr><td><strong>Jun 1-15</strong></td><td>Déficit operativo evidente</td><td class="number status-danger">-$1,850,000</td><td>Aportes Paula/Julián</td></tr>
+                                <tr><td><strong>Jun 15-30</strong></td><td>Gastos sin control</td><td class="number status-danger">-$2,000,000</td><td>William $3.2M</td></tr>
+                                <tr><td><strong>Jul 1-15</strong></td><td>Nóminas + operación</td><td class="number status-danger">-$1,850,000</td><td>Diferir pagos</td></tr>
+                                <tr><td><strong>Jul 30</strong></td><td>Crisis liquidez total</td><td class="number status-danger">-$2,780,000</td><td>William T.C + efectivo</td></tr>
                             </tbody>
                         </table>
                     </div>
                     
                     <div class="card">
-                        <h4>👨‍💼 Nicolás</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>15-31 Julio (pendiente)</td><td class="number">$211,000</td><td class="status-danger">Pendiente</td></tr>
-                                <tr><td>8 horas extras</td><td class="number">$54,000</td><td class="status-danger">Pendiente</td></tr>
-                                <tr style="background: #f8d7da;"><td><strong>TOTAL NICOLÁS</strong></td><td class="number"><strong>$265,000</strong></td><td class="status-danger"><strong>Pendiente</strong></td></tr>
+                        <h4>💡 Análisis de Decisiones Críticas</h4>
+                        <div class="alert warning">
+                            <strong>🔸 Mr Creamy ($1.5M):</strong><br>
+                            • Decisión unilateral sin consenso socios<br>
+                            • No se consultó capacidad pago<br>
+                            • Aunque rentable (82%), creó deuda externa<br>
+                            • Patrón de decisiones no coordinadas
+                        </div>
+                        <div class="alert warning">
+                            <strong>🔸 Sistema Siigo ($780k):</strong><br>
+                            • Necesario pero mal momento<br>
+                            • Pagado con T.C personal William<br>
+                            • Crea obligación reintegro urgente<br>
+                            • Correcta la decisión, incorrecta la forma
+                        </div>
+                        <div class="alert warning">
+                            <strong>🔸 Déficit Operativo Ignorado:</strong><br>
+                            • $3.7M mensuales pérdida conocida<br>
+                            • No se tomaron medidas correctivas<br>
+                            • Dependencia de aportes eternos<br>
+                            • Modelo insostenible desde inicio
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4>🎯 Puntos de Quiebre Identificados</h4>
+                    <div class="financial-grid">
+                        <div class="alert danger">
+                            <strong>📍 PUNTO 1 - Mayo 2025:</strong><br>
+                            Pérdida $6M cocina debió triggear reevaluación total del proyecto y búsqueda de capital adicional planificado, no emergencial.
+                        </div>
+                        <div class="alert danger">
+                            <strong>📍 PUNTO 2 - Junio 2025:</strong><br>
+                            Primer déficit $1.85M debió activar plan de contingencia y límites de gasto estrictos, no más inversiones.
+                        </div>
+                        <div class="alert danger">
+                            <strong>📍 PUNTO 3 - Julio 2025:</strong><br>
+                            Nóminas impagadas debieron generar decisión: inyección capital planificada o cierre ordenado, no improvisación.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4>📊 Impacto por Socio en la Crisis</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Socio</th><th>Inversión Original</th><th>Aportes Crisis</th><th>Total</th><th>% Carga Crisis</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>William</strong></td><td class="number">$9,000,000</td><td class="number status-danger">$5,980,000</td><td class="number">$14,980,000</td><td class="status-danger"><strong>85%</strong></td></tr>
+                            <tr><td>Daniel</td><td class="number">$9,000,000</td><td class="number">$3,000,000</td><td class="number">$12,000,000</td><td class="status-warning">13%</td></tr>
+                            <tr><td>Paula</td><td class="number">$9,235,000</td><td class="number">$1,907,000</td><td class="number">$11,142,000</td><td class="status-good">1%</td></tr>
+                            <tr><td>Julián</td><td class="number">$9,235,000</td><td class="number">$1,907,000</td><td class="number">$11,142,000</td><td class="status-good">1%</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="alert danger">
+                        <strong>⚠️ CONCLUSIÓN:</strong> William ha cargado con el 85% de los costos de la crisis ($5.98M de $7M total), creando desequilibrio insostenible en la sociedad.
+                    </div>
+                </div>
+            </div>
+        </div>da;"><td><strong>TOTAL NICOLÁS</strong></td><td class="number"><strong>$265,000</strong></td><td class="status-danger"><strong>Pendiente</strong></td></tr>
                             </tbody>
                         </table>
                     </div>
