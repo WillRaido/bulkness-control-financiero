@@ -365,6 +365,7 @@
             <button class="tab" onclick="showTab('inversiones')">📊 Inversiones Socios</button>
             <button class="tab" onclick="showTab('deudas')">💳 Deudas y Pagos</button>
             <button class="tab" onclick="showTab('proyeccion')">🎯 Proyección</button>
+            <button class="tab" onclick="showTab('operaciones')">📋 Operaciones</button>
             <button class="tab" onclick="showTab('alertas')">⚠️ Alertas</button>
         </div>
 
@@ -670,7 +671,138 @@
             </div>
         </div>
 
-        <div id="alertas" class="tab-content">
+        <div id="operaciones" class="tab-content">
+            <div class="section">
+                <h3>📊 Reporte Operativo - Gustavo (30-31 Jul 2025)</h3>
+                <div class="alert success">
+                    <strong>✅ Sistema Siigo:</strong> Gustavo en capacitación - Implementación en proceso
+                </div>
+                
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>🥤 Inventario Mr Creamy (30 Jul)</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Concepto</th><th>Valor</th><th>Detalle</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Costo unitario</td><td class="number">$33,000</td><td>30 envases</td></tr>
+                                <tr><td>Precio venta</td><td class="number">$60,000</td><td>Margen 82%</td></tr>
+                                <tr><td>Inversión total</td><td class="number">$990,000</td><td>30 x $33k</td></tr>
+                                <tr><td>Venta potencial</td><td class="number">$1,800,000</td><td>30 x $60k</td></tr>
+                                <tr style="background: #d4edda;"><td><strong>Ganancia proyectada</strong></td><td class="number"><strong>$810,000</strong></td><td class="status-good"><strong>82% margen</strong></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="alert warning">
+                            <strong>⚠️ Pendiente:</strong> Fecha de pago factura proveedor
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>💊 Stock Suplementos Juan</h4>
+                        <div class="result">
+                            <strong>Inventario en consignación:</strong><br>
+                            <span class="number">$1,705,000</span>
+                        </div>
+                        <div class="alert info" style="background: #e2e3e5; color: #383d41; border-left-color: #6c757d;">
+                            <strong>📋 Nota:</strong> Productos de Juan en consignación - Pendiente desglose detallado
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>🛒 Compras 31 Julio 2025</h3>
+                <div class="card">
+                    <h4>💰 Desglose de Gastos Diarios</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Proveedor</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Proveedor 1</td><td>Varios</td><td class="number">$12,340</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr><td>Proveedor 2</td><td>Frutas</td><td class="number">$91,350</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr><td>Proveedor 3</td><td>Toppings y refrigerador</td><td class="number">$393,910</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr><td>Panadería</td><td>Pan y productos</td><td class="number">$19,600</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr><td>Postobón</td><td>Bebidas</td><td class="number">$111,500</td><td class="status-good">✅ Pagado</td></tr>
+                            <tr style="background: #f8f9fa; font-weight: bold;"><td colspan="2"><strong>TOTAL COMPRAS</strong></td><td class="number"><strong>$628,700</strong></td><td><strong>Pagado</strong></td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="result">
+                        <strong>Capital trabajo enviado:</strong> $1,000,000<br>
+                        <strong>Gastado:</strong> $628,700<br>
+                        <strong>Saldo disponible:</strong> <span class="number">$371,300</span>
+                    </div>
+                    <div class="alert warning">
+                        <strong>📋 Pendiente:</strong> Productos faltantes para completar carta
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>💰 Nóminas Pendientes Julio 2025</h3>
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>👨‍💼 Gustavo Ordóñez</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Período</th><th>Valor</th><th>Pagado</th><th>Pendiente</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1-15 Julio</td><td class="number">$811,000</td><td class="number">$550,000</td><td class="number status-warning">$261,000</td></tr>
+                                <tr><td>15-31 Julio</td><td class="number">$811,000</td><td class="number">$0</td><td class="number status-danger">$811,000</td></tr>
+                                <tr style="background: #fff3cd;"><td><strong>TOTAL GUSTAVO</strong></td><td class="number">$1,622,000</td><td class="number">$550,000</td><td class="number"><strong>$1,072,000</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>👨‍💼 Nicolás</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>15-31 Julio (pendiente)</td><td class="number">$211,000</td><td class="status-danger">Pendiente</td></tr>
+                                <tr><td>8 horas extras</td><td class="number">$54,000</td><td class="status-danger">Pendiente</td></tr>
+                                <tr style="background: #f8d7da;"><td><strong>TOTAL NICOLÁS</strong></td><td class="number"><strong>$265,000</strong></td><td class="status-danger"><strong>Pendiente</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="alert danger">
+                    <strong>🚨 TOTAL NÓMINAS PENDIENTES: $1,337,000</strong><br>
+                    Gustavo: $1,072,000 | Nicolás: $265,000
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>🏠 Servicios y Pagos Fijos</h3>
+                <div class="card">
+                    <h4>✅ Servicios Julio - PAGADOS</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Servicio</th><th>Valor Pagado</th><th>Presupuestado</th><th>Diferencia</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Luz</td><td class="number">$300,000</td><td class="number">$500,000</td><td class="number status-good">-$200,000</td></tr>
+                            <tr><td>Agua</td><td class="number">$120,000</td><td class="number">$300,000</td><td class="number status-good">-$180,000</td></tr>
+                            <tr><td>Internet</td><td class="number">$36,000</td><td class="number">$100,000</td><td class="number status-good">-$64,000</td></tr>
+                            <tr style="background: #d4edda;"><td><strong>TOTAL</strong></td><td class="number"><strong>$456,000</strong></td><td class="number">$900,000</td><td class="number status-good"><strong>-$444,000</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="alert success">
+                        <strong>✅ Ahorro en servicios:</strong> $444,000 vs presupuesto
+                    </div>
+                </div>
+                
+                <div class="alert warning">
+                    <strong>📅 Próximo pago:</strong> Arriendo 5 Agosto - $2,400,000
+                </div>
+            </div>
+        </div>
             <div class="section">
                 <h3>⚠️ Sistema de Alertas</h3>
                 <div id="alertasContainer">
