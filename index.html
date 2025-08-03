@@ -11,24 +11,15 @@
             padding: 10px;
             background-color: #f5f7fa;
             color: #333;
-            min-height: 100vh;
         }
         
-        @media (max-width: 768px) {
-            body { padding: 5px; }
-        }
-
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             overflow: hidden;
-        }
-        
-        @media (max-width: 768px) {
-            .container { border-radius: 8px; margin: 0 5px; }
         }
 
         .header {
@@ -43,18 +34,12 @@
             font-size: 28px;
             font-weight: 600;
         }
-        
-        @media (max-width: 768px) {
-            .header { padding: 20px 15px; }
-            .header h1 { font-size: 22px; }
-        }
 
         .tabs {
             display: flex;
             background: #f8f9fa;
             border-bottom: 1px solid #dee2e6;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
         }
         
         .tab {
@@ -68,17 +53,12 @@
             font-size: 13px;
             font-weight: 500;
             transition: all 0.3s ease;
-            white-space: nowrap;
         }
         
         .tab.active {
             background: white;
             border-bottom: 3px solid #667eea;
             color: #667eea;
-        }
-        
-        @media (max-width: 768px) {
-            .tab { min-width: 120px; padding: 12px 6px; font-size: 11px; }
         }
 
         .tab-content {
@@ -89,10 +69,6 @@
         .tab-content.active {
             display: block;
         }
-        
-        @media (max-width: 768px) {
-            .tab-content { padding: 15px; }
-        }
 
         .section {
             margin-bottom: 25px;
@@ -100,10 +76,6 @@
             border: 1px solid #e9ecef;
             border-radius: 8px;
             background: #f8f9fa;
-        }
-        
-        @media (max-width: 768px) {
-            .section { margin-bottom: 20px; padding: 15px; }
         }
 
         .section h3 {
@@ -123,7 +95,9 @@
         }
         
         @media (max-width: 768px) {
-            .financial-grid { grid-template-columns: 1fr; gap: 15px; }
+            .financial-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -132,10 +106,6 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             border-left: 4px solid #667eea;
-        }
-        
-        @media (max-width: 768px) {
-            .card { padding: 15px; border-left-width: 3px; }
         }
 
         .card h4 {
@@ -166,16 +136,10 @@
             background: #667eea;
             color: white;
             font-weight: 600;
-            font-size: 12px;
         }
         
         .table tr:hover {
             background: #f8f9fa;
-        }
-        
-        @media (max-width: 768px) {
-            .table { font-size: 11px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .table th, .table td { padding: 6px 8px; min-width: 80px; }
         }
 
         .alert {
@@ -242,24 +206,37 @@
             font-size: 13px;
             font-weight: 500;
             margin-top: 8px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .result {
+            padding: 12px;
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 Análisis Financiero Bulkness Café</h1>
-            <p>Evidencia de Mala Gestión y Decisiones - Actualizado 3 Agosto 2025</p>
+            <h1>📊 Control Financiero Bulkness Café</h1>
+            <p>Análisis Completo de Gestión - 3 Agosto 2025</p>
         </div>
 
         <div class="tabs">
             <button class="tab active" onclick="showTab('crisis')">🚨 Crisis 72h</button>
             <button class="tab" onclick="showTab('faltantes')">💸 Dinero Perdido</button>
+            <button class="tab" onclick="showTab('deudas')">💳 Deudas Juan</button>
             <button class="tab" onclick="showTab('decisiones')">❌ Malas Decisiones</button>
-            <button class="tab" onclick="showTab('deudas')">💳 Deudas Detalle</button>
-            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones Total</button>
+            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones</button>
             <button class="tab" onclick="showTab('ventas')">📈 Ventas Necesarias</button>
-            <button class="tab" onclick="showTab('administracion')">🔍 Mala Administración</button>
         </div>
 
         <!-- CRISIS 72 HORAS -->
@@ -268,45 +245,41 @@
                 <h3>🚨 Crisis Inmediata - Próximas 72 Horas</h3>
                 
                 <div class="summary-box">
-                    <strong>TOTAL REQUERIDO INMEDIATO: $5,145,000</strong><br>
-                    <strong>DISPONIBLE MÁXIMO: $1,522,500</strong><br>
-                    <strong>DÉFICIT CRÍTICO: $3,622,500 (70%)</strong>
+                    <strong>TOTAL REQUERIDO: $5,145,000</strong><br>
+                    <strong>DISPONIBLE: $1,522,500</strong><br>
+                    <strong>DÉFICIT: $3,622,500 (70%)</strong>
                 </div>
                 
                 <div class="card">
-                    <h4>⏰ Cronograma Crítico</h4>
+                    <h4>⏰ Pagos Críticos</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Días</th><th>Acumulado</th></tr>
+                            <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Días</th></tr>
                         </thead>
                         <tbody>
                             <tr class="highlight-bad">
                                 <td><strong>3 Ago (HOY)</strong></td>
-                                <td>Nómina Gustavo (18 días atraso)</td>
+                                <td>Nómina Gustavo</td>
                                 <td class="number">$1,072,000</td>
                                 <td class="status-danger">0</td>
-                                <td class="number">$1,072,000</td>
                             </tr>
                             <tr class="highlight-missing">
                                 <td><strong>4 Ago</strong></td>
-                                <td>Nómina Nicolás (pendiente)</td>
+                                <td>Nómina Nicolás</td>
                                 <td class="number">$893,000</td>
                                 <td class="status-warning">1</td>
-                                <td class="number">$1,965,000</td>
                             </tr>
                             <tr class="highlight-bad">
                                 <td><strong>5 Ago</strong></td>
-                                <td>Arriendo Agosto</td>
+                                <td>Arriendo</td>
                                 <td class="number">$2,400,000</td>
                                 <td class="status-danger">2</td>
-                                <td class="number">$4,365,000</td>
                             </tr>
                             <tr class="highlight-missing">
                                 <td><strong>7 Ago</strong></td>
-                                <td>Reintegro T.C William</td>
+                                <td>T.C William</td>
                                 <td class="number">$780,000</td>
                                 <td class="status-warning">4</td>
-                                <td class="number">$5,145,000</td>
                             </tr>
                         </tbody>
                     </table>
@@ -314,31 +287,31 @@
 
                 <div class="financial-grid">
                     <div class="card">
-                        <h4>💰 Recursos Reales Disponibles</h4>
+                        <h4>💰 Recursos Disponibles</h4>
                         <table class="table">
                             <thead>
-                                <tr><th>Fuente</th><th>Valor</th><th>Realidad</th></tr>
+                                <tr><th>Fuente</th><th>Valor</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Capital trabajo Gustavo</td><td class="number">$262,500</td><td class="status-good">Efectivo real</td></tr>
-                                <tr><td>Ventas 3 días (promedio)</td><td class="number">$450,000</td><td class="status-warning">Optimista</td></tr>
-                                <tr><td>Mr Creamy (si vende todo)</td><td class="number">$810,000</td><td class="status-warning">7-15 días mínimo</td></tr>
-                                <tr><td>Suplementos Juan</td><td class="number">$0</td><td class="status-danger">Consignación, no dinero</td></tr>
+                                <tr><td>Capital trabajo</td><td class="number">$262,500</td></tr>
+                                <tr><td>Ventas 3 días</td><td class="number">$450,000</td></tr>
+                                <tr><td>Mr Creamy</td><td class="number">$810,000</td></tr>
+                                <tr><td><strong>TOTAL</strong></td><td class="number"><strong>$1,522,500</strong></td></tr>
                             </tbody>
                         </table>
                     </div>
                     
                     <div class="card">
-                        <h4>📊 Déficit Real por Día</h4>
+                        <h4>📊 Déficit por Día</h4>
                         <table class="table">
                             <thead>
-                                <tr><th>Día</th><th>Necesario</th><th>Disponible</th><th>Faltante</th></tr>
+                                <tr><th>Hasta</th><th>Necesario</th><th>Faltante</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Hoy (3 Ago)</td><td class="number">$1,072,000</td><td class="number">$262,500</td><td class="number status-danger">$809,500</td></tr>
-                                <tr><td>Hasta 4 Ago</td><td class="number">$1,965,000</td><td class="number">$412,500</td><td class="number status-danger">$1,552,500</td></tr>
-                                <tr><td>Hasta 5 Ago</td><td class="number">$4,365,000</td><td class="number">$562,500</td><td class="number status-danger">$3,802,500</td></tr>
-                                <tr><td>Hasta 7 Ago</td><td class="number">$5,145,000</td><td class="number">$712,500</td><td class="number status-danger">$4,432,500</td></tr>
+                                <tr><td>Hoy</td><td class="number">$1,072,000</td><td class="number status-danger">$809,500</td></tr>
+                                <tr><td>4 Ago</td><td class="number">$1,965,000</td><td class="number status-danger">$1,552,500</td></tr>
+                                <tr><td>5 Ago</td><td class="number">$4,365,000</td><td class="number status-danger">$3,802,500</td></tr>
+                                <tr><td>7 Ago</td><td class="number">$5,145,000</td><td class="number status-danger">$4,432,500</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -349,125 +322,177 @@
         <!-- DINERO PERDIDO -->
         <div id="faltantes" class="tab-content">
             <div class="section">
-                <h3>💸 Análisis: ¿Dónde Está el Dinero?</h3>
-                
-                <div class="alert danger">
-                    <strong>PREGUNTA CLAVE:</strong> Si no se pagó arriendo mayo y junio ($4.8M), ¿dónde fue esa plata?
-                </div>
+                <h3>💸 ¿Dónde Está el Dinero?</h3>
                 
                 <div class="card">
-                    <h4>🔍 Rastreo de Arriendos No Pagados</h4>
+                    <h4>🔍 Arriendos No Pagados</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Mes</th><th>Arriendo</th><th>Estado Pago</th><th>¿Dónde fue el dinero?</th><th>Explicación</th></tr>
+                            <tr><th>Mes</th><th>Arriendo</th><th>Estado</th><th>¿Dónde fue?</th></tr>
                         </thead>
                         <tbody>
                             <tr class="highlight-bad">
-                                <td><strong>Mayo 2025</strong></td>
+                                <td>Mayo 2025</td>
                                 <td class="number">$2,400,000</td>
                                 <td class="status-danger">NO PAGADO</td>
-                                <td class="status-danger">SIN EXPLICACIÓN</td>
-                                <td>¿Adecuaciones? ¿Robos? ¿Gastos operativos?</td>
+                                <td class="status-danger">SIN EXPLICAR</td>
                             </tr>
                             <tr class="highlight-bad">
-                                <td><strong>Junio 2025</strong></td>
+                                <td>Junio 2025</td>
                                 <td class="number">$2,400,000</td>
                                 <td class="status-danger">NO PAGADO</td>
-                                <td class="status-danger">SIN EXPLICACIÓN</td>
-                                <td>¿En qué se gastó esta plata?</td>
+                                <td class="status-danger">SIN EXPLICAR</td>
                             </tr>
-                            <tr class="highlight-bad">
-                                <td><strong>Julio 2025</strong></td>
+                            <tr class="highlight-good">
+                                <td>Julio 2025</td>
                                 <td class="number">$2,400,000</td>
                                 <td class="status-good">PAGADO</td>
                                 <td>Control Gustavo</td>
-                                <td>Primer mes con control real</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td><strong>Agosto 2025</strong></td>
-                                <td class="number">$2,400,000</td>
-                                <td class="status-danger">PENDIENTE (5 Ago)</td>
-                                <td>Crisis actual</td>
-                                <td>Vence en 2 días</td>
                             </tr>
                         </tbody>
                     </table>
                     
                     <div class="summary-box">
-                        <strong>DINERO "PERDIDO" EN ARRIENDOS: $4,800,000</strong><br>
-                        Mayo + Junio sin pagar = ¿Dónde fueron $4.8 millones?
+                        <strong>DINERO "PERDIDO": $4,800,000</strong><br>
+                        Mayo + Junio sin pagar = ¿Dónde fueron?
                     </div>
                 </div>
 
                 <div class="card">
-                    <h4>📊 Flujo de Dinero Mayo-Agosto 2025</h4>
+                    <h4>📊 Gastos Cuestionables</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Período</th><th>Ingresos Reportados</th><th>Gastos Mayores</th><th>Diferencia</th><th>¿Explicación?</th></tr>
+                            <tr><th>Concepto</th><th>Valor</th><th>Justificación</th><th>¿Necesario?</th></tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Mayo 19-31</strong></td>
-                                <td class="number">$2,713,000</td>
-                                <td class="number">$858,347</td>
-                                <td class="number">$1,854,653</td>
-                                <td class="status-danger">¿Dónde están $1.85M?</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Junio 15-Julio 15</strong></td>
-                                <td class="number">$6,125,500</td>
-                                <td class="number">$6,907,143</td>
-                                <td class="number status-danger">-$781,643</td>
-                                <td>Déficit confirmado</td>
+                            <tr class="highlight-bad">
+                                <td>Cocina robada</td>
+                                <td class="number">$6,000,000</td>
+                                <td>Robo externo</td>
+                                <td class="status-danger">Falta seguro</td>
                             </tr>
                             <tr class="highlight-missing">
-                                <td><strong>TOTAL DISPONIBLE</strong></td>
-                                <td class="number">$8,838,500</td>
-                                <td class="number">$7,765,490</td>
-                                <td class="number">$1,073,010</td>
-                                <td class="status-danger">¿Por qué piden más dinero?</td>
+                                <td>Ropa Paula/Julián</td>
+                                <td class="number">$1,500,000</td>
+                                <td class="status-danger">NO CLARA</td>
+                                <td class="status-danger">¿Para qué?</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Mr Creamy (sin consenso)</td>
+                                <td class="number">$1,500,000</td>
+                                <td>Rentabilidad</td>
+                                <td class="status-warning">Creó deuda</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEUDAS JUAN -->
+        <div id="deudas" class="tab-content">
+            <div class="section">
+                <h3>💳 Deuda Juan - Detalle Completo</h3>
+                
+                <div class="card">
+                    <h4>📦 Productos Juan en Bulkness</h4>
+                    <div class="summary-box">
+                        <strong>VALOR PRODUCTOS EN CONSIGNACIÓN: $1,705,000</strong><br>
+                        Stock actual de suplementos de Juan en Bulkness
+                    </div>
+                    
+                    <table class="table">
+                        <thead>
+                            <tr><th>Concepto</th><th>Valor</th><th>Estado</th><th>Observación</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-good">
+                                <td>Stock suplementos</td>
+                                <td class="number">$1,705,000</td>
+                                <td class="status-good">En tienda</td>
+                                <td>Inventario reportado Gustavo</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Deuda por Mr Creamy</td>
+                                <td class="number">$3,200,000</td>
+                                <td class="status-danger">Pendiente</td>
+                                <td>Compra adicional sin consenso</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="card">
-                    <h4>🔍 Gastos No Documentados o Mal Explicados</h4>
+                    <h4>💰 Plan de Pagos Deuda Juan</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Concepto</th><th>Valor</th><th>Justificación</th><th>Documentación</th><th>Necesidad</th></tr>
+                            <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Estado</th><th>Días</th></tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight-bad">
-                                <td>Cocina robada (pérdida)</td>
-                                <td class="number">$6,000,000</td>
-                                <td>Robo externo</td>
-                                <td class="status-warning">Denuncia?</td>
-                                <td class="status-danger">Falta seguro</td>
+                            <tr class="highlight-good">
+                                <td>29 Jul 2025</td>
+                                <td><strong>Abono William</strong></td>
+                                <td class="number"><strong>$1,000,000</strong></td>
+                                <td class="status-good">✅ PAGADO</td>
+                                <td>-</td>
                             </tr>
                             <tr class="highlight-missing">
-                                <td>Ropa Julia/Paula</td>
-                                <td class="number">$1,500,000</td>
-                                <td class="status-danger">NO CLARA</td>
-                                <td class="status-danger">INEXISTENTE</td>
-                                <td class="status-danger">¿Era necesaria?</td>
+                                <td><strong>15 Ago 2025</strong></td>
+                                <td><strong>1ª Cuota</strong></td>
+                                <td class="number"><strong>$733,000</strong></td>
+                                <td class="status-warning">⏳ PENDIENTE</td>
+                                <td class="status-warning">12</td>
                             </tr>
                             <tr class="highlight-missing">
-                                <td>Mr Creamy (decisión unilateral)</td>
-                                <td class="number">$1,500,000</td>
-                                <td>Rentabilidad 82%</td>
-                                <td class="status-warning">Sin consenso</td>
-                                <td class="status-warning">Creó deuda</td>
+                                <td><strong>30 Ago 2025</strong></td>
+                                <td><strong>2ª Cuota</strong></td>
+                                <td class="number"><strong>$733,000</strong></td>
+                                <td class="status-warning">⏳ PENDIENTE</td>
+                                <td class="status-warning">27</td>
                             </tr>
                             <tr class="highlight-missing">
-                                <td>Gastos "varios" no especificados</td>
-                                <td class="number">$2,000,000+</td>
-                                <td class="status-danger">SIN DETALLAR</td>
-                                <td class="status-danger">INEXISTENTE</td>
-                                <td class="status-danger">SIN EVALUAR</td>
+                                <td><strong>15 Sep 2025</strong></td>
+                                <td><strong>3ª Cuota Final</strong></td>
+                                <td class="number"><strong>$734,000</strong></td>
+                                <td class="status-warning">⏳ PENDIENTE</td>
+                                <td class="status-warning">43</td>
                             </tr>
                         </tbody>
                     </table>
+                    
+                    <div class="summary-box">
+                        <strong>DEUDA ORIGINAL: $3,200,000</strong><br>
+                        <strong>PAGADO (William): $1,000,000</strong><br>
+                        <strong>SALDO PENDIENTE: $2,200,000</strong><br>
+                        <strong>3 CUOTAS DE $733k c/u</strong>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>📊 Cronograma Pagos Agosto-Septiembre</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Mes</th><th>Pagos Juan</th><th>Otros Pagos</th><th>Total Mes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Agosto</strong></td>
+                                <td class="number">$1,466,000</td>
+                                <td class="number">$6,500,000+</td>
+                                <td class="number status-danger">$7,966,000+</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Septiembre</strong></td>
+                                <td class="number">$734,000</td>
+                                <td class="number">$6,100,000</td>
+                                <td class="number status-warning">$6,834,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="alert danger">
+                        <strong>AGOSTO CRÍTICO:</strong> Casi $8M en pagos incluyendo cuotas Juan
+                    </div>
                 </div>
             </div>
         </div>
@@ -475,178 +500,172 @@
         <!-- MALAS DECISIONES -->
         <div id="decisiones" class="tab-content">
             <div class="section">
-                <h3>❌ Catálogo de Malas Decisiones Administrativas</h3>
+                <h3>❌ Catálogo de Malas Decisiones</h3>
                 
                 <div class="card">
-                    <h4>🎯 Decisiones Unilaterales (Sin Consenso)</h4>
+                    <h4>🎯 Decisiones Sin Consenso</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Fecha</th><th>Decisión</th><th>Tomada por</th><th>Costo</th><th>Consenso</th><th>Impacto</th></tr>
+                            <tr><th>Decisión</th><th>Costo</th><th>Consenso</th><th>Resultado</th></tr>
                         </thead>
                         <tbody>
                             <tr class="highlight-bad">
-                                <td>Jun 2025</td>
-                                <td>Compra Mr Creamy</td>
-                                <td>Paula/Julián</td>
+                                <td>Mr Creamy</td>
                                 <td class="number">$1,500,000</td>
                                 <td class="status-danger">CERO</td>
-                                <td>Deuda externa + crisis</td>
+                                <td>Deuda $3.2M</td>
                             </tr>
                             <tr class="highlight-missing">
-                                <td>Mayo 2025</td>
-                                <td>Inversión ropa</td>
-                                <td>Paula/Julián</td>
+                                <td>Ropa negocio</td>
                                 <td class="number">$1,500,000</td>
                                 <td class="status-danger">CERO</td>
-                                <td>¿Dónde está la ropa?</td>
+                                <td>¿Dónde está?</td>
                             </tr>
                             <tr class="highlight-missing">
-                                <td>Jul 2025</td>
-                                <td>Sistema Siigo T.C William</td>
-                                <td>Paula/Julián</td>
+                                <td>Siigo con T.C William</td>
                                 <td class="number">$780,000</td>
                                 <td class="status-danger">CERO</td>
-                                <td>Deuda personal William</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td>May-Jul 2025</td>
-                                <td>Múltiples "urgencias"</td>
-                                <td>Paula/Julián</td>
-                                <td class="number">$10,980,000</td>
-                                <td class="status-danger">CERO</td>
-                                <td>William carga 85% crisis</td>
+                                <td>Deuda personal</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="card">
-                    <h4>📊 Patrón de Solicitudes "Urgentes"</h4>
+                    <h4>📊 Patrón "Urgencias"</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Fecha</th><th>Justificación</th><th>Solicitado a</th><th>Valor</th><th>Planificación Previa</th><th>Resultado</th></tr>
+                            <tr><th>Fecha</th><th>Valor</th><th>Planificación</th><th>Pagador</th></tr>
                         </thead>
                         <tbody>
+                            <tr><td>15 May</td><td class="number">$2,000,000</td><td class="status-danger">0 días</td><td>Daniel</td></tr>
+                            <tr><td>1 Jun</td><td class="number">$3,000,000</td><td class="status-danger">0 días</td><td>Daniel</td></tr>
+                            <tr><td>26 Jun</td><td class="number">$3,200,000</td><td class="status-danger">0 días</td><td>William</td></tr>
+                            <tr><td>30 Jul</td><td class="number">$2,780,000</td><td class="status-danger">0 días</td><td>William</td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="summary-box">
+                        <strong>$10,980,000 en "urgencias" sin planificación</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INVERSIONES -->
+        <div id="inversiones" class="tab-content">
+            <div class="section">
+                <h3>📊 Inversiones Totales por Socio</h3>
+                
+                <div class="card">
+                    <h4>💰 Estado Actual</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Socio</th><th>Inversión Total</th><th>% Participación</th><th>Promedio Mensual</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-bad">
+                                <td><strong>William</strong></td>
+                                <td class="number"><strong>$14,980,000</strong></td>
+                                <td class="status-danger"><strong>29.8%</strong></td>
+                                <td class="number">$2,996,000</td>
+                            </tr>
                             <tr>
-                                <td>15 May</td>
-                                <td>"Terminar apertura"</td>
                                 <td>Daniel</td>
-                                <td class="number">$2,000,000</td>
-                                <td class="status-danger">0 días</td>
-                                <td>Préstamo T.C</td>
+                                <td class="number">$12,000,000</td>
+                                <td>23.9%</td>
+                                <td class="number">$2,400,000</td>
                             </tr>
                             <tr>
-                                <td>1 Jun</td>
-                                <td>"Emergencias operativas"</td>
-                                <td>Daniel</td>
-                                <td class="number">$3,000,000</td>
-                                <td class="status-danger">0 días</td>
-                                <td>Préstamo T.C</td>
+                                <td>Paula</td>
+                                <td class="number">$11,142,000</td>
+                                <td>22.2%</td>
+                                <td class="number">$2,228,400</td>
                             </tr>
                             <tr>
-                                <td>26 Jun</td>
-                                <td>"Capital trabajo"</td>
-                                <td>William</td>
-                                <td class="number">$3,200,000</td>
-                                <td class="status-danger">0 días</td>
-                                <td>Transferencia</td>
-                            </tr>
-                            <tr>
-                                <td>30 Jul</td>
-                                <td>"Crisis total"</td>
-                                <td>William</td>
-                                <td class="number">$2,780,000</td>
-                                <td class="status-danger">0 días</td>
-                                <td>T.C + efectivo</td>
+                                <td>Julián</td>
+                                <td class="number">$11,142,000</td>
+                                <td>22.2%</td>
+                                <td class="number">$2,228,400</td>
                             </tr>
                         </tbody>
                     </table>
                     
                     <div class="summary-box">
-                        <strong>PATRÓN TÓXICO:</strong> $10,980,000 solicitados en "urgencias" sin 1 solo día de planificación previa
+                        <strong>TOTAL INVERTIDO: $49,264,000</strong><br>
+                        <strong>PROMEDIO POR SOCIO: $12,316,000</strong><br>
+                        <strong>EXCESO WILLIAM: $2,664,000</strong>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h4>🤔 Decisiones Contradictorias</h4>
+                    <h4>📈 Evolución Mensual William</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Situación</th><th>Acción Tomada</th><th>Lógica</th><th>Contradicción</th></tr>
+                            <tr><th>Mes</th><th>Aporte</th><th>Acumulado</th><th>Motivo</th></tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight-missing">
-                                <td>Buenos márgenes (61-82%)</td>
-                                <td>Seguir pidiendo dinero</td>
-                                <td class="status-danger">NO TIENE</td>
-                                <td>¿Por qué déficit con rentabilidad alta?</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td>"Lo que más sale es bowls"</td>
-                                <td>No analizar por qué déficit</td>
-                                <td class="status-danger">NO TIENE</td>
-                                <td>Juli reconoce éxito pero no explica pérdidas</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td>Gustavo ahorra 49% servicios</td>
-                                <td>Paula/Juli no replican eficiencia</td>
-                                <td class="status-danger">NO TIENE</td>
-                                <td>Empleado más eficiente que jefes</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td>Experiencia empresarial P/J</td>
-                                <td>Transfieren liderazgo a ingenieros</td>
-                                <td class="status-danger">NO TIENE</td>
-                                <td>Expertos evaden responsabilidad</td>
-                            </tr>
+                            <tr><td>Mar-Abr</td><td class="number">$9,000,000</td><td class="number">$9,000,000</td><td>Inversión inicial</td></tr>
+                            <tr><td>Jun</td><td class="number">$3,200,000</td><td class="number">$12,200,000</td><td>"Capital trabajo"</td></tr>
+                            <tr><td>Jul</td><td class="number">$2,780,000</td><td class="number">$14,980,000</td><td>"Crisis total"</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        <!-- DEUDAS DETALLE -->
-        <div id="deudas" class="tab-content">
+        <!-- VENTAS NECESARIAS -->
+        <div id="ventas" class="tab-content">
             <div class="section">
-                <h3>💳 Detalle Completo de Deudas</h3>
+                <h3>📈 Ventas Necesarias para Sostenibilidad</h3>
                 
+                <div class="financial-grid">
+                    <div class="card">
+                        <h4>💰 Calculadora Gastos Fijos</h4>
+                        <div class="input-group">
+                            <label>Arriendo mensual:</label>
+                            <input type="number" id="arriendo" value="2400000">
+                        </div>
+                        <div class="input-group">
+                            <label>Nóminas (Gustavo + Nicolás):</label>
+                            <input type="number" id="nominas" value="3244000">
+                        </div>
+                        <div class="input-group">
+                            <label>Servicios (luz + agua + internet):</label>
+                            <input type="number" id="servicios" value="456000">
+                        </div>
+                        <div class="input-group">
+                            <label>Otros gastos operativos:</label>
+                            <input type="number" id="otros" value="500000">
+                        </div>
+                        <button class="btn" onclick="calcular()">Calcular</button>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>📊 Resultados</h4>
+                        <div class="result">
+                            <strong>Total Gastos Mensuales:</strong><br>
+                            <span id="totalGastos">$6,600,000</span>
+                        </div>
+                        <div class="result">
+                            <strong>Venta Diaria Necesaria:</strong><br>
+                            <span id="ventaDiaria">$220,000</span>
+                        </div>
+                        <div class="result">
+                            <strong>Venta Mensual Necesaria:</strong><br>
+                            <span id="ventaMensual">$6,600,000</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
-                    <h4>📊 Deuda Juan - Cronograma Exacto</h4>
+                    <h4>📈 Escenarios de Venta</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Concepto</th><th>Fecha</th><th>Valor</th><th>Estado</th><th>Días Restantes</th></tr>
+                            <tr><th>Venta Diaria</th><th>Venta Mensual</th><th>Balance vs Gastos</th><th>Estado</th></tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight-good">
-                                <td>Abono William</td>
-                                <td>29 Jul 2025</td>
-                                <td class="number">$1,000,000</td>
-                                <td class="status-good">✅ Pagado</td>
-                                <td>-</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td><strong>1ª Cuota</strong></td>
-                                <td><strong>15 Ago 2025</strong></td>
-                                <td class="number"><strong>$733,000</strong></td>
-                                <td class="status-warning">⏳ Pendiente</td>
-                                <td class="status-warning">12 días</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td><strong>2ª Cuota</strong></td>
-                                <td><strong>30 Ago 2025</strong></td>
-                                <td class="number"><strong>$733,000</strong></td>
-                                <td class="status-warning">⏳ Pendiente</td>
-                                <td class="status-warning">27 días</td>
-                            </tr>
-                            <tr class="highlight-missing">
-                                <td><strong>3ª Cuota</strong></td>
-                                <td><strong>15 Sep 2025</strong></td>
-                                <td class="number"><strong>$734,000</strong></td>
-                                <td class="status-warning">⏳ Pendiente</td>
-                                <td class="status-warning">43 días</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <div class="summary-box">
-                        <strong>DEUDA TOTAL JUAN:</strong> $3,200,000<br>
-                        <strong>PAGADO:</strong>
+                            <tr><td class="number">$150,000</td><td class="number">$4,500,000</td><td class="number status-danger">-$2,100,000</td><td class="status-danger">Déficit crítico</td></tr>
+                            <tr><td class="number">$200,000</td><td class="number">$6,000,000</td><td class="number status-danger">-$600,000</td><td class="status-danger">Déficit</td></tr>
+                            <tr><td class="number">$220,000</td><td class="number">$6,600,000</td><td class="number status-good">$0</td><td class="status-good">Equilibrio</td></tr>
+                            <tr><td class="number">$300,000</td><td class="number">$9,000,000</td><td class="number status-good">+$2,400,000
