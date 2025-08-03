@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Financiero Bulkness Café</title>
+    <title>Control Financiero Bulkness - Análisis Completo</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,13 +15,11 @@
         }
         
         @media (max-width: 768px) {
-            body {
-                padding: 5px;
-            }
+            body { padding: 5px; }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 12px;
@@ -30,10 +28,7 @@
         }
         
         @media (max-width: 768px) {
-            .container {
-                border-radius: 8px;
-                margin: 0 5px;
-            }
+            .container { border-radius: 8px; margin: 0 5px; }
         }
 
         .header {
@@ -50,16 +45,8 @@
         }
         
         @media (max-width: 768px) {
-            .header {
-                padding: 20px 15px;
-            }
-            .header h1 {
-                font-size: 22px;
-            }
-            .header p {
-                font-size: 14px;
-                margin: 5px 0 0 0;
-            }
+            .header { padding: 20px 15px; }
+            .header h1 { font-size: 22px; }
         }
 
         .tabs {
@@ -72,13 +59,13 @@
         
         .tab {
             flex: 1;
-            min-width: 120px;
-            padding: 15px 10px;
+            min-width: 140px;
+            padding: 15px 8px;
             text-align: center;
             cursor: pointer;
             background: #f8f9fa;
             border: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -91,16 +78,12 @@
         }
         
         @media (max-width: 768px) {
-            .tab {
-                min-width: 100px;
-                padding: 12px 8px;
-                font-size: 12px;
-            }
+            .tab { min-width: 120px; padding: 12px 6px; font-size: 11px; }
         }
 
         .tab-content {
             display: none;
-            padding: 30px;
+            padding: 25px;
         }
         
         .tab-content.active {
@@ -108,160 +91,64 @@
         }
         
         @media (max-width: 768px) {
-            .tab-content {
-                padding: 15px;
-            }
+            .tab-content { padding: 15px; }
         }
 
         .section {
-            margin-bottom: 30px;
-            padding: 25px;
+            margin-bottom: 25px;
+            padding: 20px;
             border: 1px solid #e9ecef;
             border-radius: 8px;
             background: #f8f9fa;
         }
         
         @media (max-width: 768px) {
-            .section {
-                margin-bottom: 20px;
-                padding: 15px;
-            }
+            .section { margin-bottom: 20px; padding: 15px; }
         }
 
         .section h3 {
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             color: #495057;
             font-size: 18px;
             font-weight: 600;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #667eea;
         }
 
         .financial-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 20px;
+            margin-bottom: 20px;
         }
         
         @media (max-width: 768px) {
-            .financial-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin-bottom: 20px;
-            }
+            .financial-grid { grid-template-columns: 1fr; gap: 15px; }
         }
 
         .card {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             border-left: 4px solid #667eea;
         }
         
         @media (max-width: 768px) {
-            .card {
-                padding: 15px;
-                border-left-width: 3px;
-            }
+            .card { padding: 15px; border-left-width: 3px; }
         }
 
         .card h4 {
-            margin: 0 0 15px 0;
+            margin: 0 0 12px 0;
             color: #495057;
             font-size: 16px;
             font-weight: 600;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: #495057;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-        
-        .input-group input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .input-group input {
-                font-size: 16px;
-                padding: 12px;
-            }
-        }
-
-        .result {
-            padding: 15px;
-            background: #e7f3ff;
-            border-left: 4px solid #007bff;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 16px;
-            margin-top: 15px;
-        }
-
-        .alert {
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 15px;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        
-        @media (max-width: 768px) {
-            .alert {
-                padding: 12px;
-                font-size: 13px;
-                margin-top: 12px;
-            }
-        }
-
-        .alert.success {
-            background: #d4edda;
-            color: #155724;
-            border-left: 4px solid #28a745;
-        }
-
-        .alert.warning {
-            background: #fff3cd;
-            color: #856404;
-            border-left: 4px solid #ffc107;
-        }
-
-        .alert.danger {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 4px solid #dc3545;
-        }
-
-        .alert.info {
-            background: #e2e3e5;
-            color: #383d41;
-            border-left: 4px solid #6c757d;
         }
 
         .table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 15px;
             background: white;
             border-radius: 8px;
             overflow: hidden;
@@ -269,19 +156,17 @@
         }
         
         .table th, .table td {
-            padding: 12px 15px;
+            padding: 10px 12px;
             text-align: left;
             border-bottom: 1px solid #dee2e6;
-            white-space: normal;
-            word-wrap: break-word;
+            font-size: 13px;
         }
         
         .table th {
             background: #667eea;
             color: white;
             font-weight: 600;
-            position: sticky;
-            top: 0;
+            font-size: 12px;
         }
         
         .table tr:hover {
@@ -289,416 +174,479 @@
         }
         
         @media (max-width: 768px) {
-            .table {
-                font-size: 12px;
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-                -webkit-overflow-scrolling: touch;
-            }
-            .table th, .table td {
-                padding: 8px 6px;
-                min-width: 80px;
-            }
+            .table { font-size: 11px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .table th, .table td { padding: 6px 8px; min-width: 80px; }
         }
 
-        .btn {
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        .alert {
+            padding: 12px;
             border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
+            margin-top: 12px;
             font-weight: 500;
-            transition: background 0.3s ease;
-            width: 100%;
-            margin-top: 10px;
+            font-size: 13px;
+            line-height: 1.4;
         }
-        
-        .btn:hover {
-            background: #5a6fd8;
-        }
-        
-        @media (max-width: 768px) {
-            .btn {
-                padding: 12px 20px;
-                font-size: 16px;
-                touch-action: manipulation;
-            }
-        }
+
+        .alert.success { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .alert.warning { background: #fff3cd; color: #856404; border-left: 4px solid #ffc107; }
+        .alert.danger { background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545; }
+        .alert.info { background: #e2e3e5; color: #383d41; border-left: 4px solid #6c757d; }
 
         .status-good { color: #28a745; font-weight: 600; }
         .status-warning { color: #ffc107; font-weight: 600; }
         .status-danger { color: #dc3545; font-weight: 600; }
         
-        .number { 
-            font-family: 'Courier New', monospace; 
+        .number { font-family: 'Courier New', monospace; font-size: 12px; }
+        
+        .highlight-bad { background: #f8d7da !important; }
+        .highlight-missing { background: #fff3cd !important; }
+        .highlight-good { background: #d4edda !important; }
+
+        .summary-box {
+            background: #e7f3ff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #495057;
             font-size: 13px;
         }
-        
-        @media (max-width: 768px) {
-            .number {
-                font-size: 11px;
-            }
-            * {
-                -webkit-tap-highlight-color: rgba(0,0,0,0.1);
-            }
-            .tab {
-                -webkit-tap-highlight-color: rgba(102, 126, 234, 0.2);
-            }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 13px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 Control Financiero Bulkness Café</h1>
-            <p>Sistema de Control para Socios - Actualizado 3 Agosto 2025</p>
+            <h1>📊 Análisis Financiero Bulkness Café</h1>
+            <p>Evidencia de Mala Gestión y Decisiones - Actualizado 3 Agosto 2025</p>
         </div>
 
         <div class="tabs">
-            <button class="tab active" onclick="showTab('crisis')">🚨 Crisis Inmediata</button>
-            <button class="tab" onclick="showTab('operaciones')">📋 Operaciones</button>
-            <button class="tab" onclick="showTab('cronograma')">📅 Cronograma</button>
-            <button class="tab" onclick="showTab('gastos')">💰 Gastos Fijos</button>
-            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones</button>
-            <button class="tab" onclick="showTab('analisis')">🔍 Análisis Gestión</button>
+            <button class="tab active" onclick="showTab('crisis')">🚨 Crisis 72h</button>
+            <button class="tab" onclick="showTab('faltantes')">💸 Dinero Perdido</button>
+            <button class="tab" onclick="showTab('decisiones')">❌ Malas Decisiones</button>
+            <button class="tab" onclick="showTab('deudas')">💳 Deudas Detalle</button>
+            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones Total</button>
+            <button class="tab" onclick="showTab('ventas')">📈 Ventas Necesarias</button>
+            <button class="tab" onclick="showTab('administracion')">🔍 Mala Administración</button>
         </div>
 
-        <!-- CRISIS INMEDIATA -->
+        <!-- CRISIS 72 HORAS -->
         <div id="crisis" class="tab-content active">
             <div class="section">
-                <h3>🚨 CRISIS INMEDIATA - Próximos 3 Días</h3>
+                <h3>🚨 Crisis Inmediata - Próximas 72 Horas</h3>
                 
-                <div class="alert danger">
-                    <strong>⏰ EMERGENCIA TOTAL:</strong><br>
-                    <strong>$4,858,000 requeridos en 72 horas para evitar colapso</strong><br>
-                    Sin estos pagos = Cierre definitivo de Bulkness
+                <div class="summary-box">
+                    <strong>TOTAL REQUERIDO INMEDIATO: $5,145,000</strong><br>
+                    <strong>DISPONIBLE MÁXIMO: $1,522,500</strong><br>
+                    <strong>DÉFICIT CRÍTICO: $3,622,500 (70%)</strong>
                 </div>
                 
                 <div class="card">
-                    <h4>💰 Pagos Críticos Inmediatos</h4>
+                    <h4>⏰ Cronograma Crítico</h4>
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th>Vencimiento</th>
-                                <th>Concepto</th>
-                                <th>Valor</th>
-                                <th>Consecuencia</th>
-                            </tr>
+                            <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Días</th><th>Acumulado</th></tr>
                         </thead>
                         <tbody>
-                            <tr style="background: #f8d7da;">
-                                <td><strong>HOY (3 Ago)</strong></td>
+                            <tr class="highlight-bad">
+                                <td><strong>3 Ago (HOY)</strong></td>
                                 <td>Nómina Gustavo (18 días atraso)</td>
                                 <td class="number">$1,072,000</td>
-                                <td class="status-danger">Renuncia + Cierre operativo</td>
+                                <td class="status-danger">0</td>
+                                <td class="number">$1,072,000</td>
                             </tr>
-                            <tr style="background: #fff3cd;">
+                            <tr class="highlight-missing">
                                 <td><strong>4 Ago</strong></td>
                                 <td>Nómina Nicolás (pendiente)</td>
                                 <td class="number">$893,000</td>
-                                <td class="status-warning">Pérdida barista/entrenador</td>
+                                <td class="status-warning">1</td>
+                                <td class="number">$1,965,000</td>
                             </tr>
-                            <tr style="background: #f8d7da;">
+                            <tr class="highlight-bad">
                                 <td><strong>5 Ago</strong></td>
-                                <td>Arriendo agosto</td>
+                                <td>Arriendo Agosto</td>
                                 <td class="number">$2,400,000</td>
-                                <td class="status-danger">Desalojo + Pérdida total $50M</td>
+                                <td class="status-danger">2</td>
+                                <td class="number">$4,365,000</td>
                             </tr>
-                            <tr style="background: #fff3cd;">
+                            <tr class="highlight-missing">
                                 <td><strong>7 Ago</strong></td>
                                 <td>Reintegro T.C William</td>
                                 <td class="number">$780,000</td>
-                                <td class="status-warning">Intereses crecientes</td>
-                            </tr>
-                            <tr style="background: #e2e3e5; font-weight: bold;">
-                                <td colspan="2"><strong>TOTAL CRÍTICO</strong></td>
-                                <td class="number"><strong>$5,145,000</strong></td>
-                                <td class="status-danger"><strong>COLAPSO TOTAL</strong></td>
+                                <td class="status-warning">4</td>
+                                <td class="number">$5,145,000</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                
+
                 <div class="financial-grid">
                     <div class="card">
-                        <h4>💸 Recursos Disponibles</h4>
+                        <h4>💰 Recursos Reales Disponibles</h4>
                         <table class="table">
                             <thead>
-                                <tr><th>Fuente</th><th>Valor</th><th>Disponibilidad</th></tr>
+                                <tr><th>Fuente</th><th>Valor</th><th>Realidad</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Capital trabajo (Gustavo)</td><td class="number">$262,500</td><td class="status-good">Inmediata</td></tr>
-                                <tr><td>Ventas 3 días (estimado)</td><td class="number">$450,000</td><td class="status-warning">Proyectado</td></tr>
-                                <tr><td>Mr Creamy (si se vende todo)</td><td class="number">$810,000</td><td class="status-warning">7-15 días</td></tr>
-                                <tr style="background: #f8f9fa; font-weight: bold;">
-                                    <td><strong>TOTAL MÁXIMO</strong></td>
-                                    <td class="number"><strong>$1,522,500</strong></td>
-                                    <td class="status-danger"><strong>30% de necesidad</strong></td>
-                                </tr>
+                                <tr><td>Capital trabajo Gustavo</td><td class="number">$262,500</td><td class="status-good">Efectivo real</td></tr>
+                                <tr><td>Ventas 3 días (promedio)</td><td class="number">$450,000</td><td class="status-warning">Optimista</td></tr>
+                                <tr><td>Mr Creamy (si vende todo)</td><td class="number">$810,000</td><td class="status-warning">7-15 días mínimo</td></tr>
+                                <tr><td>Suplementos Juan</td><td class="number">$0</td><td class="status-danger">Consignación, no dinero</td></tr>
                             </tbody>
                         </table>
                     </div>
                     
                     <div class="card">
-                        <h4>📊 Déficit Crítico</h4>
-                        <div class="result">
-                            <strong>Necesario:</strong> $5,145,000<br>
-                            <strong>Disponible:</strong> $1,522,500<br>
-                        </div>
-                        <div class="alert danger">
-                            <strong>FALTANTE: $3,622,500 (70%)</strong><br>
-                            Sin aporte inmediato socios = CIERRE SEGURO
-                        </div>
+                        <h4>📊 Déficit Real por Día</h4>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Día</th><th>Necesario</th><th>Disponible</th><th>Faltante</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Hoy (3 Ago)</td><td class="number">$1,072,000</td><td class="number">$262,500</td><td class="number status-danger">$809,500</td></tr>
+                                <tr><td>Hasta 4 Ago</td><td class="number">$1,965,000</td><td class="number">$412,500</td><td class="number status-danger">$1,552,500</td></tr>
+                                <tr><td>Hasta 5 Ago</td><td class="number">$4,365,000</td><td class="number">$562,500</td><td class="number status-danger">$3,802,500</td></tr>
+                                <tr><td>Hasta 7 Ago</td><td class="number">$5,145,000</td><td class="number">$712,500</td><td class="number status-danger">$4,432,500</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- OPERACIONES -->
-        <div id="operaciones" class="tab-content">
+        <!-- DINERO PERDIDO -->
+        <div id="faltantes" class="tab-content">
             <div class="section">
-                <h3>📋 Análisis Operativo - Gustavo Ordóñez</h3>
+                <h3>💸 Análisis: ¿Dónde Está el Dinero?</h3>
+                
+                <div class="alert danger">
+                    <strong>PREGUNTA CLAVE:</strong> Si no se pagó arriendo mayo y junio ($4.8M), ¿dónde fue esa plata?
+                </div>
                 
                 <div class="card">
-                    <h4>🍽️ Márgenes por Producto (Análisis Gustavo)</h4>
+                    <h4>🔍 Rastreo de Arriendos No Pagados</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Producto</th><th>Costo</th><th>Precio</th><th>Ganancia</th><th>Margen %</th></tr>
+                            <tr><th>Mes</th><th>Arriendo</th><th>Estado Pago</th><th>¿Dónde fue el dinero?</th><th>Explicación</th></tr>
                         </thead>
                         <tbody>
-                            <tr style="background: #d4edda;">
-                                <td><strong>Bowl Cut</strong></td>
-                                <td class="number">$7,401</td>
-                                <td class="number">$20,900</td>
-                                <td class="number">$13,499</td>
-                                <td class="status-good"><strong>65%</strong></td>
+                            <tr class="highlight-bad">
+                                <td><strong>Mayo 2025</strong></td>
+                                <td class="number">$2,400,000</td>
+                                <td class="status-danger">NO PAGADO</td>
+                                <td class="status-danger">SIN EXPLICACIÓN</td>
+                                <td>¿Adecuaciones? ¿Robos? ¿Gastos operativos?</td>
                             </tr>
-                            <tr style="background: #d4edda;">
-                                <td><strong>Bowl Maingaining</strong></td>
-                                <td class="number">$8,119</td>
-                                <td class="number">$20,900</td>
-                                <td class="number">$12,781</td>
-                                <td class="status-good"><strong>61%</strong></td>
+                            <tr class="highlight-bad">
+                                <td><strong>Junio 2025</strong></td>
+                                <td class="number">$2,400,000</td>
+                                <td class="status-danger">NO PAGADO</td>
+                                <td class="status-danger">SIN EXPLICACIÓN</td>
+                                <td>¿En qué se gastó esta plata?</td>
                             </tr>
-                            <tr style="background: #d4edda;">
-                                <td><strong>Mr Creamy</strong></td>
-                                <td class="number">$33,000</td>
-                                <td class="number">$60,000</td>
-                                <td class="number">$27,000</td>
-                                <td class="status-good"><strong>82%</strong></td>
+                            <tr class="highlight-bad">
+                                <td><strong>Julio 2025</strong></td>
+                                <td class="number">$2,400,000</td>
+                                <td class="status-good">PAGADO</td>
+                                <td>Control Gustavo</td>
+                                <td>Primer mes con control real</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td><strong>Agosto 2025</strong></td>
+                                <td class="number">$2,400,000</td>
+                                <td class="status-danger">PENDIENTE (5 Ago)</td>
+                                <td>Crisis actual</td>
+                                <td>Vence en 2 días</td>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="alert success">
-                        <strong>✅ PRODUCTOS RENTABLES:</strong> Márgenes excelentes 61-82%
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4>📦 Stock Actual</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Producto</th><th>Inversión</th><th>Venta Potencial</th><th>Estado</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Mr Creamy (30 envases)</td><td class="number">$990,000</td><td class="number">$1,800,000</td><td class="status-good">Rotación excelente</td></tr>
-                            <tr><td>Suplementos Juan</td><td class="number">$1,705,000</td><td class="number">Variable</td><td class="status-warning">Consignación</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="card">
-                    <h4>🛒 Control de Compras (31 Jul - 2 Ago)</h4>
-                    <div class="result">
-                        <strong>Capital enviado William:</strong> $1,000,000<br>
-                        <strong>Gastado total:</strong> $737,500<br>
-                        <strong>Saldo actual:</strong> $262,500
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CRONOGRAMA -->
-        <div id="cronograma" class="tab-content">
-            <div class="section">
-                <h3>📅 Cronograma de Pagos Agosto</h3>
-                
-                <div class="card">
-                    <h4>📊 Calendario Completo</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background: #f8d7da;"><td>3 Ago</td><td>Nómina Gustavo</td><td class="number">$1,072,000</td><td class="status-danger">Crítico</td></tr>
-                            <tr style="background: #fff3cd;"><td>4 Ago</td><td>Nómina Nicolás</td><td class="number">$893,000</td><td class="status-warning">Urgente</td></tr>
-                            <tr style="background: #f8d7da;"><td>5 Ago</td><td>Arriendo</td><td class="number">$2,400,000</td><td class="status-danger">Crítico</td></tr>
-                            <tr style="background: #fff3cd;"><td>7 Ago</td><td>T.C William</td><td class="number">$780,000</td><td class="status-warning">Urgente</td></tr>
-                            <tr><td>15 Ago</td><td>Cuota Juan</td><td class="number">$733,000</td><td class="status-warning">Programado</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- GASTOS FIJOS -->
-        <div id="gastos" class="tab-content">
-            <div class="section">
-                <h3>💰 Estructura de Gastos Fijos</h3>
-                
-                <div class="financial-grid">
-                    <div class="card">
-                        <h4>📊 Gastos Mensuales</h4>
-                        <div class="input-group">
-                            <label>Arriendo (30% de $8M):</label>
-                            <input type="number" id="arriendo" value="2400000" readonly>
-                        </div>
-                        <div class="input-group">
-                            <label>Nómina Gustavo:</label>
-                            <input type="number" id="gustavo" value="1622000">
-                        </div>
-                        <div class="input-group">
-                            <label>Nómina Nicolás:</label>
-                            <input type="number" id="nicolas" value="1622000">
-                        </div>
-                        <div class="input-group">
-                            <label>Servicios (luz, agua, internet):</label>
-                            <input type="number" id="servicios" value="456000">
-                        </div>
-                        <button class="btn" onclick="calcular()">Calcular</button>
-                    </div>
                     
-                    <div class="card">
-                        <h4>📈 Resultados</h4>
-                        <div class="result">
-                            <strong>Total Gastos Mensuales:</strong><br>
-                            <span id="totalGastos">$6,100,000</span>
-                        </div>
-                        <div class="result">
-                            <strong>Venta Diaria Necesaria:</strong><br>
-                            <span id="ventaDiaria">$203,333</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- INVERSIONES -->
-        <div id="inversiones" class="tab-content">
-            <div class="section">
-                <h3>📊 Inversiones por Socio</h3>
-                
-                <div class="card">
-                    <h4>💰 Estado Actual</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Socio</th><th>Inversión Total</th><th>% Participación</th><th>Carga Crisis</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background: #f8d7da;"><td><strong>William</strong></td><td class="number">$14,980,000</td><td>29.8%</td><td class="status-danger">85%</td></tr>
-                            <tr><td>Daniel</td><td class="number">$12,000,000</td><td>23.9%</td><td class="status-warning">13%</td></tr>
-                            <tr><td>Paula</td><td class="number">$11,142,000</td><td>22.2%</td><td class="status-good">1%</td></tr>
-                            <tr><td>Julián</td><td class="number">$11,142,000</td><td>22.2%</td><td class="status-good">1%</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- ANÁLISIS GESTIÓN -->
-        <div id="analisis" class="tab-content">
-            <div class="section">
-                <h3>🔍 Análisis de Gestión: El Problema Real</h3>
-                
-                <div class="alert danger">
-                    <strong>🎯 PROBLEMA CENTRAL:</strong><br>
-                    Paula/Julián (empresarios + operadores diarios) han transferido liderazgo financiero a William/Daniel (ingenieros + ingresos mensuales fijos)
-                </div>
-                
-                <div class="card">
-                    <h4>🤔 La Contradicción Fundamental</h4>
-                    <div class="alert warning">
-                        <strong>DATOS CONFIRMADOS:</strong><br>
-                        • Bowls: 61-65% margen<br>
-                        • Mr Creamy: 82% margen + "excelente rotación"<br>
-                        • Juli: "Lo que más sale es bowls, batidos, sándwiches y café"<br>
-                        <strong>¿POR QUÉ SIGUEN NECESITANDO APORTES CONSTANTES?</strong>
+                    <div class="summary-box">
+                        <strong>DINERO "PERDIDO" EN ARRIENDOS: $4,800,000</strong><br>
+                        Mayo + Junio sin pagar = ¿Dónde fueron $4.8 millones?
                     </div>
                 </div>
 
                 <div class="card">
-                    <h4>📊 Patrón de "Préstamos Urgentes"</h4>
+                    <h4>📊 Flujo de Dinero Mayo-Agosto 2025</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Fecha</th><th>Solicitante</th><th>Pagador</th><th>Valor</th><th>Planificación</th></tr>
+                            <tr><th>Período</th><th>Ingresos Reportados</th><th>Gastos Mayores</th><th>Diferencia</th><th>¿Explicación?</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Mayo 15</td><td>Paula/Julián</td><td>Daniel</td><td class="number">$2,000,000</td><td class="status-danger">CERO</td></tr>
-                            <tr><td>Jun 1</td><td>Paula/Julián</td><td>Daniel</td><td class="number">$3,000,000</td><td class="status-danger">CERO</td></tr>
-                            <tr><td>Jun 26</td><td>Paula/Julián</td><td>William</td><td class="number">$3,200,000</td><td class="status-danger">CERO</td></tr>
-                            <tr><td>Jul 30</td><td>Paula/Julián</td><td>William</td><td class="number">$2,780,000</td><td class="status-danger">CERO</td></tr>
-                            <tr style="background: #f8f9fa; font-weight: bold;">
-                                <td colspan="3"><strong>TOTAL "URGENTE"</strong></td>
-                                <td class="number"><strong>$10,980,000</strong></td>
-                                <td class="status-danger"><strong>SIEMPRE CERO</strong></td>
+                            <tr>
+                                <td><strong>Mayo 19-31</strong></td>
+                                <td class="number">$2,713,000</td>
+                                <td class="number">$858,347</td>
+                                <td class="number">$1,854,653</td>
+                                <td class="status-danger">¿Dónde están $1.85M?</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Junio 15-Julio 15</strong></td>
+                                <td class="number">$6,125,500</td>
+                                <td class="number">$6,907,143</td>
+                                <td class="number status-danger">-$781,643</td>
+                                <td>Déficit confirmado</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td><strong>TOTAL DISPONIBLE</strong></td>
+                                <td class="number">$8,838,500</td>
+                                <td class="number">$7,765,490</td>
+                                <td class="number">$1,073,010</td>
+                                <td class="status-danger">¿Por qué piden más dinero?</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="alert danger">
-                    <strong>💡 CONCLUSIÓN:</strong><br>
-                    No es problema de capital, es problema de <strong>GESTIÓN Y LIDERAZGO</strong>. Paula/Julián evaden responsabilidad financiera pese a experiencia empresarial y control operativo diario.
+                <div class="card">
+                    <h4>🔍 Gastos No Documentados o Mal Explicados</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Concepto</th><th>Valor</th><th>Justificación</th><th>Documentación</th><th>Necesidad</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-bad">
+                                <td>Cocina robada (pérdida)</td>
+                                <td class="number">$6,000,000</td>
+                                <td>Robo externo</td>
+                                <td class="status-warning">Denuncia?</td>
+                                <td class="status-danger">Falta seguro</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Ropa Julia/Paula</td>
+                                <td class="number">$1,500,000</td>
+                                <td class="status-danger">NO CLARA</td>
+                                <td class="status-danger">INEXISTENTE</td>
+                                <td class="status-danger">¿Era necesaria?</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Mr Creamy (decisión unilateral)</td>
+                                <td class="number">$1,500,000</td>
+                                <td>Rentabilidad 82%</td>
+                                <td class="status-warning">Sin consenso</td>
+                                <td class="status-warning">Creó deuda</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Gastos "varios" no especificados</td>
+                                <td class="number">$2,000,000+</td>
+                                <td class="status-danger">SIN DETALLAR</td>
+                                <td class="status-danger">INEXISTENTE</td>
+                                <td class="status-danger">SIN EVALUAR</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        function showTab(tabName) {
-            // Ocultar todos los contenidos
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-            
-            // Remover clase active de todos los tabs
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Mostrar el contenido seleccionado
-            document.getElementById(tabName).classList.add('active');
-            
-            // Activar el tab seleccionado
-            event.target.classList.add('active');
-        }
+        <!-- MALAS DECISIONES -->
+        <div id="decisiones" class="tab-content">
+            <div class="section">
+                <h3>❌ Catálogo de Malas Decisiones Administrativas</h3>
+                
+                <div class="card">
+                    <h4>🎯 Decisiones Unilaterales (Sin Consenso)</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Fecha</th><th>Decisión</th><th>Tomada por</th><th>Costo</th><th>Consenso</th><th>Impacto</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-bad">
+                                <td>Jun 2025</td>
+                                <td>Compra Mr Creamy</td>
+                                <td>Paula/Julián</td>
+                                <td class="number">$1,500,000</td>
+                                <td class="status-danger">CERO</td>
+                                <td>Deuda externa + crisis</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Mayo 2025</td>
+                                <td>Inversión ropa</td>
+                                <td>Paula/Julián</td>
+                                <td class="number">$1,500,000</td>
+                                <td class="status-danger">CERO</td>
+                                <td>¿Dónde está la ropa?</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Jul 2025</td>
+                                <td>Sistema Siigo T.C William</td>
+                                <td>Paula/Julián</td>
+                                <td class="number">$780,000</td>
+                                <td class="status-danger">CERO</td>
+                                <td>Deuda personal William</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>May-Jul 2025</td>
+                                <td>Múltiples "urgencias"</td>
+                                <td>Paula/Julián</td>
+                                <td class="number">$10,980,000</td>
+                                <td class="status-danger">CERO</td>
+                                <td>William carga 85% crisis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-        function formatNumber(num) {
-            return new Intl.NumberFormat('es-CO', {
-                style: 'currency',
-                currency: 'COP',
-                minimumFractionDigits: 0
-            }).format(num);
-        }
+                <div class="card">
+                    <h4>📊 Patrón de Solicitudes "Urgentes"</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Fecha</th><th>Justificación</th><th>Solicitado a</th><th>Valor</th><th>Planificación Previa</th><th>Resultado</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15 May</td>
+                                <td>"Terminar apertura"</td>
+                                <td>Daniel</td>
+                                <td class="number">$2,000,000</td>
+                                <td class="status-danger">0 días</td>
+                                <td>Préstamo T.C</td>
+                            </tr>
+                            <tr>
+                                <td>1 Jun</td>
+                                <td>"Emergencias operativas"</td>
+                                <td>Daniel</td>
+                                <td class="number">$3,000,000</td>
+                                <td class="status-danger">0 días</td>
+                                <td>Préstamo T.C</td>
+                            </tr>
+                            <tr>
+                                <td>26 Jun</td>
+                                <td>"Capital trabajo"</td>
+                                <td>William</td>
+                                <td class="number">$3,200,000</td>
+                                <td class="status-danger">0 días</td>
+                                <td>Transferencia</td>
+                            </tr>
+                            <tr>
+                                <td>30 Jul</td>
+                                <td>"Crisis total"</td>
+                                <td>William</td>
+                                <td class="number">$2,780,000</td>
+                                <td class="status-danger">0 días</td>
+                                <td>T.C + efectivo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="summary-box">
+                        <strong>PATRÓN TÓXICO:</strong> $10,980,000 solicitados en "urgencias" sin 1 solo día de planificación previa
+                    </div>
+                </div>
 
-        function calcular() {
-            const arriendo = parseFloat(document.getElementById('arriendo').value) || 0;
-            const gustavo = parseFloat(document.getElementById('gustavo').value) || 0;
-            const nicolas = parseFloat(document.getElementById('nicolas').value) || 0;
-            const servicios = parseFloat(document.getElementById('servicios').value) || 0;
+                <div class="card">
+                    <h4>🤔 Decisiones Contradictorias</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Situación</th><th>Acción Tomada</th><th>Lógica</th><th>Contradicción</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-missing">
+                                <td>Buenos márgenes (61-82%)</td>
+                                <td>Seguir pidiendo dinero</td>
+                                <td class="status-danger">NO TIENE</td>
+                                <td>¿Por qué déficit con rentabilidad alta?</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>"Lo que más sale es bowls"</td>
+                                <td>No analizar por qué déficit</td>
+                                <td class="status-danger">NO TIENE</td>
+                                <td>Juli reconoce éxito pero no explica pérdidas</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Gustavo ahorra 49% servicios</td>
+                                <td>Paula/Juli no replican eficiencia</td>
+                                <td class="status-danger">NO TIENE</td>
+                                <td>Empleado más eficiente que jefes</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td>Experiencia empresarial P/J</td>
+                                <td>Transfieren liderazgo a ingenieros</td>
+                                <td class="status-danger">NO TIENE</td>
+                                <td>Expertos evaden responsabilidad</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-            const totalGastos = arriendo + gustavo + nicolas + servicios;
-            const ventaDiaria = totalGastos / 30;
-
-            document.getElementById('totalGastos').textContent = formatNumber(totalGastos);
-            document.getElementById('ventaDiaria').textContent = formatNumber(ventaDiaria);
-        }
-
-        // Calcular valores iniciales
-        window.onload = function() {
-            calcular();
-        };
-    </script>
-</body>
-</html>
+        <!-- DEUDAS DETALLE -->
+        <div id="deudas" class="tab-content">
+            <div class="section">
+                <h3>💳 Detalle Completo de Deudas</h3>
+                
+                <div class="card">
+                    <h4>📊 Deuda Juan - Cronograma Exacto</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Concepto</th><th>Fecha</th><th>Valor</th><th>Estado</th><th>Días Restantes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-good">
+                                <td>Abono William</td>
+                                <td>29 Jul 2025</td>
+                                <td class="number">$1,000,000</td>
+                                <td class="status-good">✅ Pagado</td>
+                                <td>-</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td><strong>1ª Cuota</strong></td>
+                                <td><strong>15 Ago 2025</strong></td>
+                                <td class="number"><strong>$733,000</strong></td>
+                                <td class="status-warning">⏳ Pendiente</td>
+                                <td class="status-warning">12 días</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td><strong>2ª Cuota</strong></td>
+                                <td><strong>30 Ago 2025</strong></td>
+                                <td class="number"><strong>$733,000</strong></td>
+                                <td class="status-warning">⏳ Pendiente</td>
+                                <td class="status-warning">27 días</td>
+                            </tr>
+                            <tr class="highlight-missing">
+                                <td><strong>3ª Cuota</strong></td>
+                                <td><strong>15 Sep 2025</strong></td>
+                                <td class="number"><strong>$734,000</strong></td>
+                                <td class="status-warning">⏳ Pendiente</td>
+                                <td class="status-warning">43 días</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="summary-box">
+                        <strong>DEUDA TOTAL JUAN:</strong> $3,200,000<br>
+                        <strong>PAGADO:</strong>
