@@ -19,6 +19,7 @@
                 padding: 5px;
             }
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -34,12 +35,14 @@
                 margin: 0 5px;
             }
         }
+
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 30px;
             text-align: center;
         }
+        
         .header h1 {
             margin: 0;
             font-size: 28px;
@@ -58,6 +61,7 @@
                 margin: 5px 0 0 0;
             }
         }
+
         .tabs {
             display: flex;
             background: #f8f9fa;
@@ -65,6 +69,7 @@
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
+        
         .tab {
             flex: 1;
             min-width: 120px;
@@ -78,6 +83,7 @@
             transition: all 0.3s ease;
             white-space: nowrap;
         }
+        
         .tab.active {
             background: white;
             border-bottom: 3px solid #667eea;
@@ -85,19 +91,18 @@
         }
         
         @media (max-width: 768px) {
-            .tabs {
-                -webkit-overflow-scrolling: touch;
-            }
             .tab {
                 min-width: 100px;
                 padding: 12px 8px;
                 font-size: 12px;
             }
         }
+
         .tab-content {
             display: none;
             padding: 30px;
         }
+        
         .tab-content.active {
             display: block;
         }
@@ -107,6 +112,7 @@
                 padding: 15px;
             }
         }
+
         .section {
             margin-bottom: 30px;
             padding: 25px;
@@ -121,6 +127,7 @@
                 padding: 15px;
             }
         }
+
         .section h3 {
             margin: 0 0 20px 0;
             color: #495057;
@@ -129,6 +136,7 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #667eea;
         }
+
         .financial-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -143,6 +151,7 @@
                 margin-bottom: 20px;
             }
         }
+
         .card {
             background: white;
             padding: 25px;
@@ -157,21 +166,25 @@
                 border-left-width: 3px;
             }
         }
+
         .card h4 {
             margin: 0 0 15px 0;
             color: #495057;
             font-size: 16px;
             font-weight: 600;
         }
+
         .input-group {
             margin-bottom: 15px;
         }
+
         .input-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
             color: #495057;
         }
+
         .input-group input {
             width: 100%;
             padding: 10px;
@@ -180,6 +193,7 @@
             font-size: 14px;
             box-sizing: border-box;
         }
+        
         .input-group input:focus {
             outline: none;
             border-color: #667eea;
@@ -188,10 +202,11 @@
         
         @media (max-width: 768px) {
             .input-group input {
-                font-size: 16px; /* Evita zoom en iOS */
+                font-size: 16px;
                 padding: 12px;
             }
         }
+
         .result {
             padding: 15px;
             background: #e7f3ff;
@@ -201,6 +216,7 @@
             font-size: 16px;
             margin-top: 15px;
         }
+
         .alert {
             padding: 15px;
             border-radius: 4px;
@@ -217,21 +233,31 @@
                 margin-top: 12px;
             }
         }
+
         .alert.success {
             background: #d4edda;
             color: #155724;
             border-left: 4px solid #28a745;
         }
+
         .alert.warning {
             background: #fff3cd;
             color: #856404;
             border-left: 4px solid #ffc107;
         }
+
         .alert.danger {
             background: #f8d7da;
             color: #721c24;
             border-left: 4px solid #dc3545;
         }
+
+        .alert.info {
+            background: #e2e3e5;
+            color: #383d41;
+            border-left: 4px solid #6c757d;
+        }
+
         .table {
             width: 100%;
             border-collapse: collapse;
@@ -240,15 +266,8 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            display: block;
-            white-space: nowrap;
         }
-        .table thead, .table tbody {
-            display: table;
-            width: 100%;
-            table-layout: fixed;
-        }
+        
         .table th, .table td {
             padding: 12px 15px;
             text-align: left;
@@ -256,6 +275,7 @@
             white-space: normal;
             word-wrap: break-word;
         }
+        
         .table th {
             background: #667eea;
             color: white;
@@ -263,6 +283,7 @@
             position: sticky;
             top: 0;
         }
+        
         .table tr:hover {
             background: #f8f9fa;
         }
@@ -275,25 +296,12 @@
                 white-space: nowrap;
                 -webkit-overflow-scrolling: touch;
             }
-            .table thead, .table tbody {
-                display: table;
-                width: 100%;
-            }
             .table th, .table td {
                 padding: 8px 6px;
                 min-width: 80px;
             }
-            
-            /* Estilo especial para tablas en móvil */
-            .mobile-table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            .mobile-table .table {
-                min-width: 600px;
-            }
         }
+
         .btn {
             background: #667eea;
             color: white;
@@ -307,6 +315,7 @@
             width: 100%;
             margin-top: 10px;
         }
+        
         .btn:hover {
             background: #5a6fd8;
         }
@@ -315,12 +324,14 @@
             .btn {
                 padding: 12px 20px;
                 font-size: 16px;
-                touch-action: manipulation; /* Mejora la experiencia táctil */
+                touch-action: manipulation;
             }
         }
+
         .status-good { color: #28a745; font-weight: 600; }
         .status-warning { color: #ffc107; font-weight: 600; }
         .status-danger { color: #dc3545; font-weight: 600; }
+        
         .number { 
             font-family: 'Courier New', monospace; 
             font-size: 13px;
@@ -330,24 +341,11 @@
             .number {
                 font-size: 11px;
             }
-        }
-        
-        /* Mejoras para touch */
-        @media (max-width: 768px) {
             * {
                 -webkit-tap-highlight-color: rgba(0,0,0,0.1);
             }
-            
             .tab {
                 -webkit-tap-highlight-color: rgba(102, 126, 234, 0.2);
-            }
-            
-            /* Scroll suave en tablas */
-            .table-container {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                margin: 15px -15px;
-                padding: 0 15px;
             }
         }
     </style>
@@ -356,467 +354,69 @@
     <div class="container">
         <div class="header">
             <h1>📊 Control Financiero Bulkness Café</h1>
-            <p>Sistema de Control para Socios</p>
+            <p>Sistema de Control para Socios - Actualizado 3 Agosto 2025</p>
         </div>
 
         <div class="tabs">
-            <button class="tab active" onclick="showTab('gastos')">💰 Gastos Fijos</button>
-            <button class="tab" onclick="showTab('ventas')">📈 Análisis Ventas</button>
-            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones Socios</button>
-            <button class="tab" onclick="showTab('deudas')">💳 Deudas y Pagos</button>
-            <button class="tab" onclick="showTab('proyeccion')">🎯 Proyección</button>
+            <button class="tab active" onclick="showTab('crisis')">🚨 Crisis Inmediata</button>
             <button class="tab" onclick="showTab('operaciones')">📋 Operaciones</button>
-            <button class="tab" onclick="showTab('alertas')">⚠️ Alertas</button>
+            <button class="tab" onclick="showTab('cronograma')">📅 Cronograma</button>
+            <button class="tab" onclick="showTab('gastos')">💰 Gastos Fijos</button>
+            <button class="tab" onclick="showTab('inversiones')">📊 Inversiones</button>
+            <button class="tab" onclick="showTab('analisis')">🔍 Análisis Gestión</button>
         </div>
 
-        <div id="gastos" class="tab-content active">
-            <div class="financial-grid">
-                <div class="card">
-                    <h4>💸 Gastos Fijos Mensuales</h4>
-                    <div class="input-group">
-                        <label>Arriendo (30% de $8M):</label>
-                        <input type="number" id="arriendo" value="2400000" readonly>
-                    </div>
-                    <div class="input-group">
-                        <label>Nómina Nico (Salario mínimo):</label>
-                        <input type="number" id="nico" value="1300000">
-                    </div>
-                    <div class="input-group">
-                        <label>Nómina Gustavo (Salario mínimo):</label>
-                        <input type="number" id="gustavo" value="1300000">
-                    </div>
-                    <div class="input-group">
-                        <label>Agua:</label>
-                        <input type="number" id="agua" value="300000">
-                    </div>
-                    <div class="input-group">
-                        <label>Luz:</label>
-                        <input type="number" id="luz" value="500000">
-                    </div>
-                    <div class="input-group">
-                        <label>Internet:</label>
-                        <input type="number" id="internet" value="100000">
-                    </div>
-                    <div class="input-group">
-                        <label>Otros gastos (seguros, sistema, etc.):</label>
-                        <input type="number" id="otros" value="500000" placeholder="Seguros, Siigo, etc.">
-                    </div>
-                    <button class="btn" onclick="calcular()">Calcular</button>
-                </div>
-
-                <div class="card">
-                    <h4>📊 Resumen Financiero</h4>
-                    <div class="result">
-                        <strong>Total Gastos Fijos:</strong><br>
-                        <span class="number" id="totalGastos">$6,400,000</span>
-                    </div>
-                    <div class="result">
-                        <strong>Venta Diaria Necesaria:</strong><br>
-                        <span class="number" id="ventaDiaria">$213,333</span>
-                    </div>
-                    <div class="result">
-                        <strong>Venta Mensual Necesaria:</strong><br>
-                        <span class="number" id="ventaMensual">$6,400,000</span>
-                    </div>
-                    <div id="estadoActual" class="alert warning">
-                        <strong>Estado Actual:</strong> Necesitas análisis de ventas
-                    </div>
-                </div>
-            </div>
-
+        <!-- CRISIS INMEDIATA -->
+        <div id="crisis" class="tab-content active">
             <div class="section">
-                <h3>📋 Desglose de Gastos</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Concepto</th>
-                            <th>Valor Mensual</th>
-                            <th>% del Total</th>
-                            <th>Responsable</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaGastos">
-                        <tr><td>Arriendo (30%)</td><td class="number">$2,400,000</td><td>37.5%</td><td>Bulkness</td></tr>
-                        <tr><td>Nómina Nico</td><td class="number">$1,300,000</td><td>20.3%</td><td>Bulkness</td></tr>
-                        <tr><td>Nómina Gustavo</td><td class="number">$1,300,000</td><td>20.3%</td><td>Bulkness</td></tr>
-                        <tr><td>Luz</td><td class="number">$500,000</td><td>7.8%</td><td>Bulkness</td></tr>
-                        <tr><td>Otros gastos</td><td class="number">$500,000</td><td>7.8%</td><td>Bulkness</td></tr>
-                        <tr><td>Agua</td><td class="number">$300,000</td><td>4.7%</td><td>Bulkness</td></tr>
-                        <tr><td>Internet</td><td class="number">$100,000</td><td>1.6%</td><td>Bulkness</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div id="ventas" class="tab-content">
-            <div class="financial-grid">
-                <div class="card">
-                    <h4>📈 Análisis de Ventas</h4>
-                    <div class="input-group">
-                        <label>Venta Diaria Promedio Actual:</label>
-                        <input type="number" id="ventaActual" value="150000" placeholder="Según reportes">
-                    </div>
-                    <div class="input-group">
-                        <label>Días operativos al mes:</label>
-                        <input type="number" id="diasMes" value="30">
-                    </div>
-                    <div class="input-group">
-                        <label>Margen de ganancia estimado (%):</label>
-                        <input type="number" id="margen" value="60" placeholder="60%">
-                    </div>
-                    <button class="btn" onclick="analizarVentas()">Analizar</button>
-                </div>
-
-                <div class="card">
-                    <h4>🎯 Resultados del Análisis</h4>
-                    <div class="result">
-                        <strong>Ventas Mensuales Actuales:</strong><br>
-                        <span class="number" id="ventasActualesMes">$4,500,000</span>
-                    </div>
-                    <div class="result">
-                        <strong>Ganancia Neta Mensual:</strong><br>
-                        <span class="number" id="gananciaNeta">$2,700,000</span>
-                    </div>
-                    <div class="result">
-                        <strong>Balance (Ganancia - Gastos):</strong><br>
-                        <span class="number" id="balance">-$3,700,000</span>
-                    </div>
-                    <div id="recomendacion" class="alert danger">
-                        <strong>⚠️ Déficit mensual de $3,700,000</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h3>📊 Escenarios de Venta</h3>
-                <div class="table-container">
-                    <table class="table" id="tablaEscenarios">
-                        <thead>
-                            <tr>
-                                <th>Venta Diaria</th>
-                                <th>Venta Mensual</th>
-                                <th>Ganancia Neta</th>
-                                <th>Balance</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td class="number">$150,000</td><td class="number">$4,500,000</td><td class="number">$2,700,000</td><td class="number status-danger">-$3,700,000</td><td class="status-danger">Pérdida</td></tr>
-                            <tr><td class="number">$200,000</td><td class="number">$6,000,000</td><td class="number">$3,600,000</td><td class="number status-danger">-$2,800,000</td><td class="status-danger">Pérdida</td></tr>
-                            <tr><td class="number">$250,000</td><td class="number">$7,500,000</td><td class="number">$4,500,000</td><td class="number status-danger">-$1,900,000</td><td class="status-danger">Pérdida</td></tr>
-                            <tr><td class="number">$300,000</td><td class="number">$9,000,000</td><td class="number">$5,400,000</td><td class="number status-danger">-$1,000,000</td><td class="status-danger">Pérdida</td></tr>
-                            <tr><td class="number">$356,000</td><td class="number">$10,680,000</td><td class="number">$6,408,000</td><td class="number status-good">+$8,000</td><td class="status-good">Equilibrio</td></tr>
-                            <tr><td class="number">$400,000</td><td class="number">$12,000,000</td><td class="number">$7,200,000</td><td class="number status-good">+$800,000</td><td class="status-good">Ganancia</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="inversiones" class="tab-content">
-            <div class="section">
-                <h3>📊 Inversión Actual por Socio (Actualizado 30 Jul 2025)</h3>
-                <div class="financial-grid">
-                    <div class="card">
-                        <h4>💰 William Quintero</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Fecha</th><th>Concepto</th><th>Valor</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Inicial</td><td>Inversión base</td><td class="number">$9,000,000</td></tr>
-                                <tr><td>26/06/2025</td><td>Aporte adicional</td><td class="number">$3,200,000</td></tr>
-                                <tr><td>30/07/2025</td><td>Abono deuda Juan</td><td class="number">$1,000,000</td></tr>
-                                <tr><td>30/07/2025</td><td>Sistema Siigo (T.C)</td><td class="number">$780,000</td></tr>
-                                <tr><td>30/07/2025</td><td>Capital trabajo/mercado</td><td class="number">$1,000,000</td></tr>
-                                <tr style="background: #e7f3ff; font-weight: bold;"><td colspan="2"><strong>TOTAL WILLIAM</strong></td><td class="number"><strong>$14,980,000</strong></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>👥 Otros Socios (28 Jul 2025)</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Socio</th><th>Inversión Total</th><th>% Participación</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><strong>William</strong></td><td class="number"><strong>$14,980,000</strong></td><td><strong>29.8%</strong></td></tr>
-                                <tr><td>Daniel</td><td class="number">$12,000,000</td><td>23.9%</td></tr>
-                                <tr><td>Paula</td><td class="number">$11,142,000</td><td>22.2%</td></tr>
-                                <tr><td>Julián</td><td class="number">$11,142,000</td><td>22.2%</td></tr>
-                                <tr style="background: #f8f9fa; font-weight: bold;"><td><strong>TOTAL</strong></td><td class="number"><strong>$49,264,000</strong></td><td><strong>100%</strong></td></tr>
-                            </tbody>
-                        </table>
-                        <div class="alert warning">
-                            <strong>⚠️ Nota:</strong> William es ahora el mayor inversionista con $14.98M
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4>📈 Evolución de Inversión William</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Período</th><th>Inversión Acumulada</th><th>Motivo</th><th>Estado</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Inicial</td><td class="number">$9,000,000</td><td>Inversión base original</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr><td>Jun 2025</td><td class="number">$12,200,000</td><td>Capital adicional + emergencias</td><td class="status-good">✅ Pagado</td></tr>
-                            <tr><td>Jul 2025</td><td class="number">$14,980,000</td><td>Crisis liquidez + sistema + deuda Juan</td><td class="status-warning">💳 T.C</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="deudas" class="tab-content">
-            <div class="section">
-                <h3>💳 Control de Deudas y Pagos Pendientes</h3>
-                <div class="financial-grid">
-                    <div class="card">
-                        <h4>🏦 Deuda Juan (Suplementos)</h4>
-                        <div class="alert warning">
-                            <strong>Deuda Original:</strong> $3,200,000 (capital suplementos)<br>
-                            <strong>Abono William (29 Jul):</strong> $1,000,000<br>
-                            <strong>Saldo Pendiente:</strong> $2,200,000
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Fecha Pago</th><th>Valor Cuota</th><th>Estado</th><th>Días Restantes</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>15 Agosto 2025</td><td class="number">$733,000</td><td class="status-warning">⏳ Pendiente</td><td id="dias1">16 días</td></tr>
-                                <tr><td>30 Agosto 2025</td><td class="number">$733,000</td><td class="status-warning">⏳ Pendiente</td><td id="dias2">31 días</td></tr>
-                                <tr><td>15 Sept 2025</td><td class="number">$734,000</td><td class="status-warning">⏳ Pendiente</td><td id="dias3">47 días</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>💳 Sistema Siigo (Tarjeta William)</h4>
-                        <div class="alert danger">
-                            <strong>Total:</strong> $780,000 - Pagado con T.C William<br>
-                            <strong>Modalidad:</strong> 3 cuotas de $260,000 c/u<br>
-                            <strong>⚠️ Requiere reintegro urgente</strong>
-                        </div>
-                        <div class="input-group">
-                            <label>Fecha facturación T.C:</label>
-                            <input type="date" id="fechaTC" value="2025-07-30">
-                        </div>
-                        <button class="btn" onclick="calcularCuotasTC()">Calcular Vencimientos</button>
-                        <div id="cuotasTC"></div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4>📋 Otras Deudas Pendientes (Mayo 2025)</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Acreedor</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Juan</td><td>Suplementos (ver arriba)</td><td class="number">$2,200,000</td><td class="status-warning">En cuotas</td></tr>
-                            <tr><td>Alejo</td><td>MR Cream</td><td class="number">$75,000</td><td class="status-warning">Pendiente</td></tr>
-                            <tr><td>Jhon tatuador</td><td>Suplementos</td><td class="number">$386,000</td><td class="status-warning">Por recoger</td></tr>
-                            <tr><td>Daniel</td><td>Varios</td><td class="number">$40,000</td><td class="status-warning">Pendiente</td></tr>
-                            <tr><td>Paula</td><td>Gastos varios</td><td class="number">$54,000</td><td class="status-warning">Pendiente</td></tr>
-                            <tr><td>Julián</td><td>Gastos varios</td><td class="number">$25,000</td><td class="status-warning">Pendiente</td></tr>
-                        </tbody>
-                    </table>
-                    <div class="result">
-                        <strong>Total Deudas Menores:</strong> $580,000
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="section">
-                <h3>🎯 Metas para Alcanzar Equilibrio</h3>
-                <div class="financial-grid">
-                    <div class="card">
-                        <h4>📋 Plan de Acción</h4>
-                        <div class="alert warning">
-                            <strong>Meta Crítica:</strong><br>
-                            Alcanzar <strong>$356,000 diarios</strong> para equilibrio
-                        </div>
-                        <div class="alert success">
-                            <strong>Meta Ideal:</strong><br>
-                            Alcanzar <strong>$400,000 diarios</strong> para rentabilidad
-                        </div>
-                        <p><strong>Estrategias sugeridas:</strong></p>
-                        <ul>
-                            <li>Implementar delivery (Rappi, Uber Eats)</li>
-                            <li>Planes de entrenamiento con Nico</li>
-                            <li>Alianza con Dharma Gym</li>
-                            <li>Marketing digital y pauta</li>
-                            <li>Eventos y brunches regulares</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>⏰ Cronograma de Metas</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Mes</th><th>Meta Diaria</th><th>Estrategia</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Mes 1</td><td class="number">$200,000</td><td>Optimizar operación actual</td></tr>
-                                <tr><td>Mes 2</td><td class="number">$280,000</td><td>Delivery + Marketing</td></tr>
-                                <tr><td>Mes 3</td><td class="number">$356,000</td><td>Equilibrio financiero</td></tr>
-                                <tr><td>Mes 4+</td><td class="number">$400,000+</td><td>Crecimiento sostenible</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="operaciones" class="tab-content">
-            <div class="section">
-                <h3>📊 Control Operativo Diario - Gustavo Ordóñez</h3>
-                <div class="alert success">
-                    <strong>✅ Responsable Operativo:</strong> Gustavo - Capacitación Siigo en proceso | Línea telefónica colombiana configurada
-                </div>
-                
-                <div class="card">
-                    <h4>🛒 Detalle de Compras 31 Julio 2025</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Hora</th><th>Proveedor/Concepto</th><th>Productos</th><th>Valor</th><th>Factura</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Mañana</td><td>Proveedor mayorista</td><td>Insumos varios</td><td class="number">$12,340</td><td>✅ Recibida</td></tr>
-                            <tr><td>Mañana</td><td>Frutería central</td><td>Frutas frescas (carta)</td><td class="number">$91,350</td><td>✅ Recibida</td></tr>
-                            <tr><td>Mediodía</td><td>Distribuidor toppings</td><td>Toppings + refrigerador</td><td class="number">$393,910</td><td>✅ Recibida</td></tr>
-                            <tr><td>Tarde</td><td>Panadería local</td><td>Pan y productos panadería</td><td class="number">$19,600</td><td>✅ Recibida</td></tr>
-                            <tr><td>Tarde</td><td>Postobón</td><td>Bebidas y refrescos</td><td class="number">$111,500</td><td>✅ Pagada</td></tr>
-                            <tr style="background: #f8f9fa; font-weight: bold;">
-                                <td colspan="3"><strong>TOTAL GASTADO 31 JULIO</strong></td>
-                                <td class="number"><strong>$628,700</strong></td>
-                                <td class="status-good"><strong>Completo</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <div class="financial-grid" style="margin-top: 20px;">
-                        <div class="result">
-                            <strong>💰 Control Capital Trabajo:</strong><br>
-                            • William envió: <span class="number">$1,000,000</span><br>
-                            • Gastado 31 jul: <span class="number">$628,700</span><br>
-                            • Disponible: <span class="number">$371,300</span>
-                        </div>
-                        <div class="alert warning">
-                            <strong>📋 Pendiente completar:</strong><br>
-                            Productos faltantes para carta completa<br>
-                            <strong>Estimado necesario:</strong> $200-300k adicionales
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="financial-grid">
-                    <div class="card">
-                        <h4>🥤 Análisis Inventario Mr Creamy</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Detalle</th><th>Cantidad</th><th>Valor Unit.</th><th>Total</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Stock actual</td><td>30 envases</td><td class="number">$33,000</td><td class="number">$990,000</td></tr>
-                                <tr><td>Precio venta</td><td>30 envases</td><td class="number">$60,000</td><td class="number">$1,800,000</td></tr>
-                                <tr><td>Margen ganancia</td><td>-</td><td>82%</td><td class="number status-good">$810,000</td></tr>
-                            </tbody>
-                        </table>
-                        <div class="alert info" style="background: #e2e3e5; color: #383d41; border-left-color: #6c757d;">
-                            <strong>📊 Rotación:</strong> "Excelente rotación" - Gustavo<br>
-                            <strong>⚠️ Pendiente:</strong> Fecha pago factura proveedor
-                        </div>
-                        <div class="alert success">
-                            <strong>💡 Uso dual:</strong> Venta directa + ingrediente para carta (bowls, cremas arroz)
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>💊 Inventario Suplementos (Juan)</h4>
-                        <div class="result">
-                            <strong>📦 Stock en consignación:</strong><br>
-                            <span class="number">$1,705,000</span>
-                        </div>
-                        <div class="alert warning">
-                            <strong>📋 Pendiente mañana:</strong><br>
-                            • Desglose detallado por producto<br>
-                            • Cálculo de márgenes individuales<br>
-                            • Reporte de rotación por ítem
-                        </div>
-                        <div class="alert info" style="background: #e2e3e5; color: #383d41; border-left-color: #6c757d;">
-                            <strong>💰 Valor total inventario:</strong><br>
-                            Mr Creamy ($990k) + Juan ($1.7M) = <strong>$2,695,000</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="cronograma" class="tab-content">
-            <div class="section">
-                <h3>📅 Cronograma Crítico de Pagos - Próximos 30 Días</h3>
+                <h3>🚨 CRISIS INMEDIATA - Próximos 3 Días</h3>
                 
                 <div class="alert danger">
-                    <strong>🚨 EMERGENCIA FINANCIERA:</strong><br>
-                    <strong>$5,250,000 requeridos en los próximos 15 días para evitar colapso operativo</strong>
+                    <strong>⏰ EMERGENCIA TOTAL:</strong><br>
+                    <strong>$4,858,000 requeridos en 72 horas para evitar colapso</strong><br>
+                    Sin estos pagos = Cierre definitivo de Bulkness
                 </div>
                 
                 <div class="card">
-                    <h4>📊 Desglose Cronológico Agosto 2025</h4>
+                    <h4>💰 Pagos Críticos Inmediatos</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Fecha Límite</th><th>Concepto</th><th>Beneficiario</th><th>Valor</th><th>Criticidad</th><th>Consecuencia</th></tr>
+                            <tr>
+                                <th>Vencimiento</th>
+                                <th>Concepto</th>
+                                <th>Valor</th>
+                                <th>Consecuencia</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr style="background: #f8d7da;">
-                                <td><strong>1-2 Ago</strong></td>
-                                <td>Nómina Gustavo (pendiente)</td>
-                                <td>Gustavo Ordóñez</td>
+                                <td><strong>HOY (3 Ago)</strong></td>
+                                <td>Nómina Gustavo (18 días atraso)</td>
                                 <td class="number">$1,072,000</td>
-                                <td class="status-danger">MÁXIMA</td>
-                                <td>Renuncia operador clave</td>
+                                <td class="status-danger">Renuncia + Cierre operativo</td>
                             </tr>
-                            <tr style="background: #f8d7da;">
-                                <td><strong>1-2 Ago</strong></td>
+                            <tr style="background: #fff3cd;">
+                                <td><strong>4 Ago</strong></td>
                                 <td>Nómina Nicolás (pendiente)</td>
-                                <td>Nicolás</td>
-                                <td class="number">$265,000</td>
-                                <td class="status-danger">MÁXIMA</td>
-                                <td>Pérdida empleado</td>
+                                <td class="number">$893,000</td>
+                                <td class="status-warning">Pérdida barista/entrenador</td>
                             </tr>
                             <tr style="background: #f8d7da;">
                                 <td><strong>5 Ago</strong></td>
                                 <td>Arriendo agosto</td>
-                                <td>Propietario local</td>
                                 <td class="number">$2,400,000</td>
-                                <td class="status-danger">MÁXIMA</td>
-                                <td>Desalojo inmediato</td>
+                                <td class="status-danger">Desalojo + Pérdida total $50M</td>
                             </tr>
                             <tr style="background: #fff3cd;">
-                                <td><strong>7-10 Ago</strong></td>
+                                <td><strong>7 Ago</strong></td>
                                 <td>Reintegro T.C William</td>
-                                <td>William (personal)</td>
                                 <td class="number">$780,000</td>
-                                <td class="status-warning">ALTA</td>
-                                <td>Intereses acumulativos</td>
+                                <td class="status-warning">Intereses crecientes</td>
                             </tr>
-                            <tr style="background: #fff3cd;">
-                                <td><strong>15 Ago</strong></td>
-                                <td>1ª Cuota deuda Juan</td>
-                                <td>Juan (suplementos)</td>
-                                <td class="number">$733,000</td>
-                                <td class="status-warning">ALTA</td>
-                                <td>Pérdida credibilidad</td>
-                            </tr>
-                            <tr style="background: #e2e3e5;">
-                                <td colspan="3"><strong>TOTAL CRÍTICO (15 días)</strong></td>
-                                <td class="number"><strong>$5,250,000</strong></td>
-                                <td class="status-danger"><strong>COLAPSO</strong></td>
-                                <td><strong>Cierre forzoso</strong></td>
+                            <tr style="background: #e2e3e5; font-weight: bold;">
+                                <td colspan="2"><strong>TOTAL CRÍTICO</strong></td>
+                                <td class="number"><strong>$5,145,000</strong></td>
+                                <td class="status-danger"><strong>COLAPSO TOTAL</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -824,310 +424,234 @@
                 
                 <div class="financial-grid">
                     <div class="card">
-                        <h4>📅 Vista Semanal - Agosto</h4>
+                        <h4>💸 Recursos Disponibles</h4>
                         <table class="table">
                             <thead>
-                                <tr><th>Semana</th><th>Pagos Obligatorios</th><th>Acumulado</th><th>Impacto</th></tr>
+                                <tr><th>Fuente</th><th>Valor</th><th>Disponibilidad</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1-7 Ago</td><td class="number">$4,517,000</td><td class="number">$4,517,000</td><td class="status-danger">Crítico</td></tr>
-                                <tr><td>8-15 Ago</td><td class="number">$733,000</td><td class="number">$5,250,000</td><td class="status-danger">Colapso</td></tr>
-                                <tr><td>16-23 Ago</td><td class="number">$500,000*</td><td class="number">$5,750,000</td><td class="status-warning">Operativo</td></tr>
-                                <tr><td>24-31 Ago</td><td class="number">$1,800,000*</td><td class="number">$7,550,000</td><td class="status-warning">Nóminas</td></tr>
+                                <tr><td>Capital trabajo (Gustavo)</td><td class="number">$262,500</td><td class="status-good">Inmediata</td></tr>
+                                <tr><td>Ventas 3 días (estimado)</td><td class="number">$450,000</td><td class="status-warning">Proyectado</td></tr>
+                                <tr><td>Mr Creamy (si se vende todo)</td><td class="number">$810,000</td><td class="status-warning">7-15 días</td></tr>
+                                <tr style="background: #f8f9fa; font-weight: bold;">
+                                    <td><strong>TOTAL MÁXIMO</strong></td>
+                                    <td class="number"><strong>$1,522,500</strong></td>
+                                    <td class="status-danger"><strong>30% de necesidad</strong></td>
+                                </tr>
                             </tbody>
                         </table>
-                        <p style="font-size: 12px; color: #6c757d;">*Estimado operación normal + nóminas agosto</p>
                     </div>
                     
                     <div class="card">
-                        <h4>⚠️ Recursos Disponibles vs Necesidades</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Fuente</th><th>Disponible</th><th>Estado</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Capital trabajo restante</td><td class="number">$371,300</td><td class="status-good">Disponible</td></tr>
-                                <tr><td>Inventario Mr Creamy</td><td class="number">$810,000*</td><td class="status-warning">Si se vende</td></tr>
-                                <tr><td>Ventas diarias estimadas</td><td class="number">$2,250,000*</td><td class="status-warning">15 días</td></tr>
-                                <tr style="background: #f8f9fa;"><td><strong>TOTAL POSIBLE</strong></td><td class="number"><strong>$3,431,300</strong></td><td class="status-danger"><strong>Insuficiente</strong></td></tr>
-                            </tbody>
-                        </table>
-                        <div class="alert danger">
-                            <strong>💰 DÉFICIT CRÍTICO:</strong><br>
-                            Necesario: $5,250,000<br>
-                            Disponible: $3,431,300<br>
-                            <strong>FALTANTE: $1,818,700</strong>
+                        <h4>📊 Déficit Crítico</h4>
+                        <div class="result">
+                            <strong>Necesario:</strong> $5,145,000<br>
+                            <strong>Disponible:</strong> $1,522,500<br>
                         </div>
-                        <p style="font-size: 12px; color: #6c757d;">*Proyecciones optimistas</p>
+                        <div class="alert danger">
+                            <strong>FALTANTE: $3,622,500 (70%)</strong><br>
+                            Sin aporte inmediato socios = CIERRE SEGURO
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- OPERACIONES -->
+        <div id="operaciones" class="tab-content">
             <div class="section">
-                <h3>🏠 Servicios y Próximos Pagos Fijos</h3>
+                <h3>📋 Análisis Operativo - Gustavo Ordóñez</h3>
+                
                 <div class="card">
-                    <h4>✅ Servicios Julio 2025 - PAGADOS (Gestión Gustavo)</h4>
+                    <h4>🍽️ Márgenes por Producto (Análisis Gustavo)</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Servicio</th><th>Valor Real</th><th>Presupuestado</th><th>Ahorro</th><th>% Eficiencia</th><th>Fecha Pago</th></tr>
+                            <tr><th>Producto</th><th>Costo</th><th>Precio</th><th>Ganancia</th><th>Margen %</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>⚡ Energía eléctrica</td><td class="number">$300,000</td><td class="number">$500,000</td><td class="number status-good">$200,000</td><td class="status-good">40%</td><td>Jul 25</td></tr>
-                            <tr><td>💧 Acueducto y alcantarillado</td><td class="number">$120,000</td><td class="number">$300,000</td><td class="number status-good">$180,000</td><td class="status-good">60%</td><td>Jul 20</td></tr>
-                            <tr><td>🌐 Internet banda ancha</td><td class="number">$36,000</td><td class="number">$100,000</td><td class="number status-good">$64,000</td><td class="status-good">64%</td><td>Jul 15</td></tr>
-                            <tr style="background: #d4edda; font-weight: bold;">
-                                <td><strong>TOTAL JULIO</strong></td>
-                                <td class="number"><strong>$456,000</strong></td>
-                                <td class="number">$900,000</td>
-                                <td class="number status-good"><strong>$444,000</strong></td>
-                                <td class="status-good"><strong>49%</strong></td>
-                                <td><strong>Pagado</strong></td>
+                            <tr style="background: #d4edda;">
+                                <td><strong>Bowl Cut</strong></td>
+                                <td class="number">$7,401</td>
+                                <td class="number">$20,900</td>
+                                <td class="number">$13,499</td>
+                                <td class="status-good"><strong>65%</strong></td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td><strong>Bowl Maingaining</strong></td>
+                                <td class="number">$8,119</td>
+                                <td class="number">$20,900</td>
+                                <td class="number">$12,781</td>
+                                <td class="status-good"><strong>61%</strong></td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td><strong>Mr Creamy</strong></td>
+                                <td class="number">$33,000</td>
+                                <td class="number">$60,000</td>
+                                <td class="number">$27,000</td>
+                                <td class="status-good"><strong>82%</strong></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="alert success">
-                        <strong>🎉 GESTIÓN EXCEPCIONAL:</strong> Gustavo logró $444,000 de ahorro (49% menos que presupuesto) - Eficiencia operativa destacada
+                        <strong>✅ PRODUCTOS RENTABLES:</strong> Márgenes excelentes 61-82%
                     </div>
                 </div>
+
+                <div class="card">
+                    <h4>📦 Stock Actual</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Producto</th><th>Inversión</th><th>Venta Potencial</th><th>Estado</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mr Creamy (30 envases)</td><td class="number">$990,000</td><td class="number">$1,800,000</td><td class="status-good">Rotación excelente</td></tr>
+                            <tr><td>Suplementos Juan</td><td class="number">$1,705,000</td><td class="number">Variable</td><td class="status-warning">Consignación</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h4>🛒 Control de Compras (31 Jul - 2 Ago)</h4>
+                    <div class="result">
+                        <strong>Capital enviado William:</strong> $1,000,000<br>
+                        <strong>Gastado total:</strong> $737,500<br>
+                        <strong>Saldo actual:</strong> $262,500
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRONOGRAMA -->
+        <div id="cronograma" class="tab-content">
+            <div class="section">
+                <h3>📅 Cronograma de Pagos Agosto</h3>
+                
+                <div class="card">
+                    <h4>📊 Calendario Completo</h4>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f8d7da;"><td>3 Ago</td><td>Nómina Gustavo</td><td class="number">$1,072,000</td><td class="status-danger">Crítico</td></tr>
+                            <tr style="background: #fff3cd;"><td>4 Ago</td><td>Nómina Nicolás</td><td class="number">$893,000</td><td class="status-warning">Urgente</td></tr>
+                            <tr style="background: #f8d7da;"><td>5 Ago</td><td>Arriendo</td><td class="number">$2,400,000</td><td class="status-danger">Crítico</td></tr>
+                            <tr style="background: #fff3cd;"><td>7 Ago</td><td>T.C William</td><td class="number">$780,000</td><td class="status-warning">Urgente</td></tr>
+                            <tr><td>15 Ago</td><td>Cuota Juan</td><td class="number">$733,000</td><td class="status-warning">Programado</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- GASTOS FIJOS -->
+        <div id="gastos" class="tab-content">
+            <div class="section">
+                <h3>💰 Estructura de Gastos Fijos</h3>
                 
                 <div class="financial-grid">
                     <div class="card">
-                        <h4>📅 Pagos Fijos Próximos</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Concepto</th><th>Fecha Límite</th><th>Valor</th><th>Días Restantes</th><th>Criticidad</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background: #f8d7da;">
-                                    <td><strong>🏠 Arriendo Agosto</strong></td>
-                                    <td><strong>5 Agosto 2025</strong></td>
-                                    <td class="number"><strong>$2,400,000</strong></td>
-                                    <td class="status-danger"><strong>5 días</strong></td>
-                                    <td class="status-danger">MÁXIMA</td>
-                                </tr>
-                                <tr><td>⚡ Servicios Agosto</td><td>25 Agosto 2025</td><td class="number">~$456,000</td><td>25 días</td><td class="status-good">Baja</td></tr>
-                                <tr><td>🏠 Arriendo Septiembre</td><td>5 Sept 2025</td><td class="number">$2,400,000</td><td>36 días</td><td class="status-warning">Media</td></tr>
-                            </tbody>
-                        </table>
+                        <h4>📊 Gastos Mensuales</h4>
+                        <div class="input-group">
+                            <label>Arriendo (30% de $8M):</label>
+                            <input type="number" id="arriendo" value="2400000" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Nómina Gustavo:</label>
+                            <input type="number" id="gustavo" value="1622000">
+                        </div>
+                        <div class="input-group">
+                            <label>Nómina Nicolás:</label>
+                            <input type="number" id="nicolas" value="1622000">
+                        </div>
+                        <div class="input-group">
+                            <label>Servicios (luz, agua, internet):</label>
+                            <input type="number" id="servicios" value="456000">
+                        </div>
+                        <button class="btn" onclick="calcular()">Calcular</button>
                     </div>
                     
                     <div class="card">
-                        <h4>🏠 Desglose Arriendo Total</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Concepto</th><th>Valor Total</th><th>% Bulkness</th><th>Valor Bulkness</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Arriendo local completo</td><td class="number">$8,000,000</td><td>30%</td><td class="number">$2,400,000</td></tr>
-                                <tr><td>Bestial Ink (Paula/Julián)</td><td class="number">$8,000,000</td><td>70%</td><td class="number">$5,600,000</td></tr>
-                            </tbody>
-                        </table>
-                        <div class="alert warning">
-                            <strong>⚠️ CONSECUENCIA NO PAGO:</strong><br>
-                            Desalojo afecta tanto Bulkness como Bestial Ink.<br>
-                            <strong>Pérdida total de las 2 inversiones.</strong>
+                        <h4>📈 Resultados</h4>
+                        <div class="result">
+                            <strong>Total Gastos Mensuales:</strong><br>
+                            <span id="totalGastos">$6,100,000</span>
+                        </div>
+                        <div class="result">
+                            <strong>Venta Diaria Necesaria:</strong><br>
+                            <span id="ventaDiaria">$203,333</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- INVERSIONES -->
+        <div id="inversiones" class="tab-content">
             <div class="section">
-                <h3>🚨 Análisis de Crisis: ¿Cómo Llegamos Aquí?</h3>
-                
-                <div class="alert danger">
-                    <strong>📊 RESUMEN EJECUTIVO:</strong><br>
-                    Bulkness requiere $5.25M en 15 días para sobrevivir. La crisis es resultado de déficit operativo estructural, decisiones no coordinadas y dependencia excesiva de aportes de William.
-                </div>
+                <h3>📊 Inversiones por Socio</h3>
                 
                 <div class="card">
-                    <h4>🔍 Causas Raíz de la Crisis</h4>
+                    <h4>💰 Estado Actual</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Causa Principal</th><th>Impacto Financiero</th><th>Período</th><th>Responsabilidad</th></tr>
+                            <tr><th>Socio</th><th>Inversión Total</th><th>% Participación</th><th>Carga Crisis</th></tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>1. Déficit Operativo Estructural</strong></td>
-                                <td class="number status-danger">-$3,700,000/mes</td>
-                                <td>Jun-Jul 2025</td>
-                                <td>Modelo de negocio</td>
-                            </tr>
-                            <tr>
-                                <td><strong>2. Ventas Insuficientes vs Gastos</strong></td>
-                                <td class="number">$150k vs $356k diarios</td>
-                                <td>Continuo</td>
-                                <td>Estrategia comercial</td>
-                            </tr>
-                            <tr>
-                                <td><strong>3. Decisiones Sin Consenso</strong></td>
-                                <td class="number">$2,000,000+</td>
-                                <td>Mayo-Jul 2025</td>
-                                <td>Falta governance</td>
-                            </tr>
-                            <tr>
-                                <td><strong>4. Dependencia de William</strong></td>
-                                <td class="number">$5,980,000</td>
-                                <td>60 días</td>
-                                <td>Desequilibrio socios</td>
-                            </tr>
-                            <tr>
-                                <td><strong>5. Falta Control Financiero</strong></td>
-                                <td class="number">$1,500,000+</td>
-                                <td>Jun-Jul 2025</td>
-                                <td>Sistemas internos</td>
-                            </tr>
+                            <tr style="background: #f8d7da;"><td><strong>William</strong></td><td class="number">$14,980,000</td><td>29.8%</td><td class="status-danger">85%</td></tr>
+                            <tr><td>Daniel</td><td class="number">$12,000,000</td><td>23.9%</td><td class="status-warning">13%</td></tr>
+                            <tr><td>Paula</td><td class="number">$11,142,000</td><td>22.2%</td><td class="status-good">1%</td></tr>
+                            <tr><td>Julián</td><td class="number">$11,142,000</td><td>22.2%</td><td class="status-good">1%</td></tr>
                         </tbody>
                     </table>
-                </div>
-                
-                <div class="financial-grid">
-                    <div class="card">
-                        <h4>📈 Cronología de la Crisis</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Período</th><th>Evento Crítico</th><th>Impacto</th><th>Respuesta</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><strong>Mayo 2025</strong></td><td>Pérdida $6M cocina + apertura</td><td class="number status-danger">-$6,000,000</td><td>Daniel crédito $3M</td></tr>
-                                <tr><td><strong>Jun 1-15</strong></td><td>Déficit operativo evidente</td><td class="number status-danger">-$1,850,000</td><td>Aportes Paula/Julián</td></tr>
-                                <tr><td><strong>Jun 15-30</strong></td><td>Gastos sin control</td><td class="number status-danger">-$2,000,000</td><td>William $3.2M</td></tr>
-                                <tr><td><strong>Jul 1-15</strong></td><td>Nóminas + operación</td><td class="number status-danger">-$1,850,000</td><td>Diferir pagos</td></tr>
-                                <tr><td><strong>Jul 30</strong></td><td>Crisis liquidez total</td><td class="number status-danger">-$2,780,000</td><td>William T.C + efectivo</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>💡 Análisis de Decisiones Críticas</h4>
-                        <div class="alert warning">
-                            <strong>🔸 Mr Creamy ($1.5M):</strong><br>
-                            • Decisión unilateral sin consenso socios<br>
-                            • No se consultó capacidad pago<br>
-                            • Aunque rentable (82%), creó deuda externa<br>
-                            • Patrón de decisiones no coordinadas
-                        </div>
-                        <div class="alert warning">
-                            <strong>🔸 Sistema Siigo ($780k):</strong><br>
-                            • Necesario pero mal momento<br>
-                            • Pagado con T.C personal William<br>
-                            • Crea obligación reintegro urgente<br>
-                            • Correcta la decisión, incorrecta la forma
-                        </div>
-                        <div class="alert warning">
-                            <strong>🔸 Déficit Operativo Ignorado:</strong><br>
-                            • $3.7M mensuales pérdida conocida<br>
-                            • No se tomaron medidas correctivas<br>
-                            • Dependencia de aportes eternos<br>
-                            • Modelo insostenible desde inicio
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4>🎯 Puntos de Quiebre Identificados</h4>
-                    <div class="financial-grid">
-                        <div class="alert danger">
-                            <strong>📍 PUNTO 1 - Mayo 2025:</strong><br>
-                            Pérdida $6M cocina debió triggear reevaluación total del proyecto y búsqueda de capital adicional planificado, no emergencial.
-                        </div>
-                        <div class="alert danger">
-                            <strong>📍 PUNTO 2 - Junio 2025:</strong><br>
-                            Primer déficit $1.85M debió activar plan de contingencia y límites de gasto estrictos, no más inversiones.
-                        </div>
-                        <div class="alert danger">
-                            <strong>📍 PUNTO 3 - Julio 2025:</strong><br>
-                            Nóminas impagadas debieron generar decisión: inyección capital planificada o cierre ordenado, no improvisación.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h4>📊 Impacto por Socio en la Crisis</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Socio</th><th>Inversión Original</th><th>Aportes Crisis</th><th>Total</th><th>% Carga Crisis</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><strong>William</strong></td><td class="number">$9,000,000</td><td class="number status-danger">$5,980,000</td><td class="number">$14,980,000</td><td class="status-danger"><strong>85%</strong></td></tr>
-                            <tr><td>Daniel</td><td class="number">$9,000,000</td><td class="number">$3,000,000</td><td class="number">$12,000,000</td><td class="status-warning">13%</td></tr>
-                            <tr><td>Paula</td><td class="number">$9,235,000</td><td class="number">$1,907,000</td><td class="number">$11,142,000</td><td class="status-good">1%</td></tr>
-                            <tr><td>Julián</td><td class="number">$9,235,000</td><td class="number">$1,907,000</td><td class="number">$11,142,000</td><td class="status-good">1%</td></tr>
-                        </tbody>
-                    </table>
-                    <div class="alert danger">
-                        <strong>⚠️ CONCLUSIÓN:</strong> William ha cargado con el 85% de los costos de la crisis ($5.98M de $7M total), creando desequilibrio insostenible en la sociedad.
-                    </div>
-                </div>
-            </div>
-        </div>da;"><td><strong>TOTAL NICOLÁS</strong></td><td class="number"><strong>$265,000</strong></td><td class="status-danger"><strong>Pendiente</strong></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <div class="alert danger">
-                    <strong>🚨 TOTAL NÓMINAS PENDIENTES: $1,337,000</strong><br>
-                    Gustavo: $1,072,000 | Nicolás: $265,000
-                </div>
-            </div>
-            
-            <div class="section">
-                <h3>🏠 Servicios y Pagos Fijos</h3>
-                <div class="card">
-                    <h4>✅ Servicios Julio - PAGADOS</h4>
-                    <table class="table">
-                        <thead>
-                            <tr><th>Servicio</th><th>Valor Pagado</th><th>Presupuestado</th><th>Diferencia</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Luz</td><td class="number">$300,000</td><td class="number">$500,000</td><td class="number status-good">-$200,000</td></tr>
-                            <tr><td>Agua</td><td class="number">$120,000</td><td class="number">$300,000</td><td class="number status-good">-$180,000</td></tr>
-                            <tr><td>Internet</td><td class="number">$36,000</td><td class="number">$100,000</td><td class="number status-good">-$64,000</td></tr>
-                            <tr style="background: #d4edda;"><td><strong>TOTAL</strong></td><td class="number"><strong>$456,000</strong></td><td class="number">$900,000</td><td class="number status-good"><strong>-$444,000</strong></td></tr>
-                        </tbody>
-                    </table>
-                    <div class="alert success">
-                        <strong>✅ Ahorro en servicios:</strong> $444,000 vs presupuesto
-                    </div>
-                </div>
-                
-                <div class="alert warning">
-                    <strong>📅 Próximo pago:</strong> Arriendo 5 Agosto - $2,400,000
                 </div>
             </div>
         </div>
+
+        <!-- ANÁLISIS GESTIÓN -->
+        <div id="analisis" class="tab-content">
             <div class="section">
-                <h3>⚠️ Sistema de Alertas</h3>
-                <div id="alertasContainer">
-                    <div class="alert danger">
-                        <strong>🚨 CRÍTICO:</strong> Déficit operativo de $3.7M mensuales - Requiere acción inmediata
-                    </div>
-                    <div class="alert warning">
-                        <strong>⚠️ ADVERTENCIA:</strong> Ventas actuales cubren solo 42% de gastos fijos
-                    </div>
-                    <div class="alert warning">
-                        <strong>📊 CONTROL:</strong> Se requiere aumentar ventas 137% para alcanzar equilibrio
-                    </div>
-                    <div class="alert success">
-                        <strong>✅ POSITIVO:</strong> Estructura de costos definida y controlable
-                    </div>
+                <h3>🔍 Análisis de Gestión: El Problema Real</h3>
+                
+                <div class="alert danger">
+                    <strong>🎯 PROBLEMA CENTRAL:</strong><br>
+                    Paula/Julián (empresarios + operadores diarios) han transferido liderazgo financiero a William/Daniel (ingenieros + ingresos mensuales fijos)
                 </div>
                 
                 <div class="card">
-                    <h4>📈 Indicadores Clave (KPIs)</h4>
+                    <h4>🤔 La Contradicción Fundamental</h4>
+                    <div class="alert warning">
+                        <strong>DATOS CONFIRMADOS:</strong><br>
+                        • Bowls: 61-65% margen<br>
+                        • Mr Creamy: 82% margen + "excelente rotación"<br>
+                        • Juli: "Lo que más sale es bowls, batidos, sándwiches y café"<br>
+                        <strong>¿POR QUÉ SIGUEN NECESITANDO APORTES CONSTANTES?</strong>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>📊 Patrón de "Préstamos Urgentes"</h4>
                     <table class="table">
                         <thead>
-                            <tr><th>Indicador</th><th>Valor Actual</th><th>Meta</th><th>Estado</th></tr>
+                            <tr><th>Fecha</th><th>Solicitante</th><th>Pagador</th><th>Valor</th><th>Planificación</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Inversión William</td><td class="number">$14,980,000</td><td class="number">$12,000,000</td><td class="status-danger">Excedida 25%</td></tr>
-                            <tr><td>Venta Diaria</td><td class="number">$150,000</td><td class="number">$356,000</td><td class="status-danger">Crítico</td></tr>
-                            <tr><td>Deuda externa</td><td class="number">$2,980,000</td><td class="number">$0</td><td class="status-danger">Alto riesgo</td></tr>
-                            <tr><td>Balance Mensual</td><td class="number">-$3,700,000</td><td class="number">$0</td><td class="status-danger">Crítico</td></tr>
-                            <tr><td>Días supervivencia</td><td>45 días</td><td>∞</td><td class="status-danger">Emergencia</td></tr>
+                            <tr><td>Mayo 15</td><td>Paula/Julián</td><td>Daniel</td><td class="number">$2,000,000</td><td class="status-danger">CERO</td></tr>
+                            <tr><td>Jun 1</td><td>Paula/Julián</td><td>Daniel</td><td class="number">$3,000,000</td><td class="status-danger">CERO</td></tr>
+                            <tr><td>Jun 26</td><td>Paula/Julián</td><td>William</td><td class="number">$3,200,000</td><td class="status-danger">CERO</td></tr>
+                            <tr><td>Jul 30</td><td>Paula/Julián</td><td>William</td><td class="number">$2,780,000</td><td class="status-danger">CERO</td></tr>
+                            <tr style="background: #f8f9fa; font-weight: bold;">
+                                <td colspan="3"><strong>TOTAL "URGENTE"</strong></td>
+                                <td class="number"><strong>$10,980,000</strong></td>
+                                <td class="status-danger"><strong>SIEMPRE CERO</strong></td>
+                            </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <div class="alert danger">
+                    <strong>💡 CONCLUSIÓN:</strong><br>
+                    No es problema de capital, es problema de <strong>GESTIÓN Y LIDERAZGO</strong>. Paula/Julián evaden responsabilidad financiera pese a experiencia empresarial y control operativo diario.
                 </div>
             </div>
         </div>
@@ -1135,7 +659,7 @@
 
     <script>
         function showTab(tabName) {
-            // Ocultar todos los contenidos de tabs
+            // Ocultar todos los contenidos
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
             
@@ -1160,124 +684,20 @@
 
         function calcular() {
             const arriendo = parseFloat(document.getElementById('arriendo').value) || 0;
-            const nico = parseFloat(document.getElementById('nico').value) || 0;
             const gustavo = parseFloat(document.getElementById('gustavo').value) || 0;
-            const agua = parseFloat(document.getElementById('agua').value) || 0;
-            const luz = parseFloat(document.getElementById('luz').value) || 0;
-            const internet = parseFloat(document.getElementById('internet').value) || 0;
-            const otros = parseFloat(document.getElementById('otros').value) || 0;
+            const nicolas = parseFloat(document.getElementById('nicolas').value) || 0;
+            const servicios = parseFloat(document.getElementById('servicios').value) || 0;
 
-            const totalGastos = arriendo + nico + gustavo + agua + luz + internet + otros;
+            const totalGastos = arriendo + gustavo + nicolas + servicios;
             const ventaDiaria = totalGastos / 30;
-            const ventaMensual = totalGastos;
 
             document.getElementById('totalGastos').textContent = formatNumber(totalGastos);
             document.getElementById('ventaDiaria').textContent = formatNumber(ventaDiaria);
-            document.getElementById('ventaMensual').textContent = formatNumber(ventaMensual);
-
-            // Actualizar tabla de gastos
-            actualizarTablaGastos(arriendo, nico, gustavo, agua, luz, internet, otros, totalGastos);
         }
 
-        function actualizarTablaGastos(arriendo, nico, gustavo, agua, luz, internet, otros, total) {
-            const tbody = document.getElementById('tablaGastos');
-            tbody.innerHTML = `
-                <tr><td>Arriendo (30%)</td><td class="number">${formatNumber(arriendo)}</td><td>${((arriendo/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-                <tr><td>Nómina Nico</td><td class="number">${formatNumber(nico)}</td><td>${((nico/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-                <tr><td>Nómina Gustavo</td><td class="number">${formatNumber(gustavo)}</td><td>${((gustavo/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-                <tr><td>Luz</td><td class="number">${formatNumber(luz)}</td><td>${((luz/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-                <tr><td>Otros gastos</td><td class="number">${formatNumber(otros)}</td><td>${((otros/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-                <tr><td>Agua</td><td class="number">${formatNumber(agua)}</td><td>${((agua/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-                <tr><td>Internet</td><td class="number">${formatNumber(internet)}</td><td>${((internet/total)*100).toFixed(1)}%</td><td>Bulkness</td></tr>
-            `;
-        }
-
-        function analizarVentas() {
-            const ventaActual = parseFloat(document.getElementById('ventaActual').value) || 0;
-            const diasMes = parseFloat(document.getElementById('diasMes').value) || 30;
-            const margen = parseFloat(document.getElementById('margen').value) || 60;
-            
-            const totalGastos = parseFloat(document.getElementById('totalGastos').textContent.replace(/[^\d]/g, '')) || 6400000;
-            
-            const ventasActualesMes = ventaActual * diasMes;
-            const gananciaNeta = ventasActualesMes * (margen / 100);
-            const balance = gananciaNeta - totalGastos;
-
-            document.getElementById('ventasActualesMes').textContent = formatNumber(ventasActualesMes);
-            document.getElementById('gananciaNeta').textContent = formatNumber(gananciaNeta);
-            document.getElementById('balance').textContent = formatNumber(balance);
-
-            const recomendacion = document.getElementById('recomendacion');
-            if (balance > 0) {
-                recomendacion.className = 'alert success';
-                recomendacion.innerHTML = `<strong>✅ Ganancia mensual de ${formatNumber(balance)}</strong>`;
-            } else if (balance > -500000) {
-                recomendacion.className = 'alert warning';
-                recomendacion.innerHTML = `<strong>⚠️ Déficit menor de ${formatNumber(Math.abs(balance))}</strong>`;
-            } else {
-                recomendacion.className = 'alert danger';
-                recomendacion.innerHTML = `<strong>🚨 Déficit crítico de ${formatNumber(Math.abs(balance))}</strong>`;
-            }
-
-            // Actualizar tabla de escenarios
-            actualizarEscenarios(totalGastos, margen, diasMes);
-        }
-
-        function actualizarEscenarios(gastos, margen, dias) {
-            const escenarios = [150000, 200000, 250000, 300000, 356000, 400000];
-            const tbody = document.querySelector('#tablaEscenarios tbody');
-            
-            tbody.innerHTML = escenarios.map(venta => {
-                const ventaMensual = venta * dias;
-                const ganancia = ventaMensual * (margen / 100);
-                const balance = ganancia - gastos;
-                
-                let estado, clase;
-                if (balance > 100000) {
-                    estado = 'Ganancia';
-                    clase = 'status-good';
-                } else if (balance > -100000) {
-                    estado = 'Equilibrio';
-                    clase = 'status-good';
-                } else {
-                    estado = 'Pérdida';
-                    clase = 'status-danger';
-                }
-                
-                return `
-                    <tr>
-                        <td class="number">${formatNumber(venta)}</td>
-                        <td class="number">${formatNumber(ventaMensual)}</td>
-                        <td class="number">${formatNumber(ganancia)}</td>
-                        <td class="number ${clase}">${formatNumber(balance)}</td>
-                        <td class="${clase}">${estado}</td>
-                    </tr>
-                `;
-            }).join('');
-        }
-
-        // Calcular valores iniciales al cargar
+        // Calcular valores iniciales
         window.onload = function() {
             calcular();
-            analizarVentas();
-            calcularCuotasTC();
-            
-            // Actualizar contadores de días para deuda Juan
-            const hoy = new Date();
-            const fechas = [
-                new Date('2025-08-15'),
-                new Date('2025-08-30'), 
-                new Date('2025-09-15')
-            ];
-            
-            fechas.forEach((fecha, index) => {
-                const dias = Math.ceil((fecha - hoy) / (1000 * 60 * 60 * 24));
-                const elemento = document.getElementById(`dias${index + 1}`);
-                if (elemento) {
-                    elemento.textContent = `${dias} días`;
-                    elemento.className = dias < 15 ? 'status-danger' : dias < 30 ? 'status-warning' : '';
-                }
-            });
         };
     </script>
 </body>
