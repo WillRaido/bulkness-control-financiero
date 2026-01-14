@@ -3,906 +3,1131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Financiero Bulkness Café</title>
+    <title>Bulkness Café | Oportunidad de Sociedad - Café & Nutrición Deportiva</title>
+    <meta name="description" content="Buscamos socio operativo para café especializado en nutrición deportiva. Negocio establecido, productos de alto margen, excelente ubicación.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --bg-card-light: #242424;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+            --text-muted: #666666;
+            --accent-lime: #c4f135;
+            --accent-lime-dark: #a5cc2d;
+            --accent-orange: #ff6b35;
+            --accent-blue: #35a7ff;
+            --gradient-lime: linear-gradient(135deg, #c4f135 0%, #8bc34a 100%);
+            --gradient-dark: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-white);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Utility */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            min-height: 100vh;
+            padding: 0 24px;
         }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 28px;
+            letter-spacing: 2px;
+            color: var(--text-white);
+        }
+
+        .logo span { color: var(--accent-lime); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent-lime); }
+
+        .btn-contact {
+            background: var(--accent-lime);
+            color: var(--bg-dark);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(196, 241, 53, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(53, 167, 255, 0.05) 0%, transparent 50%),
+                var(--bg-dark);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(196, 241, 53, 0.1);
+            border: 1px solid rgba(196, 241, 53, 0.3);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-lime);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-lime);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 72px;
+            line-height: 0.95;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent-lime);
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 48px;
+            color: var(--accent-lime);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-lime);
+        }
+
+        .hero-card-title {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .hero-card-products {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: var(--bg-card-light);
+            border-radius: 10px;
+        }
+
+        .product-info h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .product-info span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .product-margin {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--accent-lime);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            color: var(--accent-lime);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 48px;
+            letter-spacing: 1px;
+        }
+
+        /* Concepto Section */
+        .concepto {
+            background: var(--bg-card);
+        }
+
+        .concepto-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .concepto-card {
+            background: var(--bg-dark);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .concepto-card:hover {
+            border-color: var(--accent-lime);
+            transform: translateY(-8px);
+        }
+
+        .concepto-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .concepto-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .concepto-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Financieros Section */
+        .financieros {
+            background: var(--bg-dark);
+        }
+
+        .finance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .finance-card {
+            background: var(--bg-card);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .finance-card h3 {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chart-container {
+            height: 280px;
+            position: relative;
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .metric-box {
+            background: var(--bg-card);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 24px;
             text-align: center;
         }
 
-        .header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .metric-box-value {
+            font-family: var(--font-display);
+            font-size: 36px;
+            color: var(--accent-lime);
+            margin-bottom: 8px;
         }
 
-        .header p {
-            opacity: 0.9;
+        .metric-box-label {
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        .nav-tabs {
-            display: flex;
-            background: #f8f9fa;
-            border-bottom: 2px solid #dee2e6;
-            overflow-x: auto;
+        /* Productos Section */
+        .productos {
+            background: var(--bg-card);
         }
 
-        .nav-tab {
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            border: none;
-            background: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #666;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-            min-width: 140px;
-        }
-
-        .nav-tab:hover {
-            background: #e9ecef;
-            color: #333;
-        }
-
-        .nav-tab.active {
-            background: white;
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-            font-weight: 600;
-        }
-
-        .content {
-            padding: 2rem;
-        }
-
-        .tab-panel {
-            display: none;
-        }
-
-        .tab-panel.active {
-            display: block;
-        }
-
-        .section {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid #667eea;
-        }
-
-        .section h3 {
-            color: #495057;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
-        }
-
-        .card h4 {
-            color: #495057;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .table {
+        .productos-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
-            background: white;
-            border-radius: 8px;
+            background: var(--bg-dark);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .table th, .table td {
-            padding: 0.75rem;
+        .productos-table th {
+            background: #1f1f1f;
+            padding: 16px 20px;
             text-align: left;
-            border-bottom: 1px solid #dee2e6;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
         }
 
-        .table th {
-            background: #667eea;
-            color: white;
+        .productos-table td {
+            padding: 20px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .productos-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .productos-table tr:hover td {
+            background: #1a1a1a;
+        }
+
+        .producto-name {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 16px;
         }
 
-        .table tr:hover {
-            background: #f8f9fa;
+        .producto-category {
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        .alert {
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-            font-weight: 500;
+        .margin-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
         }
 
-        .alert-danger {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 4px solid #dc3545;
+        .margin-badge.high {
+            background: rgba(196, 241, 53, 0.15);
+            color: var(--accent-lime);
         }
 
-        .alert-warning {
-            background: #fff3cd;
-            color: #856404;
-            border-left: 4px solid #ffc107;
+        .margin-badge.medium {
+            background: rgba(53, 167, 255, 0.15);
+            color: var(--accent-blue);
         }
 
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border-left: 4px solid #28a745;
+        .ganancia {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--accent-lime);
         }
 
-        .alert-info {
-            background: #e2e3e5;
-            color: #383d41;
-            border-left: 4px solid #6c757d;
+        /* Activos Section */
+        .activos {
+            background: 
+                radial-gradient(ellipse at 80% 20%, rgba(196, 241, 53, 0.05) 0%, transparent 50%),
+                var(--bg-dark);
         }
 
-        .summary-box {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            font-weight: 600;
+        .activos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .activo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .activo-item:hover {
+            border-color: var(--accent-lime);
+        }
+
+        .activo-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .activo-item h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .activo-item p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Ubicación */
+        .ubicacion {
+            background: var(--bg-card);
+        }
+
+        .ubicacion-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ubicacion-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ubicacion-feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .ubicacion-check {
+            width: 32px;
+            height: 32px;
+            background: rgba(196, 241, 53, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-lime);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .ubicacion-feature p {
+            font-size: 16px;
+        }
+
+        .ubicacion-visual {
+            background: var(--bg-dark);
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 40px;
             text-align: center;
         }
 
-        .number {
-            font-family: 'Courier New', monospace;
-            font-weight: 600;
+        .ubicacion-visual .big-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
         }
 
-        .status-danger { color: #dc3545; font-weight: 600; }
-        .status-warning { color: #ffc107; font-weight: 600; }
-        .status-success { color: #28a745; font-weight: 600; }
-
-        .highlight-red { background-color: #f8d7da !important; }
-        .highlight-yellow { background-color: #fff3cd !important; }
-        .highlight-green { background-color: #d4edda !important; }
-
-        .input-group {
-            margin-bottom: 1rem;
+        /* CTA Section */
+        .cta-section {
+            background: 
+                radial-gradient(ellipse at 50% 50%, rgba(196, 241, 53, 0.1) 0%, transparent 60%),
+                var(--bg-dark);
+            text-align: center;
+            padding: 120px 0;
         }
 
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #495057;
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 56px;
+            margin-bottom: 20px;
         }
 
-        .input-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            font-size: 1rem;
+        .cta-section h2 span {
+            color: var(--accent-lime);
         }
 
-        .btn {
-            background: #667eea;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: background 0.3s ease;
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
 
-        .btn:hover {
-            background: #5a6fd8;
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
         }
 
-        .result-box {
-            background: #e7f3ff;
-            border: 2px solid #007bff;
-            border-radius: 6px;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-weight: 600;
+        .btn-large {
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent-lime);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(196, 241, 53, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-white);
+            border: 2px solid #3a3a3a;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-lime);
+            color: var(--accent-lime);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid #2a2a2a;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 56px; }
+            .concepto-grid { grid-template-columns: 1fr; }
+            .finance-grid { grid-template-columns: 1fr; }
+            .metrics-row { grid-template-columns: repeat(2, 1fr); }
+            .activos-grid { grid-template-columns: 1fr; }
+            .ubicacion-content { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-            }
-            
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .content {
-                padding: 1rem;
-            }
-            
-            .nav-tab {
-                padding: 0.75rem 1rem;
-                font-size: 0.8rem;
-                min-width: 120px;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .table {
-                font-size: 0.85rem;
-            }
-            
-            .table th, .table td {
-                padding: 0.5rem;
-            }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 42px; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .section-title { font-size: 36px; }
+            .metrics-row { grid-template-columns: 1fr; }
+            .cta-section h2 { font-size: 36px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📊 Control Financiero Bulkness Café</h1>
-            <p>Análisis Completo de Gestión - 3 Agosto 2025</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">BULKNESS<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#concepto">Concepto</a></li>
+                <li><a href="#financieros">Financieros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#activos">Activos</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="financieros.html">Info Detallada</a></li>
+            </ul>
+            <a href="#contacto" class="btn-contact">Quiero Saber Más</a>
         </div>
+    </nav>
 
-        <div class="nav-tabs">
-            <button class="nav-tab active" data-tab="crisis">🚨 Crisis 72h</button>
-            <button class="nav-tab" data-tab="perdido">💸 Dinero Perdido</button>
-            <button class="nav-tab" data-tab="juan">💳 Deudas Juan</button>
-            <button class="nav-tab" data-tab="decisiones">❌ Decisiones</button>
-            <button class="nav-tab" data-tab="inversiones">📊 Inversiones</button>
-            <button class="nav-tab" data-tab="ventas">📈 Ventas</button>
-        </div>
-
-        <div class="content">
-            <!-- CRISIS 72 HORAS -->
-            <div id="crisis" class="tab-panel active">
-                <div class="summary-box">
-                    <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">⚠️ EMERGENCIA TOTAL</div>
-                    <div>NECESARIO: $5,145,000 | DISPONIBLE: $1,522,500</div>
-                    <div style="font-size: 1.1rem; margin-top: 0.5rem;">DÉFICIT: $3,622,500 (70%)</div>
-                </div>
-
-                <div class="section">
-                    <h3>⏰ Cronograma Crítico</h3>
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Fecha</th>
-                                    <th>Concepto</th>
-                                    <th>Valor</th>
-                                    <th>Días Restantes</th>
-                                    <th>Acumulado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-red">
-                                    <td><strong>3 Ago (HOY)</strong></td>
-                                    <td>Nómina Gustavo (18 días atraso)</td>
-                                    <td class="number">$1,072,000</td>
-                                    <td class="status-danger">0</td>
-                                    <td class="number">$1,072,000</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td><strong>4 Ago</strong></td>
-                                    <td>Nómina Nicolás</td>
-                                    <td class="number">$893,000</td>
-                                    <td class="status-warning">1</td>
-                                    <td class="number">$1,965,000</td>
-                                </tr>
-                                <tr class="highlight-red">
-                                    <td><strong>5 Ago</strong></td>
-                                    <td>Arriendo Agosto</td>
-                                    <td class="number">$2,400,000</td>
-                                    <td class="status-danger">2</td>
-                                    <td class="number">$4,365,000</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td><strong>7 Ago</strong></td>
-                                    <td>Reintegro T.C William</td>
-                                    <td class="number">$780,000</td>
-                                    <td class="status-warning">4</td>
-                                    <td class="number">$5,145,000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="grid">
-                    <div class="card">
-                        <h4>💰 Recursos Disponibles</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Fuente</th><th>Valor</th><th>Realidad</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Capital trabajo Gustavo</td><td class="number">$262,500</td><td class="status-success">Efectivo</td></tr>
-                                <tr><td>Ventas 3 días (est.)</td><td class="number">$450,000</td><td class="status-warning">Optimista</td></tr>
-                                <tr><td>Mr Creamy (si vende)</td><td class="number">$810,000</td><td class="status-warning">7-15 días</td></tr>
-                                <tr><td><strong>TOTAL</strong></td><td class="number"><strong>$1,522,500</strong></td><td class="status-danger"><strong>30%</strong></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>📊 Déficit Real</h4>
-                        <div class="alert alert-danger">
-                            <strong>FALTANTE CRÍTICO:</strong><br>
-                            Necesario: $5,145,000<br>
-                            Disponible: $1,522,500<br>
-                            <strong>Déficit: $3,622,500</strong>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">OPORTUNIDAD DE SOCIEDAD</div>
+                    <h1>
+                        CAFÉ &<br>
+                        <span class="highlight">NUTRICIÓN</span><br>
+                        DEPORTIVA
+                    </h1>
+                    <p class="hero-desc">
+                        Buscamos socio operativo para negocio establecido. 
+                        Concepto único, productos de alto margen, clientela fiel del mundo fitness.
+                        <strong>Ideal para emprendedor con pasión por el deporte y la nutrición.</strong>
+                    </p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">6</div>
+                            <div class="hero-stat-label">Meses operando</div>
                         </div>
-                        <div class="alert alert-warning">
-                            <strong>Sin aportes inmediatos = CIERRE SEGURO</strong>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">82%</div>
+                            <div class="hero-stat-label">Margen máximo</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">4</div>
+                            <div class="hero-stat-label">Socios actuales</div>
                         </div>
                     </div>
+                    <a href="#contacto" class="btn-large btn-primary">Solicitar Información</a>
                 </div>
-            </div>
-
-            <!-- DINERO PERDIDO -->
-            <div id="perdido" class="tab-panel">
-                <div class="section">
-                    <h3>💸 ¿Dónde Está el Dinero?</h3>
-                    
-                    <div class="alert alert-danger">
-                        <strong>PREGUNTA CLAVE:</strong> Si no se pagó arriendo mayo y junio ($4.8M), ¿dónde fue esa plata?
-                    </div>
-
-                    <div class="card">
-                        <h4>🔍 Arriendos No Pagados</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Mes</th><th>Arriendo</th><th>Estado Pago</th><th>¿Dónde fue el dinero?</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-red">
-                                    <td><strong>Mayo 2025</strong></td>
-                                    <td class="number">$2,400,000</td>
-                                    <td class="status-danger">NO PAGADO</td>
-                                    <td class="status-danger">SIN EXPLICACIÓN</td>
-                                </tr>
-                                <tr class="highlight-red">
-                                    <td><strong>Junio 2025</strong></td>
-                                    <td class="number">$2,400,000</td>
-                                    <td class="status-danger">NO PAGADO</td>
-                                    <td class="status-danger">SIN EXPLICACIÓN</td>
-                                </tr>
-                                <tr class="highlight-green">
-                                    <td><strong>Julio 2025</strong></td>
-                                    <td class="number">$2,400,000</td>
-                                    <td class="status-success">PAGADO</td>
-                                    <td>Control Gustavo</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="summary-box">
-                            DINERO "PERDIDO" EN ARRIENDOS: $4,800,000
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>🤔 Gastos Cuestionables</h3>
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr><th>Concepto</th><th>Valor</th><th>Justificación</th><th>¿Era necesario?</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-red">
-                                    <td>Cocina robada (pérdida)</td>
-                                    <td class="number">$6,000,000</td>
-                                    <td>Robo externo</td>
-                                    <td class="status-danger">Faltó seguro</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td>Ropa Paula/Julián</td>
-                                    <td class="number">$1,500,000</td>
-                                    <td class="status-danger">NO CLARA</td>
-                                    <td class="status-danger">¿Dónde está?</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td>Mr Creamy (decisión unilateral)</td>
-                                    <td class="number">$1,500,000</td>
-                                    <td>Rentabilidad 82%</td>
-                                    <td class="status-warning">Sin consenso</td>
-                                </tr>
-                                <tr class="highlight-red">
-                                    <td>Gastos "varios" no detallados</td>
-                                    <td class="number">$2,000,000+</td>
-                                    <td class="status-danger">SIN DETALLAR</td>
-                                    <td class="status-danger">SIN EVALUAR</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DEUDAS JUAN -->
-            <div id="juan" class="tab-panel">
-                <div class="section">
-                    <h3>💳 Deuda Juan - Análisis Completo</h3>
-                    
-                    <div class="summary-box">
-                        DEUDA ORIGINAL: $3,200,000 | PAGADO WILLIAM: $1,000,000<br>
-                        SALDO PENDIENTE: $2,200,000 (3 cuotas)
-                    </div>
-
-                    <div class="grid">
-                        <div class="card">
-                            <h4>📦 Productos Juan en Bulkness</h4>
-                            <div class="alert alert-info">
-                                <strong>Stock en consignación:</strong> $1,705,000<br>
-                                Suplementos varios reportados por Gustavo
+                
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="hero-card-title">🔥 Productos Estrella</div>
+                        <div class="hero-card-products">
+                            <div class="product-item">
+                                <div class="product-info">
+                                    <h4>Mr Creamy</h4>
+                                    <span>Helado proteico premium</span>
+                                </div>
+                                <div class="product-margin">82%</div>
                             </div>
-                            <div class="alert alert-warning">
-                                <strong>Deuda adicional Mr Creamy:</strong> $3,200,000<br>
-                                Compra sin consenso socios
+                            <div class="product-item">
+                                <div class="product-info">
+                                    <h4>Bowl Cut</h4>
+                                    <span>Bowl fitness más vendido</span>
+                                </div>
+                                <div class="product-margin">65%</div>
                             </div>
-                        </div>
-                        
-                        <div class="card">
-                            <h4>💰 Plan de Pagos</h4>
-                            <table class="table">
-                                <thead>
-                                    <tr><th>Fecha</th><th>Concepto</th><th>Valor</th><th>Estado</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="highlight-green">
-                                        <td>29 Jul 2025</td>
-                                        <td><strong>Abono William</strong></td>
-                                        <td class="number">$1,000,000</td>
-                                        <td class="status-success">✅ PAGADO</td>
-                                    </tr>
-                                    <tr class="highlight-yellow">
-                                        <td><strong>15 Ago 2025</strong></td>
-                                        <td>1ª Cuota</td>
-                                        <td class="number">$733,000</td>
-                                        <td class="status-warning">⏳ 12 días</td>
-                                    </tr>
-                                    <tr class="highlight-yellow">
-                                        <td><strong>30 Ago 2025</strong></td>
-                                        <td>2ª Cuota</td>
-                                        <td class="number">$733,000</td>
-                                        <td class="status-warning">⏳ 27 días</td>
-                                    </tr>
-                                    <tr class="highlight-yellow">
-                                        <td><strong>15 Sep 2025</strong></td>
-                                        <td>3ª Cuota Final</td>
-                                        <td class="number">$734,000</td>
-                                        <td class="status-warning">⏳ 43 días</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>📅 Impacto en Cronograma Agosto</h3>
-                    <div class="card">
-                        <div class="alert alert-danger">
-                            <strong>AGOSTO CRÍTICO:</strong> Casi $8M en pagos totales<br>
-                            Crisis actual + 2 cuotas Juan ($1,466,000)
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Período</th><th>Pagos Juan</th><th>Otros Pagos</th><th>Total</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Agosto 2025</td><td class="number">$1,466,000</td><td class="number">$5,145,000</td><td class="number status-danger">$6,611,000</td></tr>
-                                <tr><td>Septiembre 2025</td><td class="number">$734,000</td><td class="number">$6,100,000</td><td class="number status-warning">$6,834,000</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MALAS DECISIONES -->
-            <div id="decisiones" class="tab-panel">
-                <div class="section">
-                    <h3>❌ Catálogo de Malas Decisiones</h3>
-                    
-                    <div class="card">
-                        <h4>🎯 Decisiones Unilaterales (Sin Consenso)</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Fecha</th><th>Decisión</th><th>Costo</th><th>Consenso</th><th>Resultado</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-red">
-                                    <td>Jun 2025</td>
-                                    <td>Compra Mr Creamy</td>
-                                    <td class="number">$1,500,000</td>
-                                    <td class="status-danger">CERO</td>
-                                    <td>Deuda $3.2M con Juan</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td>Mayo 2025</td>
-                                    <td>Inversión ropa</td>
-                                    <td class="number">$1,500,000</td>
-                                    <td class="status-danger">CERO</td>
-                                    <td>¿Dónde está la ropa?</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td>Jul 2025</td>
-                                    <td>Siigo con T.C William</td>
-                                    <td class="number">$780,000</td>
-                                    <td class="status-danger">CERO</td>
-                                    <td>Deuda personal William</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>📊 Patrón de "Urgencias"</h3>
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr><th>Fecha</th><th>Justificación</th><th>Valor</th><th>Planificación</th><th>Pagador</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>15 May</td><td>"Terminar apertura"</td><td class="number">$2,000,000</td><td class="status-danger">0 días</td><td>Daniel</td></tr>
-                                <tr><td>1 Jun</td><td>"Emergencias"</td><td class="number">$3,000,000</td><td class="status-danger">0 días</td><td>Daniel</td></tr>
-                                <tr><td>26 Jun</td><td>"Capital trabajo"</td><td class="number">$3,200,000</td><td class="status-danger">0 días</td><td>William</td></tr>
-                                <tr><td>30 Jul</td><td>"Crisis total"</td><td class="number">$2,780,000</td><td class="status-danger">0 días</td><td>William</td></tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="summary-box">
-                            $10,980,000 en "urgencias" sin 1 día de planificación
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>🤔 Contradicciones</h3>
-                    <div class="grid">
-                        <div class="card">
-                            <div class="alert alert-warning">
-                                <strong>DATOS CONFIRMADOS:</strong><br>
-                                • Bowls: 61-65% margen<br>
-                                • Mr Creamy: 82% margen<br>
-                                • Juli: "Lo que más sale es bowls"<br>
-                                <strong>¿POR QUÉ SIGUEN PIDIENDO DINERO?</strong>
+                            <div class="product-item">
+                                <div class="product-info">
+                                    <h4>Bowl Maingaining</h4>
+                                    <span>Alta demanda</span>
+                                </div>
+                                <div class="product-margin">61%</div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="alert alert-danger">
-                                <strong>PROBLEMA REAL:</strong><br>
-                                Paula/Julián (empresarios + operadores) han transferido liderazgo financiero a William/Daniel (ingenieros + remotos)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- INVERSIONES -->
-            <div id="inversiones" class="tab-panel">
-                <div class="section">
-                    <h3>📊 Inversiones Totales por Socio</h3>
-                    
-                    <div class="summary-box">
-                        TOTAL INVERTIDO: $49,264,000 | PROMEDIO: $12,316,000<br>
-                        EXCESO WILLIAM: $2,664,000
-                    </div>
-
-                    <div class="card">
-                        <h4>💰 Estado Actual</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Socio</th><th>Inversión Total</th><th>% Participación</th><th>vs Promedio</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-red">
-                                    <td><strong>William</strong></td>
-                                    <td class="number"><strong>$14,980,000</strong></td>
-                                    <td class="status-danger"><strong>29.8%</strong></td>
-                                    <td class="status-danger">+$2,664,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Daniel</td>
-                                    <td class="number">$12,000,000</td>
-                                    <td>23.9%</td>
-                                    <td class="status-warning">-$316,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Paula</td>
-                                    <td class="number">$11,142,000</td>
-                                    <td>22.2%</td>
-                                    <td class="status-warning">-$1,174,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Julián</td>
-                                    <td class="number">$11,142,000</td>
-                                    <td>22.2%</td>
-                                    <td class="status-warning">-$1,174,000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>📈 Evolución William</h3>
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr><th>Período</th><th>Aporte</th><th>Acumulado</th><th>Motivo</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Mar-Abr 2025</td><td class="number">$9,000,000</td><td class="number">$9,000,000</td><td>Inversión inicial planificada</td></tr>
-                                <tr class="highlight-yellow"><td>Jun 2025</td><td class="number">$3,200,000</td><td class="number">$12,200,000</td><td>"Capital trabajo urgente"</td></tr>
-                                <tr class="highlight-red"><td>Jul 2025</td><td class="number">$2,780,000</td><td class="number">$14,980,000</td><td>"Crisis total"</td></tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="alert alert-danger">
-                            <strong>William carga 85% de la crisis financiera</strong> siendo el socio más remoto
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VENTAS -->
-            <div id="ventas" class="tab-panel">
-                <div class="section">
-                    <h3>📈 Ventas Necesarias para Sostenibilidad</h3>
-                    
-                    <div class="grid">
-                        <div class="card">
-                            <h4>💰 Calculadora Gastos Fijos</h4>
-                            <div class="input-group">
-                                <label>Arriendo mensual:</label>
-                                <input type="number" id="arriendo" value="2400000">
-                            </div>
-                            <div class="input-group">
-                                <label>Nóminas (Gustavo + Nicolás):</label>
-                                <input type="number" id="nominas" value="3244000">
-                            </div>
-                            <div class="input-group">
-                                <label>Servicios (luz + agua + internet):</label>
-                                <input type="number" id="servicios" value="456000">
-                            </div>
-                            <div class="input-group">
-                                <label>Otros gastos operativos:</label>
-                                <input type="number" id="otros" value="500000">
-                            </div>
-                            <button class="btn" onclick="calcularVentas()">Calcular Ventas Necesarias</button>
-                        </div>
-                        
-                        <div class="card">
-                            <h4>📊 Resultados</h4>
-                            <div class="result-box">
-                                <strong>Total Gastos Mensuales:</strong><br>
-                                <span id="totalGastos">$6,600,000</span>
-                            </div>
-                            <div class="result-box">
-                                <strong>Venta Diaria Necesaria:</strong><br>
-                                <span id="ventaDiaria">$220,000</span>
-                            </div>
-                            <div class="alert alert-warning">
-                                <strong>Venta actual estimada:</strong> $150,000 diarios<br>
-                                <strong>Déficit diario:</strong> $70,000<br>
-                                <strong>Déficit mensual:</strong> $2,100,000
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>📈 Escenarios de Venta</h3>
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr><th>Venta Diaria</th><th>Venta Mensual</th><th>Balance vs Gastos</th><th>Estado</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-red">
-                                    <td class="number">$150,000</td>
-                                    <td class="number">$4,500,000</td>
-                                    <td class="number status-danger">-$2,100,000</td>
-                                    <td class="status-danger">Déficit crítico</td>
-                                </tr>
-                                <tr class="highlight-yellow">
-                                    <td class="number">$200,000</td>
-                                    <td class="number">$6,000,000</td>
-                                    <td class="number status-warning">-$600,000</td>
-                                    <td class="status-warning">Déficit</td>
-                                </tr>
-                                <tr class="highlight-green">
-                                    <td class="number">$220,000</td>
-                                    <td class="number">$6,600,000</td>
-                                    <td class="number status-success">$0</td>
-                                    <td class="status-success">Equilibrio</td>
-                                </tr>
-                                <tr class="highlight-green">
-                                    <td class="number">$300,000</td>
-                                    <td class="number">$9,000,000</td>
-                                    <td class="number status-success">+$2,400,000</td>
-                                    <td class="status-success">Rentable</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>🎯 Plan de Crecimiento</h3>
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr><th>Mes</th><th>Meta Diaria</th><th>Meta Mensual</th><th>Estrategia Principal</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Agosto 2025</td><td class="number">$180,000</td><td class="number">$5,400,000</td><td>Supervivencia + control crisis</td></tr>
-                                <tr><td>Septiembre 2025</td><td class="number">$220,000</td><td class="number">$6,600,000</td><td>Equilibrio + delivery</td></tr>
-                                <tr><td>Octubre 2025</td><td class="number">$280,000</td><td class="number">$8,400,000</td><td>Crecimiento + marketing</td></tr>
-                                <tr><td>Noviembre+ 2025</td><td class="number">$300,000+</td><td class="number">$9,000,000+</td><td>Rentabilidad sostenible</td></tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="alert alert-info">
-                            <strong>Estrategias sugeridas:</strong><br>
-                            • Delivery (Rappi, Uber Eats)<br>
-                            • Marketing digital + pauta<br>
-                            • Planes entrenamiento Nico<br>
-                            • Alianza Dharma Gym<br>
-                            • Eventos y brunches
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>📊 Análisis Productos Rentables</h3>
-                    <div class="card">
-                        <h4>🍽️ Márgenes por Producto (Datos Gustavo)</h4>
-                        <table class="table">
-                            <thead>
-                                <tr><th>Producto</th><th>Costo</th><th>Precio</th><th>Ganancia</th><th>Margen %</th><th>Observación</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-green">
-                                    <td><strong>Bowl Cut</strong></td>
-                                    <td class="number">$7,401</td>
-                                    <td class="number">$20,900</td>
-                                    <td class="number">$13,499</td>
-                                    <td class="status-success"><strong>65%</strong></td>
-                                    <td>Producto estrella</td>
-                                </tr>
-                                <tr class="highlight-green">
-                                    <td><strong>Bowl Maingaining</strong></td>
-                                    <td class="number">$8,119</td>
-                                    <td class="number">$20,900</td>
-                                    <td class="number">$12,781</td>
-                                    <td class="status-success"><strong>61%</strong></td>
-                                    <td>Alta demanda</td>
-                                </tr>
-                                <tr class="highlight-green">
-                                    <td><strong>Mr Creamy</strong></td>
-                                    <td class="number">$33,000</td>
-                                    <td class="number">$60,000</td>
-                                    <td class="number">$27,000</td>
-                                    <td class="status-success"><strong>82%</strong></td>
-                                    <td>Excelente rotación</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="alert alert-warning">
-                            <strong>CONTRADICCIÓN:</strong> Con márgenes de 60-82% y "buena rotación"...<br>
-                            <strong>¿Por qué siguen necesitando aportes constantes?</strong>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Concepto Section -->
+    <section class="concepto" id="concepto">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">El Concepto</div>
+                <h2 class="section-title">MÁS QUE UN CAFÉ, UN ESTILO DE VIDA</h2>
+            </div>
+            
+            <div class="concepto-grid">
+                <div class="concepto-card">
+                    <div class="concepto-icon">☕</div>
+                    <h3>Cafetería Especialidad</h3>
+                    <p>Café de origen, métodos de extracción premium, bebidas calientes y frías para el público fitness.</p>
+                </div>
+                <div class="concepto-card">
+                    <div class="concepto-icon">🥗</div>
+                    <h3>Bowls Nutritivos</h3>
+                    <p>Menú diseñado por nutricionistas. Bowls con proteína, carbohidratos complejos y grasas saludables.</p>
+                </div>
+                <div class="concepto-card">
+                    <div class="concepto-icon">💪</div>
+                    <h3>Suplementación</h3>
+                    <p>Batidos proteicos, pre-entrenos, creatinas. Alianzas con marcas reconocidas de suplementación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financieros Section -->
+    <section class="financieros" id="financieros">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Números Reales</div>
+                <h2 class="section-title">ANÁLISIS FINANCIERO</h2>
+            </div>
+
+            <div class="finance-grid">
+                <div class="finance-card">
+                    <h3>📈 Ventas Mensuales (COP)</h3>
+                    <div class="chart-container">
+                        <canvas id="ventasChart"></canvas>
+                    </div>
+                </div>
+                <div class="finance-card">
+                    <h3>🎯 Margen por Categoría</h3>
+                    <div class="chart-container">
+                        <canvas id="margenChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric-box">
+                    <div class="metric-box-value">$19.5M</div>
+                    <div class="metric-box-label">Ventas acumuladas</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-box-value">65%</div>
+                    <div class="metric-box-label">Margen promedio bowls</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-box-value">$220K</div>
+                    <div class="metric-box-label">Venta diaria objetivo</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-box-value">+50</div>
+                    <div class="metric-box-label">Clientes recurrentes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section class="productos" id="productos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Lo Que Más Se Vende</div>
+                <h2 class="section-title">PRODUCTOS & MÁRGENES</h2>
+            </div>
+
+            <table class="productos-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Costo</th>
+                        <th>Precio Venta</th>
+                        <th>Ganancia</th>
+                        <th>Margen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="producto-name">🍨 Mr Creamy</div>
+                            <div class="producto-category">Helado proteico premium</div>
+                        </td>
+                        <td>$33,000</td>
+                        <td>$60,000</td>
+                        <td class="ganancia">$27,000</td>
+                        <td><span class="margin-badge high">82%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="producto-name">🥗 Bowl Cut</div>
+                            <div class="producto-category">Bowl fitness - Producto estrella</div>
+                        </td>
+                        <td>$7,401</td>
+                        <td>$20,900</td>
+                        <td class="ganancia">$13,499</td>
+                        <td><span class="margin-badge high">65%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="producto-name">🥗 Bowl Maingaining</div>
+                            <div class="producto-category">Bowl alto en proteína</div>
+                        </td>
+                        <td>$8,119</td>
+                        <td>$20,900</td>
+                        <td class="ganancia">$12,781</td>
+                        <td><span class="margin-badge high">61%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="producto-name">🥤 Batidos Proteicos</div>
+                            <div class="producto-category">Whey + frutas + base</div>
+                        </td>
+                        <td>$6,500</td>
+                        <td>$17,000</td>
+                        <td class="ganancia">$10,500</td>
+                        <td><span class="margin-badge medium">62%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="producto-name">☕ Café Especialidad</div>
+                            <div class="producto-category">Americano, Latte, Cappuccino</div>
+                        </td>
+                        <td>$2,000</td>
+                        <td>$8,000</td>
+                        <td class="ganancia">$6,000</td>
+                        <td><span class="margin-badge high">75%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="producto-name">🥪 Sandwich Ibérico</div>
+                            <div class="producto-category">Jamón serrano premium</div>
+                        </td>
+                        <td>$9,500</td>
+                        <td>$20,900</td>
+                        <td class="ganancia">$11,400</td>
+                        <td><span class="margin-badge medium">55%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Activos Section -->
+    <section class="activos" id="activos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Lo Que Incluye</div>
+                <h2 class="section-title">ACTIVOS DEL NEGOCIO</h2>
+            </div>
+
+            <div class="activos-grid">
+                <div class="activo-item">
+                    <div class="activo-icon">☕</div>
+                    <div>
+                        <h4>Equipamiento de Café</h4>
+                        <p>Máquina espresso profesional, molinos, prensa francesa, equipos de extracción</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">🍽️</div>
+                    <div>
+                        <h4>Cocina Equipada</h4>
+                        <p>Licuadoras industriales, refrigeración, plancha, utensilios profesionales</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">🪑</div>
+                    <div>
+                        <h4>Mobiliario Completo</h4>
+                        <p>Barra, mesas, sillas, decoración temática fitness, iluminación</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">📦</div>
+                    <div>
+                        <h4>Inventario Inicial</h4>
+                        <p>Stock de suplementos, insumos de café, materia prima para bowls</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">📋</div>
+                    <div>
+                        <h4>Recetas & Procesos</h4>
+                        <p>Fichas técnicas de todos los productos, costos documentados</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">🤝</div>
+                    <div>
+                        <h4>Proveedores Establecidos</h4>
+                        <p>Relaciones comerciales con distribuidores de suplementos y alimentos</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">📱</div>
+                    <div>
+                        <h4>Marca & Redes</h4>
+                        <p>Nombre registrado, Instagram activo, base de datos de clientes</p>
+                    </div>
+                </div>
+                <div class="activo-item">
+                    <div class="activo-icon">👥</div>
+                    <div>
+                        <h4>Equipo Capacitado</h4>
+                        <p>Personal con experiencia en operación, conocimiento de productos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Section -->
+    <section class="ubicacion" id="ubicacion">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Ubicación Estratégica</div>
+                <h2 class="section-title">EN EL CORAZÓN DEL FITNESS</h2>
+            </div>
+
+            <div class="ubicacion-content">
+                <div class="ubicacion-features">
+                    <div class="ubicacion-feature">
+                        <div class="ubicacion-check">✓</div>
+                        <p><strong>Zona de alto tráfico</strong> de público fitness y deportistas</p>
+                    </div>
+                    <div class="ubicacion-feature">
+                        <div class="ubicacion-check">✓</div>
+                        <p><strong>Cerca de gimnasios</strong> y centros de entrenamiento</p>
+                    </div>
+                    <div class="ubicacion-feature">
+                        <div class="ubicacion-check">✓</div>
+                        <p><strong>Fácil acceso</strong> vehicular y peatonal</p>
+                    </div>
+                    <div class="ubicacion-feature">
+                        <div class="ubicacion-check">✓</div>
+                        <p><strong>Local visible</strong> con buena exposición en calle principal</p>
+                    </div>
+                    <div class="ubicacion-feature">
+                        <div class="ubicacion-check">✓</div>
+                        <p><strong>Comunidad fitness activa</strong> en la zona</p>
+                    </div>
+                    <div class="ubicacion-feature">
+                        <div class="ubicacion-check">✓</div>
+                        <p><strong>Potencial de delivery</strong> a zona residencial cercana</p>
+                    </div>
+                </div>
+
+                <div class="ubicacion-visual">
+                    <div class="big-icon">📍</div>
+                    <h3 style="font-size: 24px; margin-bottom: 12px;">Ubicación Premium</h3>
+                    <p style="color: var(--text-gray);">
+                        El local está ubicado en una zona estratégica con alto flujo de personas 
+                        interesadas en fitness y vida saludable. Detalles exactos disponibles 
+                        para interesados serios.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <div class="container">
+            <h2>¿TE INTERESA SER <span>SOCIO</span>?</h2>
+            <p>
+                Buscamos una persona con pasión por el fitness y la nutrición, 
+                que pueda estar al frente del negocio y llevarlo al siguiente nivel.
+                <strong>Agenda una visita al local y revisemos los números juntos.</strong>
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:william@example.com?subject=Interés%20en%20sociedad%20Bulkness%20Café" class="btn-large btn-primary">
+                    📧 Contactar Ahora
+                </a>
+                <a href="financieros.html" class="btn-large btn-outline">
+                    📊 Ver Números
+                </a>
+            </div>
+            <p style="margin-top: 30px; font-size: 14px; color: var(--text-muted);">
+                Información financiera completa disponible para interesados que agenden visita
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Bulkness Café © 2025 | Oportunidad de sociedad en café de nutrición deportiva</p>
+        </div>
+    </footer>
+
+    <!-- Charts -->
     <script>
-        // Función para cambiar pestañas
-        function switchTab(tabId) {
-            // Ocultar todas las pestañas
-            document.querySelectorAll('.tab-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
-            
-            // Remover clase active de todos los botones
-            document.querySelectorAll('.nav-tab').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Mostrar la pestaña seleccionada
-            document.getElementById(tabId).classList.add('active');
-            
-            // Activar el botón correspondiente
-            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
-        }
+        Chart.defaults.color = '#666666';
+        Chart.defaults.font.family = "'Inter', sans-serif";
 
-        // Función para calcular ventas necesarias
-        function calcularVentas() {
-            const arriendo = parseFloat(document.getElementById('arriendo').value) || 0;
-            const nominas = parseFloat(document.getElementById('nominas').value) || 0;
-            const servicios = parseFloat(document.getElementById('servicios').value) || 0;
-            const otros = parseFloat(document.getElementById('otros').value) || 0;
+        // Ventas Chart
+        new Chart(document.getElementById('ventasChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                datasets: [{
+                    label: 'Ventas (millones)',
+                    data: [4.89, 3.65, 1.96, 3.29, 2.67, 1.70],
+                    backgroundColor: [
+                        '#c4f135', '#c4f135', '#666666', '#c4f135', '#c4f135', '#444444'
+                    ],
+                    borderRadius: 6,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        titleColor: '#fff',
+                        bodyColor: '#c4f135',
+                        padding: 12,
+                        callbacks: {
+                            label: ctx => '$' + ctx.parsed.y.toFixed(2) + 'M COP'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#2a2a2a' },
+                        ticks: {
+                            color: '#666',
+                            callback: v => '$' + v + 'M'
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#666' }
+                    }
+                }
+            }
+        });
 
-            const totalGastos = arriendo + nominas + servicios + otros;
-            const ventaDiaria = totalGastos / 30;
-
-            // Formatear números
-            const formatCurrency = (num) => {
-                return new Intl.NumberFormat('es-CO', {
-                    style: 'currency',
-                    currency: 'COP',
-                    minimumFractionDigits: 0
-                }).format(num);
-            };
-
-            document.getElementById('totalGastos').textContent = formatCurrency(totalGastos);
-            document.getElementById('ventaDiaria').textContent = formatCurrency(ventaDiaria);
-        }
-
-        // Inicializar cuando carga la página
-        document.addEventListener('DOMContentLoaded', function() {
-            // Agregar event listeners a los botones de pestañas
-            document.querySelectorAll('.nav-tab').forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-tab');
-                    switchTab(tabId);
-                });
-            });
-
-            // Calcular valores iniciales
-            calcularVentas();
+        // Margen Chart
+        new Chart(document.getElementById('margenChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Mr Creamy', 'Bowls', 'Café', 'Batidos', 'Otros'],
+                datasets: [{
+                    data: [82, 63, 75, 62, 55],
+                    backgroundColor: [
+                        '#c4f135',
+                        '#8bc34a',
+                        '#35a7ff',
+                        '#ff6b35',
+                        '#666666'
+                    ],
+                    borderWidth: 0,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            color: '#a0a0a0',
+                            padding: 16,
+                            usePointStyle: true,
+                            font: { size: 12 }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        callbacks: {
+                            label: ctx => ctx.label + ': ' + ctx.parsed + '% margen'
+                        }
+                    }
+                }
+            }
         });
     </script>
 </body>
