@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Financiera | Bulkness Café</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --bg-card-light: #242424;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+            --text-muted: #666666;
+            --accent-lime: #c4f135;
+            --accent-lime-dark: #a5cc2d;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.7;
+        }
+
+        nav {
+            background: rgba(15, 15, 15, 0.95);
+            border-bottom: 1px solid #2a2a2a;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--text-white);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--accent-lime); }
+
+        .back-link {
+            color: var(--accent-lime);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 48px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--text-gray);
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: var(--accent-lime);
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--bg-card-light);
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 42px;
+            color: var(--accent-lime);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        th {
+            text-align: left;
+            padding: 14px 16px;
+            background: #1f1f1f;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        tr:hover td {
+            background: #1f1f1f;
+        }
+
+        .amount {
+            font-family: var(--font-display);
+            font-size: 20px;
+        }
+
+        .positive { color: var(--accent-lime); }
+        .neutral { color: var(--text-gray); }
+
+        .chart-container {
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(196, 241, 53, 0.1) 0%, rgba(196, 241, 53, 0.02) 100%);
+            border: 1px solid rgba(196, 241, 53, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--accent-lime);
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .highlight-box p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: #2a2a2a;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding-left: 28px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-lime);
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            color: var(--accent-lime);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 50px;
+            background: var(--bg-card);
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            margin-top: 60px;
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: var(--text-gray);
+            margin-bottom: 28px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent-lime);
+            color: var(--bg-dark);
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid #2a2a2a;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            h1 { font-size: 36px; }
+            .container { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">BULKNESS<span>.</span></a>
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+    </nav>
+
+    <div class="container">
+        <h1>INFORMACIÓN FINANCIERA</h1>
+        <p class="subtitle">Datos detallados para tu análisis de inversión</p>
+
+        <!-- Resumen -->
+        <section class="section">
+            <h2>📊 RESUMEN DEL NEGOCIO</h2>
+            <div class="grid-2">
+                <div class="stat-card">
+                    <div class="stat-value">$19.5M</div>
+                    <div class="stat-label">Ventas acumuladas (6 meses)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Socios actuales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">65%</div>
+                    <div class="stat-label">Margen promedio productos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">+50</div>
+                    <div class="stat-label">Clientes recurrentes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ventas Mensuales -->
+        <section class="section">
+            <h2>📈 VENTAS MENSUALES</h2>
+            <div class="card">
+                <h3>Evolución de Ventas (COP)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mes</th>
+                            <th>Ventas</th>
+                            <th>Promedio Diario</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Julio 2025</td>
+                            <td class="amount positive">$4,890,000</td>
+                            <td>$163,000</td>
+                            <td>Mejor mes - lanzamiento</td>
+                        </tr>
+                        <tr>
+                            <td>Agosto 2025</td>
+                            <td class="amount positive">$3,650,000</td>
+                            <td>$121,667</td>
+                            <td>Estabilización</td>
+                        </tr>
+                        <tr>
+                            <td>Septiembre 2025</td>
+                            <td class="amount neutral">$1,964,183</td>
+                            <td>$93,532</td>
+                            <td>Datos parciales (21 días)</td>
+                        </tr>
+                        <tr>
+                            <td>Octubre 2025</td>
+                            <td class="amount positive">$3,291,108</td>
+                            <td>$106,165</td>
+                            <td>Recuperación</td>
+                        </tr>
+                        <tr>
+                            <td>Noviembre 2025</td>
+                            <td class="amount positive">$2,671,900</td>
+                            <td>$89,063</td>
+                            <td>Mes completo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="chart-container">
+                    <canvas id="ventasChart"></canvas>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💡 Contexto de ventas</h4>
+                <p>
+                    Las variaciones mensuales reflejan la curva de aprendizaje típica de negocios nuevos. 
+                    El producto tiene demanda comprobada y márgenes saludables. Con gestión activa y 
+                    estrategias de marketing/delivery, el potencial de crecimiento es significativo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Márgenes por Producto -->
+        <section class="section">
+            <h2>💰 MÁRGENES POR PRODUCTO</h2>
+            <div class="card">
+                <h3>Análisis de Rentabilidad</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Costo</th>
+                            <th>Precio</th>
+                            <th>Ganancia</th>
+                            <th>Margen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🍨 Mr Creamy</strong></td>
+                            <td>$33,000</td>
+                            <td>$60,000</td>
+                            <td class="amount positive">$27,000</td>
+                            <td><strong class="positive">82%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>☕ Café Americano</strong></td>
+                            <td>$2,000</td>
+                            <td>$8,000</td>
+                            <td class="amount positive">$6,000</td>
+                            <td><strong class="positive">75%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥗 Bowl Cut</strong></td>
+                            <td>$7,401</td>
+                            <td>$20,900</td>
+                            <td class="amount positive">$13,499</td>
+                            <td><strong class="positive">65%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥗 Bowl Maingaining</strong></td>
+                            <td>$8,119</td>
+                            <td>$20,900</td>
+                            <td class="amount positive">$12,781</td>
+                            <td><strong class="positive">61%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥤 Batido Proteico</strong></td>
+                            <td>$6,500</td>
+                            <td>$17,000</td>
+                            <td class="amount positive">$10,500</td>
+                            <td><strong class="positive">62%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🎯 Producto estrella: Los Bowls</h4>
+                <p>
+                    Según el personal operativo: "Lo que más sale son los bowls". Con margen de 61-65% 
+                    y alta rotación, son la columna vertebral del negocio. El potencial está en 
+                    aumentar el volumen de ventas manteniendo estos márgenes saludables.
+                </p>
+            </div>
+        </section>
+
+        <!-- Estructura de Costos -->
+        <section class="section">
+            <h2>📋 ESTRUCTURA DE COSTOS</h2>
+            <div class="card">
+                <h3>Gastos Fijos Mensuales</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto Mensual</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Arriendo del local</td>
+                            <td class="amount">$2,400,000</td>
+                            <td>Contrato vigente</td>
+                        </tr>
+                        <tr>
+                            <td>Nómina operativa</td>
+                            <td class="amount">$1,800,000</td>
+                            <td>1-2 empleados</td>
+                        </tr>
+                        <tr>
+                            <td>Servicios públicos</td>
+                            <td class="amount">$465,000</td>
+                            <td>Luz, agua, internet</td>
+                        </tr>
+                        <tr>
+                            <td>Contador</td>
+                            <td class="amount">$350,000</td>
+                            <td>Honorarios mensuales</td>
+                        </tr>
+                        <tr>
+                            <td>Insumos variables</td>
+                            <td class="amount">~$1,500,000</td>
+                            <td>Según ventas</td>
+                        </tr>
+                        <tr style="background: #1f1f1f;">
+                            <td><strong>TOTAL ESTIMADO</strong></td>
+                            <td class="amount"><strong>$6,515,000</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <h3>🎯 Punto de Equilibrio</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 16px;">Para cubrir gastos fijos:</p>
+                    <div style="text-align: center;">
+                        <div class="stat-value">$220K</div>
+                        <div class="stat-label">Venta diaria necesaria</div>
+                    </div>
+                    <p style="color: var(--text-gray); margin-top: 16px; font-size: 14px;">
+                        = $6.6M mensuales
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>🚀 Meta de Rentabilidad</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 16px;">Para generar utilidades:</p>
+                    <div style="text-align: center;">
+                        <div class="stat-value">$300K</div>
+                        <div class="stat-label">Venta diaria objetivo</div>
+                    </div>
+                    <p style="color: var(--text-gray); margin-top: 16px; font-size: 14px;">
+                        = $9M mensuales (+$2.4M utilidad)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <h2>📅 HISTORIA DEL NEGOCIO</h2>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Junio 2025</div>
+                        <div class="timeline-title">Apertura de Bulkness Café</div>
+                        <div class="timeline-desc">Lanzamiento del concepto único de café + nutrición deportiva. Inversión inicial de los 4 socios fundadores.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Julio 2025</div>
+                        <div class="timeline-title">Pico de ventas inicial</div>
+                        <div class="timeline-desc">Mejor mes con $4.89M. Validación del concepto con público fitness local.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Agosto - Octubre 2025</div>
+                        <div class="timeline-title">Optimización operativa</div>
+                        <div class="timeline-desc">Ajustes de menú, mejora de procesos, desarrollo de recetas con fichas técnicas de costos.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Noviembre 2025</div>
+                        <div class="timeline-title">Expansión de productos</div>
+                        <div class="timeline-desc">Incorporación de nuevas líneas: Mr Creamy (82% margen), postres saludables, más opciones de batidos.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Diciembre 2025</div>
+                        <div class="timeline-title">Búsqueda de socio operativo</div>
+                        <div class="timeline-desc">Los socios buscan una persona que pueda liderar presencialmente el negocio y potenciar su crecimiento.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oportunidad -->
+        <section class="section">
+            <h2>🚀 OPORTUNIDADES DE CRECIMIENTO</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📱 Delivery</h3>
+                    <p style="color: var(--text-gray);">
+                        Implementar Rappi/iFood puede aumentar ventas 30-40%. 
+                        La zona tiene alta demanda de comida saludable a domicilio.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>🏋️ Alianzas Gimnasios</h3>
+                    <p style="color: var(--text-gray);">
+                        Convenios con gimnasios cercanos para descuentos cruzados 
+                        y promociones exclusivas.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>📸 Marketing Digital</h3>
+                    <p style="color: var(--text-gray);">
+                        Instagram fitness tiene alto engagement. Colaboraciones con 
+                        influencers locales del mundo fitness.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>🍱 Meal Prep</h3>
+                    <p style="color: var(--text-gray);">
+                        Servicio de comidas preparadas semanales para clientes fitness. 
+                        Ingreso recurrente con pedidos anticipados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>¿LISTO PARA EL SIGUIENTE PASO?</h3>
+            <p>
+                Agenda una visita al local, conoce la operación de primera mano<br>
+                y revisemos juntos la documentación completa.
+            </p>
+            <a href="mailto:william@example.com?subject=Agendar%20visita%20Bulkness%20Café" class="btn-primary">
+                📧 Agendar Visita
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        Bulkness Café © 2025 | Información para inversionistas
+    </footer>
+
+    <script>
+        // Ventas Chart
+        new Chart(document.getElementById('ventasChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jul', 'Ago', 'Sep', 'Oct', 'Nov'],
+                datasets: [{
+                    label: 'Ventas',
+                    data: [4.89, 3.65, 1.96, 3.29, 2.67],
+                    borderColor: '#c4f135',
+                    backgroundColor: 'rgba(196, 241, 53, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#c4f135'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#2a2a2a' },
+                        ticks: {
+                            color: '#666',
+                            callback: v => '$' + v + 'M'
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#666' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
