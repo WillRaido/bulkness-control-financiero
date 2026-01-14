@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información Financiera | Bulkness Café</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
     <style>
         :root {
             --bg-dark: #0f0f0f;
@@ -24,7 +26,11 @@
             --font-body: 'Inter', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: var(--font-body);
@@ -51,7 +57,9 @@
             text-decoration: none;
         }
 
-        .logo span { color: var(--accent-lime); }
+        .logo span {
+            color: var(--accent-lime);
+        }
 
         .back-link {
             color: var(--accent-lime);
@@ -163,8 +171,13 @@
             font-size: 20px;
         }
 
-        .positive { color: var(--accent-lime); }
-        .neutral { color: var(--text-gray); }
+        .positive {
+            color: var(--accent-lime);
+        }
+
+        .neutral {
+            color: var(--text-gray);
+        }
 
         .chart-container {
             height: 300px;
@@ -286,12 +299,31 @@
         }
 
         @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            h1 { font-size: 36px; }
-            .container { padding: 40px 20px; }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2[style*="repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-2[style*="repeat(4"] {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="index.html" class="logo">BULKNESS<span>.</span></a>
@@ -380,8 +412,8 @@
             <div class="highlight-box">
                 <h4>💡 Contexto de ventas</h4>
                 <p>
-                    Las variaciones mensuales reflejan la curva de aprendizaje típica de negocios nuevos. 
-                    El producto tiene demanda comprobada y márgenes saludables. Con gestión activa y 
+                    Las variaciones mensuales reflejan la curva de aprendizaje típica de negocios nuevos.
+                    El producto tiene demanda comprobada y márgenes saludables. Con gestión activa y
                     estrategias de marketing/delivery, el potencial de crecimiento es significativo.
                 </p>
             </div>
@@ -445,8 +477,8 @@
             <div class="highlight-box">
                 <h4>🎯 Producto estrella: Los Bowls</h4>
                 <p>
-                    Según el personal operativo: "Lo que más sale son los bowls". Con margen de 61-65% 
-                    y alta rotación, son la columna vertebral del negocio. El potencial está en 
+                    Según el personal operativo: "Lo que más sale son los bowls". Con margen de 61-65%
+                    y alta rotación, son la columna vertebral del negocio. El potencial está en
                     aumentar el volumen de ventas manteniendo estos márgenes saludables.
                 </p>
             </div>
@@ -526,6 +558,254 @@
             </div>
         </section>
 
+        <!-- Inversiones por Socio -->
+        <section class="section">
+            <h2>💰 INVERSIONES POR SOCIO</h2>
+
+            <!-- Resumen Total -->
+            <div class="highlight-box" style="text-align: center; margin-bottom: 30px;">
+                <h4 style="font-size: 20px; margin-bottom: 8px;">INVERSIÓN TOTAL DEL PROYECTO</h4>
+                <div class="stat-value" style="font-size: 56px;">$49.26M</div>
+                <p style="margin-top: 8px;">Cuatro socios | Promedio por socio: $12,316,000</p>
+            </div>
+
+            <!-- Tarjetas por Socio -->
+            <div class="grid-2" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 30px;">
+                <div class="stat-card" style="border-left: 4px solid #ff6b6b;">
+                    <div class="stat-value" style="font-size: 28px;">$14.98M</div>
+                    <div class="stat-label">William</div>
+                    <div style="color: #ff6b6b; font-size: 12px; margin-top: 4px;">+$2.66M vs promedio</div>
+                </div>
+                <div class="stat-card" style="border-left: 4px solid #4ecdc4;">
+                    <div class="stat-value" style="font-size: 28px;">$12M</div>
+                    <div class="stat-label">Daniel</div>
+                    <div style="color: #a0a0a0; font-size: 12px; margin-top: 4px;">-$316K vs promedio</div>
+                </div>
+                <div class="stat-card" style="border-left: 4px solid #ffe66d;">
+                    <div class="stat-value" style="font-size: 28px;">$11.14M</div>
+                    <div class="stat-label">Paula</div>
+                    <div style="color: #a0a0a0; font-size: 12px; margin-top: 4px;">-$1.17M vs promedio</div>
+                </div>
+                <div class="stat-card" style="border-left: 4px solid #a29bfe;">
+                    <div class="stat-value" style="font-size: 28px;">$11.14M</div>
+                    <div class="stat-label">Julián</div>
+                    <div style="color: #a0a0a0; font-size: 12px; margin-top: 4px;">-$1.17M vs promedio</div>
+                </div>
+            </div>
+
+            <!-- Gráfico de Distribución -->
+            <div class="card">
+                <h3>📊 Distribución de Inversión</h3>
+                <div class="grid-2">
+                    <div class="chart-container" style="height: 280px;">
+                        <canvas id="inversionChart"></canvas>
+                    </div>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Socio</th>
+                                    <th>Inversión</th>
+                                    <th>% Participación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>William</strong></td>
+                                    <td class="amount positive">$14,980,000</td>
+                                    <td><strong class="positive">29.8%</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Daniel</strong></td>
+                                    <td class="amount">$12,000,000</td>
+                                    <td>23.9%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Paula</strong></td>
+                                    <td class="amount">$11,142,000</td>
+                                    <td>22.2%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Julián</strong></td>
+                                    <td class="amount">$11,142,000</td>
+                                    <td>22.2%</td>
+                                </tr>
+                                <tr style="background: #1f1f1f;">
+                                    <td><strong>TOTAL</strong></td>
+                                    <td class="amount"><strong>$49,264,000</strong></td>
+                                    <td><strong>100%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historial de Aportes -->
+            <div class="card" style="margin-top: 20px;">
+                <h3>📅 Historial de Aportes por Socio</h3>
+
+                <!-- William -->
+                <div style="margin-bottom: 30px;">
+                    <h4
+                        style="color: #ff6b6b; font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span
+                            style="width: 12px; height: 12px; background: #ff6b6b; border-radius: 50%; display: inline-block;"></span>
+                        William - $14,980,000 (29.8%)
+                    </h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Aporte</th>
+                                <th>Acumulado</th>
+                                <th>Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mar-Abr 2025</td>
+                                <td class="amount positive">$9,000,000</td>
+                                <td>$9,000,000</td>
+                                <td>Inversión inicial planificada</td>
+                            </tr>
+                            <tr>
+                                <td>Jun 2025</td>
+                                <td class="amount positive">$3,200,000</td>
+                                <td>$12,200,000</td>
+                                <td>Capital trabajo urgente</td>
+                            </tr>
+                            <tr>
+                                <td>Jul 2025</td>
+                                <td class="amount positive">$2,780,000</td>
+                                <td>$14,980,000</td>
+                                <td>Crisis total</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Daniel -->
+                <div style="margin-bottom: 30px;">
+                    <h4
+                        style="color: #4ecdc4; font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span
+                            style="width: 12px; height: 12px; background: #4ecdc4; border-radius: 50%; display: inline-block;"></span>
+                        Daniel - $12,000,000 (23.9%)
+                    </h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Aporte</th>
+                                <th>Acumulado</th>
+                                <th>Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mar-Abr 2025</td>
+                                <td class="amount positive">$7,000,000</td>
+                                <td>$7,000,000</td>
+                                <td>Inversión inicial planificada</td>
+                            </tr>
+                            <tr>
+                                <td>May 2025</td>
+                                <td class="amount positive">$2,000,000</td>
+                                <td>$9,000,000</td>
+                                <td>Terminar apertura</td>
+                            </tr>
+                            <tr>
+                                <td>Jun 2025</td>
+                                <td class="amount positive">$3,000,000</td>
+                                <td>$12,000,000</td>
+                                <td>Emergencias operativas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Paula -->
+                <div style="margin-bottom: 30px;">
+                    <h4
+                        style="color: #ffe66d; font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span
+                            style="width: 12px; height: 12px; background: #ffe66d; border-radius: 50%; display: inline-block;"></span>
+                        Paula - $11,142,000 (22.2%)
+                    </h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Aporte</th>
+                                <th>Acumulado</th>
+                                <th>Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mar-Abr 2025</td>
+                                <td class="amount positive">$9,000,000</td>
+                                <td>$9,000,000</td>
+                                <td>Inversión inicial planificada</td>
+                            </tr>
+                            <tr>
+                                <td>May-Jun 2025</td>
+                                <td class="amount positive">$2,142,000</td>
+                                <td>$11,142,000</td>
+                                <td>Aportes operativos varios</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Julián -->
+                <div>
+                    <h4
+                        style="color: #a29bfe; font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span
+                            style="width: 12px; height: 12px; background: #a29bfe; border-radius: 50%; display: inline-block;"></span>
+                        Julián - $11,142,000 (22.2%)
+                    </h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Aporte</th>
+                                <th>Acumulado</th>
+                                <th>Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mar-Abr 2025</td>
+                                <td class="amount positive">$9,000,000</td>
+                                <td>$9,000,000</td>
+                                <td>Inversión inicial planificada</td>
+                            </tr>
+                            <tr>
+                                <td>May-Jun 2025</td>
+                                <td class="amount positive">$2,142,000</td>
+                                <td>$11,142,000</td>
+                                <td>Aportes operativos varios</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Botón Exportar CSV -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="exportarCSV()" class="btn-primary"
+                    style="cursor: pointer; border: none; font-size: 16px;">
+                    📥 Descargar Inversiones (CSV)
+                </button>
+                <p style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">
+                    Descarga el detalle completo para analizar en Excel
+                </p>
+            </div>
+        </section>
+
         <!-- Timeline -->
         <section class="section">
             <h2>📅 HISTORIA DEL NEGOCIO</h2>
@@ -534,27 +814,32 @@
                     <div class="timeline-item">
                         <div class="timeline-date">Junio 2025</div>
                         <div class="timeline-title">Apertura de Bulkness Café</div>
-                        <div class="timeline-desc">Lanzamiento del concepto único de café + nutrición deportiva. Inversión inicial de los 4 socios fundadores.</div>
+                        <div class="timeline-desc">Lanzamiento del concepto único de café + nutrición deportiva.
+                            Inversión inicial de los 4 socios fundadores.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Julio 2025</div>
                         <div class="timeline-title">Pico de ventas inicial</div>
-                        <div class="timeline-desc">Mejor mes con $4.89M. Validación del concepto con público fitness local.</div>
+                        <div class="timeline-desc">Mejor mes con $4.89M. Validación del concepto con público fitness
+                            local.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Agosto - Octubre 2025</div>
                         <div class="timeline-title">Optimización operativa</div>
-                        <div class="timeline-desc">Ajustes de menú, mejora de procesos, desarrollo de recetas con fichas técnicas de costos.</div>
+                        <div class="timeline-desc">Ajustes de menú, mejora de procesos, desarrollo de recetas con fichas
+                            técnicas de costos.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Noviembre 2025</div>
                         <div class="timeline-title">Expansión de productos</div>
-                        <div class="timeline-desc">Incorporación de nuevas líneas: Mr Creamy (82% margen), postres saludables, más opciones de batidos.</div>
+                        <div class="timeline-desc">Incorporación de nuevas líneas: Mr Creamy (82% margen), postres
+                            saludables, más opciones de batidos.</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Diciembre 2025</div>
                         <div class="timeline-title">Búsqueda de socio operativo</div>
-                        <div class="timeline-desc">Los socios buscan una persona que pueda liderar presencialmente el negocio y potenciar su crecimiento.</div>
+                        <div class="timeline-desc">Los socios buscan una persona que pueda liderar presencialmente el
+                            negocio y potenciar su crecimiento.</div>
                     </div>
                 </div>
             </div>
@@ -567,28 +852,28 @@
                 <div class="card">
                     <h3>📱 Delivery</h3>
                     <p style="color: var(--text-gray);">
-                        Implementar Rappi/iFood puede aumentar ventas 30-40%. 
+                        Implementar Rappi/iFood puede aumentar ventas 30-40%.
                         La zona tiene alta demanda de comida saludable a domicilio.
                     </p>
                 </div>
                 <div class="card">
                     <h3>🏋️ Alianzas Gimnasios</h3>
                     <p style="color: var(--text-gray);">
-                        Convenios con gimnasios cercanos para descuentos cruzados 
+                        Convenios con gimnasios cercanos para descuentos cruzados
                         y promociones exclusivas.
                     </p>
                 </div>
                 <div class="card">
                     <h3>📸 Marketing Digital</h3>
                     <p style="color: var(--text-gray);">
-                        Instagram fitness tiene alto engagement. Colaboraciones con 
+                        Instagram fitness tiene alto engagement. Colaboraciones con
                         influencers locales del mundo fitness.
                     </p>
                 </div>
                 <div class="card">
                     <h3>🍱 Meal Prep</h3>
                     <p style="color: var(--text-gray);">
-                        Servicio de comidas preparadas semanales para clientes fitness. 
+                        Servicio de comidas preparadas semanales para clientes fitness.
                         Ingreso recurrente con pedidos anticipados.
                     </p>
                 </div>
@@ -651,6 +936,109 @@
                 }
             }
         });
+
+        // Inversiones Chart (Dona)
+        new Chart(document.getElementById('inversionChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['William (29.8%)', 'Daniel (23.9%)', 'Paula (22.2%)', 'Julián (22.2%)'],
+                datasets: [{
+                    data: [14980000, 12000000, 11142000, 11142000],
+                    backgroundColor: [
+                        '#ff6b6b',
+                        '#4ecdc4',
+                        '#ffe66d',
+                        '#a29bfe'
+                    ],
+                    borderWidth: 0,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#a0a0a0',
+                            padding: 16,
+                            usePointStyle: true,
+                            font: { size: 12 }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        callbacks: {
+                            label: ctx => {
+                                const value = ctx.parsed;
+                                return ' $' + value.toLocaleString('es-CO') + ' COP';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Función para exportar CSV
+        function exportarCSV() {
+            const data = [
+                ['INVERSIONES BULKNESS CAFÉ - Resumen por Socio'],
+                [''],
+                ['Socio', 'Inversión Total', '% Participación', 'Diferencia vs Promedio'],
+                ['William', '$14,980,000', '29.8%', '+$2,664,000'],
+                ['Daniel', '$12,000,000', '23.9%', '-$316,000'],
+                ['Paula', '$11,142,000', '22.2%', '-$1,174,000'],
+                ['Julián', '$11,142,000', '22.2%', '-$1,174,000'],
+                ['TOTAL', '$49,264,000', '100%', ''],
+                [''],
+                ['Promedio por socio', '$12,316,000'],
+                [''],
+                [''],
+                ['HISTORIAL DETALLADO DE APORTES'],
+                [''],
+                ['WILLIAM'],
+                ['Período', 'Aporte', 'Acumulado', 'Motivo'],
+                ['Mar-Abr 2025', '$9,000,000', '$9,000,000', 'Inversión inicial planificada'],
+                ['Jun 2025', '$3,200,000', '$12,200,000', 'Capital trabajo urgente'],
+                ['Jul 2025', '$2,780,000', '$14,980,000', 'Crisis total'],
+                [''],
+                ['DANIEL'],
+                ['Período', 'Aporte', 'Acumulado', 'Motivo'],
+                ['Mar-Abr 2025', '$7,000,000', '$7,000,000', 'Inversión inicial planificada'],
+                ['May 2025', '$2,000,000', '$9,000,000', 'Terminar apertura'],
+                ['Jun 2025', '$3,000,000', '$12,000,000', 'Emergencias operativas'],
+                [''],
+                ['PAULA'],
+                ['Período', 'Aporte', 'Acumulado', 'Motivo'],
+                ['Mar-Abr 2025', '$9,000,000', '$9,000,000', 'Inversión inicial planificada'],
+                ['May-Jun 2025', '$2,142,000', '$11,142,000', 'Aportes operativos varios'],
+                [''],
+                ['JULIÁN'],
+                ['Período', 'Aporte', 'Acumulado', 'Motivo'],
+                ['Mar-Abr 2025', '$9,000,000', '$9,000,000', 'Inversión inicial planificada'],
+                ['May-Jun 2025', '$2,142,000', '$11,142,000', 'Aportes operativos varios'],
+                [''],
+                [''],
+                ['Generado el', new Date().toLocaleDateString('es-CO') + ' ' + new Date().toLocaleTimeString('es-CO')]
+            ];
+
+            // Convertir a CSV
+            const csvContent = data.map(row => row.join(',')).join('\n');
+
+            // Crear blob y descargar
+            const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'Bulkness_Inversiones_Detalle.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
+
 </html>
